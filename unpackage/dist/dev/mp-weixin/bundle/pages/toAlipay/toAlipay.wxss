@@ -1,0 +1,33 @@
+@charset "UTF-8"
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+
+@charset "UTF-8";
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+.data-v-58bb6845:export {
+  red_theme: #FF2C3C;
+  orange_theme: #f7971e;
+  pink_theme: #fa444d;
+  gold_theme: #e0a356;
+  blue_theme: #2f80ed;
+  green_theme: #2ec840;
+}
+page.data-v-58bb6845 {
+  height: 100%;
+  background-color: black;
+}
+.container.data-v-58bb6845 {
+  padding: 0 40rpx;
+  display: flex;
+  justify-content: end;
+}
+.container .img.data-v-58bb6845 {
+  height: 750rpx;
+}
+

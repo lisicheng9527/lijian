@@ -1,0 +1,13 @@
+@charset "UTF-8";
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+.area-contanier {
+  position: relative;
+}
+.area-contanier .areahot {
+  background-color: skyblue;
+  position: absolute;
+  opacity: 0;
+}
+

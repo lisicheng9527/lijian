@@ -1,0 +1,10 @@
+(global["webpackJsonp"]=global["webpackJsonp"]||[]).push([["components/widgets/notice/notice"],{"07b7":function(n,t,e){"use strict";e.d(t,"b",(function(){return u})),e.d(t,"c",(function(){return c})),e.d(t,"a",(function(){return o}));var o={widgetRoot:function(){return e.e("components/widget-root/widget-root").then(e.bind(null,"205d"))},uTag:function(){return e.e("components/uview-ui/components/u-tag/u-tag").then(e.bind(null,"e946"))},uIcon:function(){return e.e("components/uview-ui/components/u-icon/u-icon").then(e.bind(null,"4032"))}},u=function(){var n=this,t=n.$createElement,o=(n._self._c,n.content.data.length),u=o?n.$px2rpx(n.styles.border_radius):null,c=o&&1==n.content.icon_type?e("1bb1"):null,a=o&&1!=n.content.icon_type?n.$getImageUri(n.content.icon):null;n.$mp.data=Object.assign({},{$root:{g0:o,m0:u,m1:c,m2:a}})},c=[]},"1aa0":function(n,t,e){},"5dca":function(n,t,e){"use strict";e.r(t);var o=e("07b7"),u=e("a15a");for(var c in u)["default"].indexOf(c)<0&&function(n){e.d(t,n,(function(){return u[n]}))}(c);e("6a54");var a=e("828b"),r=Object(a["a"])(u["default"],o["b"],o["c"],!1,null,"2fee7280",null,!1,o["a"],void 0);t["default"]=r.exports},"6a54":function(n,t,e){"use strict";var o=e("1aa0"),u=e.n(o);u.a},a15a:function(n,t,e){"use strict";e.r(t);var o=e("a739"),u=e.n(o);for(var c in o)["default"].indexOf(c)<0&&function(n){e.d(t,n,(function(){return o[n]}))}(c);t["default"]=u.a},a739:function(n,t,e){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var o={props:{content:{type:[Object,Array]},styles:{type:[Object,Array]}},data:function(){return{}},methods:{},computed:{}};t.default=o}}]);
+;(global["webpackJsonp"] = global["webpackJsonp"] || []).push([
+    'components/widgets/notice/notice-create-component',
+    {
+        'components/widgets/notice/notice-create-component':(function(module, exports, __webpack_require__){
+            __webpack_require__('df3c')['createComponent'](__webpack_require__("5dca"))
+        })
+    },
+    [['components/widgets/notice/notice-create-component']]
+]);

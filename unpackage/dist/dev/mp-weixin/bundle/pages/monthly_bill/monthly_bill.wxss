@@ -1,0 +1,25 @@
+@charset "UTF-8"
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+
+@charset "UTF-8";
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+.month-bill .bill-time {
+  padding: 20rpx;
+  line-height: 34rpx;
+}
+.month-bill .show-panel {
+  background-color: white;
+  padding: 36rpx 0 26rpx;
+}
+.month-bill .show-panel .panel-item {
+  flex: 1;
+  line-height: 34rpx;
+}
+

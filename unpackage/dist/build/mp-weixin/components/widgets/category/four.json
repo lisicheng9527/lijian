@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "img-list": "/components/widgets/category/img-list"
+  }
+}

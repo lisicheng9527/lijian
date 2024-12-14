@@ -1,0 +1,1 @@
+<view style="width:100%;" class="data-v-6705dc68"><scroll-view style="height:100%;" scroll-y="true" scroll-with-animation="true" class="data-v-6705dc68"><img-list vue-id="3f4da00c-1" lists="{{lists}}" class="data-v-6705dc68" bind:__l="__l"></img-list></scroll-view></view>

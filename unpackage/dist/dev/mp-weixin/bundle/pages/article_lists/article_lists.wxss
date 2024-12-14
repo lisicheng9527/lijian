@@ -1,0 +1,26 @@
+@charset "UTF-8"
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+
+@charset "UTF-8";
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+.data-v-33edb83f:export {
+  red_theme: #FF2C3C;
+  orange_theme: #f7971e;
+  pink_theme: #fa444d;
+  gold_theme: #e0a356;
+  blue_theme: #2f80ed;
+  green_theme: #2ec840;
+}
+.article-lists .card.data-v-33edb83f {
+  margin: 20rpx 20rpx 0;
+  padding: 20rpx;
+  border-radius: 14rpx;
+}
+

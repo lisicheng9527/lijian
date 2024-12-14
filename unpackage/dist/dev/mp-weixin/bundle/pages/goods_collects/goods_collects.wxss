@@ -1,0 +1,83 @@
+@charset "UTF-8"
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+
+@charset "UTF-8";
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+.data-v-34b74425:export {
+  red_theme: #FF2C3C;
+  orange_theme: #f7971e;
+  pink_theme: #fa444d;
+  gold_theme: #e0a356;
+  blue_theme: #2f80ed;
+  green_theme: #2ec840;
+}
+.collect.data-v-34b74425 {
+  position: relative;
+}
+.collect.data-v-34b74425:nth-child(n + 2)::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  content: "";
+  width: calc(100% - 160rpx - 20rpx * 2);
+  border-top: 1px solid #E5E5E5;
+}
+.collect-button.data-v-34b74425 {
+  box-sizing: border-box;
+  padding: 8rpx 30rpx;
+  font-size: 26rpx;
+  border-radius: 60px;
+}
+.collect-button--normal.data-v-34b74425 {
+  border-width: 1px;
+  border-style: solid;
+}
+.red_theme .collect-button--normal.data-v-34b74425 {
+  color: #FF2C3C;
+}
+.orange_theme .collect-button--normal.data-v-34b74425 {
+  color: #f7971e;
+}
+.pink_theme .collect-button--normal.data-v-34b74425 {
+  color: #fa444d;
+}
+.gold_theme .collect-button--normal.data-v-34b74425 {
+  color: #e0a356;
+}
+.blue_theme .collect-button--normal.data-v-34b74425 {
+  color: #2f80ed;
+}
+.green_theme .collect-button--normal.data-v-34b74425 {
+  color: #2ec840;
+}
+.red_theme .collect-button--normal.data-v-34b74425 {
+  border-color: #FF2C3C;
+}
+.orange_theme .collect-button--normal.data-v-34b74425 {
+  border-color: #f7971e;
+}
+.pink_theme .collect-button--normal.data-v-34b74425 {
+  border-color: #fa444d;
+}
+.gold_theme .collect-button--normal.data-v-34b74425 {
+  border-color: #e0a356;
+}
+.blue_theme .collect-button--normal.data-v-34b74425 {
+  border-color: #2f80ed;
+}
+.green_theme .collect-button--normal.data-v-34b74425 {
+  border-color: #2ec840;
+}
+.collect-button--muted.data-v-34b74425 {
+  color: #666666;
+  background-color: #f2f2f2;
+}
+

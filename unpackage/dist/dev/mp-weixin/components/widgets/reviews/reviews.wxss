@@ -1,0 +1,64 @@
+@charset "UTF-8";
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+.data-v-fd15bc48:export {
+  red_theme: #FF2C3C;
+  orange_theme: #f7971e;
+  pink_theme: #fa444d;
+  gold_theme: #e0a356;
+  blue_theme: #2f80ed;
+  green_theme: #2ec840;
+}
+.reviews.data-v-fd15bc48 {
+  margin: 30rpx 20rpx 30rpx 20rpx;
+  border-radius: 30rpx;
+  background-color: #ffffff;
+}
+.reviews-header.data-v-fd15bc48 {
+  padding: 24rpx;
+}
+.reviews-content.data-v-fd15bc48 {
+  padding: 24rpx;
+  border-top: 1px solid #E5E5E5;
+}
+.reviews-content .evaluate-images.data-v-fd15bc48 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.red_theme .reviews-rate.data-v-fd15bc48 {
+  color: #FF2C3C;
+}
+.orange_theme .reviews-rate.data-v-fd15bc48 {
+  color: #f7971e;
+}
+.pink_theme .reviews-rate.data-v-fd15bc48 {
+  color: #fa444d;
+}
+.gold_theme .reviews-rate.data-v-fd15bc48 {
+  color: #e0a356;
+}
+.blue_theme .reviews-rate.data-v-fd15bc48 {
+  color: #2f80ed;
+}
+.green_theme .reviews-rate.data-v-fd15bc48 {
+  color: #2ec840;
+}
+.reviews .reviews-images.data-v-fd15bc48 {
+  position: relative;
+  margin-left: auto;
+}
+.reviews .reviews-images .num-tip.data-v-fd15bc48 {
+  bottom: 8rpx;
+  right: 8rpx;
+  position: absolute;
+  background-color: gray;
+  color: white;
+  border-radius: 25rpx;
+  width: 25rpx;
+  height: 25rpx;
+  text-align: center;
+  font-size: 18rpx;
+  line-height: 25rpx;
+}
+

@@ -1,0 +1,41 @@
+@charset "UTF-8";
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+.data-v-7c1acdd4:export {
+  red_theme: #FF2C3C;
+  orange_theme: #f7971e;
+  pink_theme: #fa444d;
+  gold_theme: #e0a356;
+  blue_theme: #2f80ed;
+  green_theme: #2ec840;
+}
+.title.data-v-7c1acdd4 {
+  padding: 24rpx 30rpx;
+}
+.title .title-content.data-v-7c1acdd4 {
+  font-size: 32rpx;
+  font-weight: 500;
+}
+.title .title-subtitle.data-v-7c1acdd4 {
+  font-size: 24rpx;
+}
+.title .title-style1.data-v-7c1acdd4 {
+  text-align: center;
+}
+.title .title-style1 .title-content.data-v-7c1acdd4 {
+  display: inline-flex;
+  align-items: center;
+}
+.title .title-style1 .title-content.data-v-7c1acdd4::before, .title .title-style1 .title-content.data-v-7c1acdd4::after {
+  content: '';
+  display: inline-block;
+  width: 98rpx;
+  height: 2rpx;
+  margin: 0 20rpx;
+  background: #dcdfe6;
+}
+.title .title-more.data-v-7c1acdd4 {
+  font-size: 24rpx;
+}
+

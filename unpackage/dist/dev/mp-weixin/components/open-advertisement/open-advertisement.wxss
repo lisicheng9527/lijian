@@ -1,0 +1,12 @@
+
+.container.data-v-14062f84 {
+    width: 558rpx;
+    height: 708rpx;
+
+    margin-bottom: 20rpx;
+}
+.close.data-v-14062f84 {
+    width: 100%;
+    text-align: center;
+}
+

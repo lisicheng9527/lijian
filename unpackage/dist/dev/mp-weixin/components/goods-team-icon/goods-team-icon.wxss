@@ -1,0 +1,117 @@
+@charset "UTF-8";
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+.data-v-8fa4512c:export {
+  red_theme: #FF2C3C;
+  orange_theme: #f7971e;
+  pink_theme: #fa444d;
+  gold_theme: #e0a356;
+  blue_theme: #2f80ed;
+  green_theme: #2ec840;
+}
+.goods-team-icon.data-v-8fa4512c {
+  display: flex;
+  height: 34rpx;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 2px;
+}
+.goods-team-icon__icon.data-v-8fa4512c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42rpx;
+}
+.goods-team-icon__num.data-v-8fa4512c {
+  padding: 0 10rpx;
+  font-size: 22rpx;
+}
+.goods-team-icon__num.data-v-8fa4512c::after {
+  content: "人团";
+}
+.red_theme .goods-team-icon--primary.data-v-8fa4512c {
+  border-color: #FF2C3C;
+}
+.orange_theme .goods-team-icon--primary.data-v-8fa4512c {
+  border-color: #f7971e;
+}
+.pink_theme .goods-team-icon--primary.data-v-8fa4512c {
+  border-color: #fa444d;
+}
+.gold_theme .goods-team-icon--primary.data-v-8fa4512c {
+  border-color: #e0a356;
+}
+.blue_theme .goods-team-icon--primary.data-v-8fa4512c {
+  border-color: #2f80ed;
+}
+.green_theme .goods-team-icon--primary.data-v-8fa4512c {
+  border-color: #2ec840;
+}
+.goods-team-icon--primary .goods-team-icon__icon.data-v-8fa4512c {
+  color: #FFFFFF;
+}
+.red_theme .goods-team-icon--primary .goods-team-icon__icon.data-v-8fa4512c {
+  background-color: #ff2c3c;
+}
+.orange_theme .goods-team-icon--primary .goods-team-icon__icon.data-v-8fa4512c {
+  background-color: #f7971e;
+}
+.pink_theme .goods-team-icon--primary .goods-team-icon__icon.data-v-8fa4512c {
+  background-color: #fa444d;
+}
+.gold_theme .goods-team-icon--primary .goods-team-icon__icon.data-v-8fa4512c {
+  background-color: #e0a356;
+}
+.blue_theme .goods-team-icon--primary .goods-team-icon__icon.data-v-8fa4512c {
+  background-color: #2f80ed;
+}
+.green_theme .goods-team-icon--primary .goods-team-icon__icon.data-v-8fa4512c {
+  background-color: #2ec840;
+}
+.red_theme .goods-team-icon--primary .goods-team-icon__num.data-v-8fa4512c {
+  color: #FF2C3C;
+}
+.orange_theme .goods-team-icon--primary .goods-team-icon__num.data-v-8fa4512c {
+  color: #f7971e;
+}
+.pink_theme .goods-team-icon--primary .goods-team-icon__num.data-v-8fa4512c {
+  color: #fa444d;
+}
+.gold_theme .goods-team-icon--primary .goods-team-icon__num.data-v-8fa4512c {
+  color: #e0a356;
+}
+.blue_theme .goods-team-icon--primary .goods-team-icon__num.data-v-8fa4512c {
+  color: #2f80ed;
+}
+.green_theme .goods-team-icon--primary .goods-team-icon__num.data-v-8fa4512c {
+  color: #2ec840;
+}
+.goods-team-icon--normal.data-v-8fa4512c {
+  border-color: #FFFFFF;
+}
+.goods-team-icon--normal .goods-team-icon__icon.data-v-8fa4512c {
+  background-color: #FFFFFF;
+}
+.red_theme .goods-team-icon--normal .goods-team-icon__icon.data-v-8fa4512c {
+  color: #FF2C3C;
+}
+.orange_theme .goods-team-icon--normal .goods-team-icon__icon.data-v-8fa4512c {
+  color: #f7971e;
+}
+.pink_theme .goods-team-icon--normal .goods-team-icon__icon.data-v-8fa4512c {
+  color: #fa444d;
+}
+.gold_theme .goods-team-icon--normal .goods-team-icon__icon.data-v-8fa4512c {
+  color: #e0a356;
+}
+.blue_theme .goods-team-icon--normal .goods-team-icon__icon.data-v-8fa4512c {
+  color: #2f80ed;
+}
+.green_theme .goods-team-icon--normal .goods-team-icon__icon.data-v-8fa4512c {
+  color: #2ec840;
+}
+.goods-team-icon--normal .goods-team-icon__num.data-v-8fa4512c {
+  color: #FFFFFF;
+}
+

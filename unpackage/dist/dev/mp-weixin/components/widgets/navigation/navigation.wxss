@@ -1,0 +1,20 @@
+@charset "UTF-8";
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+.data-v-5d3d1238:export {
+  red_theme: #FF2C3C;
+  orange_theme: #f7971e;
+  pink_theme: #fa444d;
+  gold_theme: #e0a356;
+  blue_theme: #2f80ed;
+  green_theme: #2ec840;
+}
+.navigation.data-v-5d3d1238 {
+  position: relative;
+}
+.navigation .navigation-swiper.data-v-5d3d1238 {
+  position: relative;
+  z-index: 99;
+}
+

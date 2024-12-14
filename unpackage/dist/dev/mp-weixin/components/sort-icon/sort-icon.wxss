@@ -1,0 +1,18 @@
+@charset "UTF-8";
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+.data-v-6bbb5454:export {
+  red_theme: #FF2C3C;
+  orange_theme: #f7971e;
+  pink_theme: #fa444d;
+  gold_theme: #e0a356;
+  blue_theme: #2f80ed;
+  green_theme: #2ec840;
+}
+.sort-icon.data-v-6bbb5454 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+

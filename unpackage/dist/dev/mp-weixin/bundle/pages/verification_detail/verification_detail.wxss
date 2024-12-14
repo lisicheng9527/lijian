@@ -1,0 +1,103 @@
+@charset "UTF-8"
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+
+@charset "UTF-8";
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+.data-v-0d7b41d1:export {
+  red_theme: #FF2C3C;
+  orange_theme: #f7971e;
+  pink_theme: #fa444d;
+  gold_theme: #e0a356;
+  blue_theme: #2f80ed;
+  green_theme: #2ec840;
+}
+.verification-detail.data-v-0d7b41d1 {
+  padding: 0 20rpx;
+}
+.order.data-v-0d7b41d1 {
+  padding-left: 20rpx;
+  margin-top: 20rpx;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+.order-header.data-v-0d7b41d1 {
+  display: flex;
+  height: 80rpx;
+  align-items: center;
+  padding-right: 20rpx;
+  border-bottom: 1px dashed #E5E5E5;
+}
+.order-header .order-sn.data-v-0d7b41d1 {
+  font-size: 28rpx;
+}
+.order-header .order-status.data-v-0d7b41d1 {
+  margin-left: auto;
+  font-size: 26rpx;
+}
+.red_theme .order-header .order-status--primary.data-v-0d7b41d1 {
+  color: #FF2C3C;
+}
+.orange_theme .order-header .order-status--primary.data-v-0d7b41d1 {
+  color: #f7971e;
+}
+.pink_theme .order-header .order-status--primary.data-v-0d7b41d1 {
+  color: #fa444d;
+}
+.gold_theme .order-header .order-status--primary.data-v-0d7b41d1 {
+  color: #e0a356;
+}
+.blue_theme .order-header .order-status--primary.data-v-0d7b41d1 {
+  color: #2f80ed;
+}
+.green_theme .order-header .order-status--primary.data-v-0d7b41d1 {
+  color: #2ec840;
+}
+.order-header .order-status--muted.data-v-0d7b41d1 {
+  color: #999999;
+}
+.order-main__spec.data-v-0d7b41d1 {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+.operation.data-v-0d7b41d1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80rpx;
+  margin-top: 20rpx;
+  border-radius: 60px;
+}
+.operation--primary.data-v-0d7b41d1 {
+  color: #ffffff;
+}
+.red_theme .operation--primary.data-v-0d7b41d1 {
+  background-color: #ff2c3c;
+}
+.orange_theme .operation--primary.data-v-0d7b41d1 {
+  background-color: #f7971e;
+}
+.pink_theme .operation--primary.data-v-0d7b41d1 {
+  background-color: #fa444d;
+}
+.gold_theme .operation--primary.data-v-0d7b41d1 {
+  background-color: #e0a356;
+}
+.blue_theme .operation--primary.data-v-0d7b41d1 {
+  background-color: #2f80ed;
+}
+.green_theme .operation--primary.data-v-0d7b41d1 {
+  background-color: #2ec840;
+}
+.operation--normal.data-v-0d7b41d1 {
+  background-color: #ffffff;
+  color: #333333;
+}
+

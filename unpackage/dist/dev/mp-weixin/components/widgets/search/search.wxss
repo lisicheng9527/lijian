@@ -1,0 +1,25 @@
+@charset "UTF-8";
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+.data-v-040f4a38:export {
+  red_theme: #FF2C3C;
+  orange_theme: #f7971e;
+  pink_theme: #fa444d;
+  gold_theme: #e0a356;
+  blue_theme: #2f80ed;
+  green_theme: #2ec840;
+}
+.search.data-v-040f4a38 {
+  box-sizing: border-box;
+  width: 100%;
+}
+.search .search-content.data-v-040f4a38 {
+  height: 64rpx;
+  line-height: 64rpx;
+  padding: 0 24px;
+}
+.search .search-content .search-text.data-v-040f4a38 {
+  margin-left: 8px;
+}
+

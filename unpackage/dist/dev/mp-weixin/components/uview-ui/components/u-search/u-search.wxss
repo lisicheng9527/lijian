@@ -1,0 +1,63 @@
+@charset "UTF-8";
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+.data-v-d275a09a:export {
+  red_theme: #FF2C3C;
+  orange_theme: #f7971e;
+  pink_theme: #fa444d;
+  gold_theme: #e0a356;
+  blue_theme: #2f80ed;
+  green_theme: #2ec840;
+}
+.u-search.data-v-d275a09a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+}
+.u-content.data-v-d275a09a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 18rpx;
+  flex: 1;
+}
+.u-clear-icon.data-v-d275a09a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.u-input.data-v-d275a09a {
+  flex: 1;
+  font-size: 28rpx;
+  line-height: 1;
+  margin: 0 10rpx;
+  color: #909399;
+}
+.u-close-wrap.data-v-d275a09a {
+  width: 40rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.u-placeholder-class.data-v-d275a09a {
+  color: #909399;
+}
+.u-action.data-v-d275a09a {
+  font-size: 28rpx;
+  color: #303133;
+  width: 0;
+  overflow: hidden;
+  transition: all 0.3s;
+  white-space: nowrap;
+  text-align: center;
+}
+.u-action-active.data-v-d275a09a {
+  width: 80rpx;
+  margin-left: 10rpx;
+}
+

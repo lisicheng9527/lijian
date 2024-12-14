@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "left-aside": "/components/widgets/category/left-aside",
+    "goods": "/components/widgets/category/goods"
+  }
+}

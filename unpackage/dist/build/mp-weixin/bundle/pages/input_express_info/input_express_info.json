@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "填写快递单号",
+  "usingComponents": {
+    "uploader": "/components/uploader/uploader"
+  }
+}

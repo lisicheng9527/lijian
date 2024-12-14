@@ -1,0 +1,70 @@
+@charset "UTF-8"
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+
+@charset "UTF-8";
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+.btn {
+  width: 180rpx;
+  border-width: 1rpx;
+  border-style: solid;
+  padding: 8rpx 24rpx;
+}
+.red_theme .btn {
+  color: #FF2C3C;
+}
+.orange_theme .btn {
+  color: #f7971e;
+}
+.pink_theme .btn {
+  color: #fa444d;
+}
+.gold_theme .btn {
+  color: #e0a356;
+}
+.blue_theme .btn {
+  color: #2f80ed;
+}
+.green_theme .btn {
+  color: #2ec840;
+}
+.red_theme .btn {
+  border-color: #FF2C3C;
+}
+.orange_theme .btn {
+  border-color: #f7971e;
+}
+.pink_theme .btn {
+  border-color: #fa444d;
+}
+.gold_theme .btn {
+  border-color: #e0a356;
+}
+.blue_theme .btn {
+  border-color: #2f80ed;
+}
+.green_theme .btn {
+  border-color: #2ec840;
+}
+.commen-header {
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #E5E5E5;
+}
+.comment-img {
+  margin-bottom: 20rpx;
+}
+.comment-img:not(:nth-last-of-type(4n+1)) {
+  margin-right: 20rpx;
+}
+.goods {
+  border-radius: 10rpx;
+  background-color: #F6F6F6;
+  padding: 20rpx 20rpx 0 20rpx;
+}
+

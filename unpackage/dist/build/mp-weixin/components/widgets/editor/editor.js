@@ -1,0 +1,10 @@
+(global["webpackJsonp"]=global["webpackJsonp"]||[]).push([["components/widgets/editor/editor"],{"0b48":function(e,t,n){"use strict";n.r(t);var r=n("d3d1"),o=n.n(r);for(var u in r)["default"].indexOf(u)<0&&function(e){n.d(t,e,(function(){return r[e]}))}(u);t["default"]=o.a},5357:function(e,t,n){e.exports={red_theme:"#FF2C3C",orange_theme:"#f7971e",pink_theme:"#fa444d",gold_theme:"#e0a356",blue_theme:"#2f80ed",green_theme:"#2ec840"}},d3d1:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;n("4a52");var r={props:{content:{type:[Object,Array]},styles:{type:[Object,Array]}},data:function(){return{current:0}},methods:{},computed:{},watch:{}};t.default=r},d913:function(e,t,n){"use strict";n.r(t);var r=n("f190"),o=n("0b48");for(var u in o)["default"].indexOf(u)<0&&function(e){n.d(t,e,(function(){return o[e]}))}(u);n("eb14");var d=n("828b"),a=Object(d["a"])(o["default"],r["b"],r["c"],!1,null,null,null,!1,r["a"],void 0);t["default"]=a.exports},eb14:function(e,t,n){"use strict";var r=n("5357"),o=n.n(r);o.a},f190:function(e,t,n){"use strict";n.d(t,"b",(function(){return o})),n.d(t,"c",(function(){return u})),n.d(t,"a",(function(){return r}));var r={widgetRoot:function(){return n.e("components/widget-root/widget-root").then(n.bind(null,"205d"))},uParse:function(){return Promise.all([n.e("common/vendor"),n.e("components/uview-ui/components/u-parse/u-parse")]).then(n.bind(null,"6b34"))}},o=function(){var e=this,t=e.$createElement,n=(e._self._c,e.$px2rpx(e.styles.border_radius_top)),r=e.$px2rpx(e.styles.border_radius_top),o=e.$px2rpx(e.styles.border_radius_bottom),u=e.$px2rpx(e.styles.border_radius_bottom);e.$mp.data=Object.assign({},{$root:{m0:n,m1:r,m2:o,m3:u}})},u=[]}}]);
+;(global["webpackJsonp"] = global["webpackJsonp"] || []).push([
+    'components/widgets/editor/editor-create-component',
+    {
+        'components/widgets/editor/editor-create-component':(function(module, exports, __webpack_require__){
+            __webpack_require__('df3c')['createComponent'](__webpack_require__("d913"))
+        })
+    },
+    [['components/widgets/editor/editor-create-component']]
+]);

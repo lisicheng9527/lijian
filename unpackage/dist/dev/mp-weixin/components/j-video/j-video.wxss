@@ -1,0 +1,37 @@
+@charset "UTF-8";
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+.data-v-0153f2b6:export {
+  red_theme: #FF2C3C;
+  orange_theme: #f7971e;
+  pink_theme: #fa444d;
+  gold_theme: #e0a356;
+  blue_theme: #2f80ed;
+  green_theme: #2ec840;
+}
+.root.data-v-0153f2b6 {
+  position: relative;
+  width: 750rpx;
+  height: 300px;
+  overflow: hidden;
+}
+.posterImg.data-v-0153f2b6,
+.video.data-v-0153f2b6,
+.box.data-v-0153f2b6 {
+  display: flex;
+  width: 750rpx;
+  height: 300px;
+  position: absolute;
+}
+.video.data-v-0153f2b6 {
+  margin-left: -2000px;
+}
+.box.data-v-0153f2b6 {
+  justify-content: center;
+  align-items: center;
+}
+.playIcon.data-v-0153f2b6 {
+  width: 100rpx;
+}
+

@@ -1,0 +1,77 @@
+@charset "UTF-8"
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+
+@charset "UTF-8";
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+.balance-transfer {
+  padding: 20rpx 30rpx;
+}
+.balance-transfer .contain {
+  border-radius: 20rpx;
+  padding: 0 24rpx;
+}
+.balance-transfer .transfer-money {
+  padding: 30rpx 45rpx;
+}
+.balance-transfer .transfer-money .input {
+  border-bottom: 1px solid #E5E5E5;
+  margin-top: 30rpx;
+}
+.balance-transfer .transfer-money .input input {
+  width: 100%;
+  height: 94rpx;
+  text-align: left;
+  font-size: 66rpx;
+  margin-left: 30rpx;
+}
+.balance-transfer .transfer-money .btn {
+  line-height: 84rpx;
+  margin-top: 80rpx;
+}
+.red_theme .balance-transfer .transfer-money .btn {
+  background-image: linear-gradient(180deg, #F95F2F 50%, #FF2C3C 100%);
+}
+.orange_theme .balance-transfer .transfer-money .btn {
+  background-image: linear-gradient(180deg, #ffd200 50%, #f7971e 100%);
+}
+.pink_theme .balance-transfer .transfer-money .btn {
+  background-image: linear-gradient(180deg, #fd498f 50%, #fa444d 100%);
+}
+.gold_theme .balance-transfer .transfer-money .btn {
+  background-image: linear-gradient(180deg, #ebc389 50%, #e0a356 100%);
+}
+.blue_theme .balance-transfer .transfer-money .btn {
+  background-image: linear-gradient(180deg, #56ccf2 50%, #2f80ed 100%);
+}
+.green_theme .balance-transfer .transfer-money .btn {
+  background-image: linear-gradient(180deg, #3de650 50%, #2ec840 100%);
+}
+.balance-transfer .user {
+  padding: 22rpx 25rpx;
+}
+.balance-transfer .user .list .item {
+  padding: 26rpx 0;
+}
+.balance-transfer .user .list .item:not(:last-of-type) {
+  border-bottom: 1px solid #E5E5E5;
+}
+/* 弹窗 */
+.balance-transfer .set-word input {
+  border: var(--border);
+  padding: 16rpx 20rpx;
+  font-size: 28rpx;
+  border-radius: 6rpx;
+  margin-bottom: 20rpx;
+}
+.balance-transfer .phone {
+  padding: 20rpx 0;
+  font-size: 42rpx;
+}
+

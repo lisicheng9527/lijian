@@ -1,0 +1,1 @@
+<view class="{{['data-v-259fa9b0',themeName]}}" style="display:inline-block;"><view class="{{['data-v-259fa9b0','goods-team-icon',style[theme]]}}"><u-icon class="goods-team-icon__icon data-v-259fa9b0" vue-id="4d8d96dc-1" name="account" size="28" bind:__l="__l"></u-icon><text class="goods-team-icon__num data-v-259fa9b0">{{count}}</text></view></view>

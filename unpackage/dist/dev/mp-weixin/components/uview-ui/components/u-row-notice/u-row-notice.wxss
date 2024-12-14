@@ -1,0 +1,73 @@
+@charset "UTF-8";
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+.data-v-0173d113:export {
+  red_theme: #FF2C3C;
+  orange_theme: #f7971e;
+  pink_theme: #fa444d;
+  gold_theme: #e0a356;
+  blue_theme: #2f80ed;
+  green_theme: #2ec840;
+}
+.u-notice-bar.data-v-0173d113 {
+  padding: 18rpx 24rpx;
+  overflow: hidden;
+}
+.u-direction-row.data-v-0173d113 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.u-left-icon.data-v-0173d113 {
+  display: inline-flex;
+  align-items: center;
+}
+.u-notice-box.data-v-0173d113 {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  margin-left: 12rpx;
+}
+.u-right-icon.data-v-0173d113 {
+  margin-left: 12rpx;
+  display: inline-flex;
+  align-items: center;
+}
+.u-notice-content.data-v-0173d113 {
+  -webkit-animation: u-loop-animation-data-v-0173d113 10s linear infinite both;
+          animation: u-loop-animation-data-v-0173d113 10s linear infinite both;
+  text-align: right;
+  padding-left: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.u-notice-text.data-v-0173d113 {
+  font-size: 26rpx;
+  word-break: keep-all;
+  white-space: nowrap;
+}
+@-webkit-keyframes u-loop-animation-data-v-0173d113 {
+0% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+}
+}
+@keyframes u-loop-animation-data-v-0173d113 {
+0% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+}
+}
+

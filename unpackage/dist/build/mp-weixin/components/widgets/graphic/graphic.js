@@ -1,0 +1,10 @@
+(global["webpackJsonp"]=global["webpackJsonp"]||[]).push([["components/widgets/graphic/graphic"],{1611:function(t,e,n){"use strict";n.r(e);var r=n("ce18"),o=n("6f0c");for(var a in o)["default"].indexOf(a)<0&&function(t){n.d(e,t,(function(){return o[t]}))}(a);n("4dd6");var u=n("828b"),i=Object(u["a"])(o["default"],r["b"],r["c"],!1,null,"6a0aa16a",null,!1,r["a"],void 0);e["default"]=i.exports},"1d43":function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0;var r=n("4a52"),o={props:{content:{type:[Object,Array]},styles:{type:[Object,Array]}},data:function(){return{}},methods:{handleClick:function(t){(0,r.navigateTo)(t)}},computed:{}};e.default=o},"4dd6":function(t,e,n){"use strict";var r=n("a6f8"),o=n.n(r);o.a},"6f0c":function(t,e,n){"use strict";n.r(e);var r=n("1d43"),o=n.n(r);for(var a in r)["default"].indexOf(a)<0&&function(t){n.d(e,t,(function(){return r[t]}))}(a);e["default"]=o.a},a6f8:function(t,e,n){},ce18:function(t,e,n){"use strict";n.d(e,"b",(function(){return o})),n.d(e,"c",(function(){return a})),n.d(e,"a",(function(){return r}));var r={widgetRoot:function(){return n.e("components/widget-root/widget-root").then(n.bind(null,"205d"))},uImage:function(){return n.e("components/uview-ui/components/u-image/u-image").then(n.bind(null,"0cd9"))}},o=function(){var t=this,e=t.$createElement,n=(t._self._c,t.$px2rpx(t.styles.border_radius_top)),r=t.$px2rpx(t.styles.border_radius_top),o=t.$px2rpx(t.styles.border_radius_bottom),a=t.$px2rpx(t.styles.border_radius_bottom),u=t.__map(t.content.data,(function(e,n){var r=t.__get_orig(e),o=t.$getImageUri(e.url);return{$orig:r,m4:o}}));t.$mp.data=Object.assign({},{$root:{m0:n,m1:r,m2:o,m3:a,l0:u}})},a=[]}}]);
+;(global["webpackJsonp"] = global["webpackJsonp"] || []).push([
+    'components/widgets/graphic/graphic-create-component',
+    {
+        'components/widgets/graphic/graphic-create-component':(function(module, exports, __webpack_require__){
+            __webpack_require__('df3c')['createComponent'](__webpack_require__("1611"))
+        })
+    },
+    [['components/widgets/graphic/graphic-create-component']]
+]);

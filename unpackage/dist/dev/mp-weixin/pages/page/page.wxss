@@ -1,0 +1,19 @@
+@charset "UTF-8"
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+
+@charset "UTF-8";
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+.page {
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  overflow: hidden;
+  min-height: calc(100vh - env(safe-area-inset-bottom));
+}
+

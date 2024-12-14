@@ -1,0 +1,97 @@
+@charset "UTF-8"
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+
+@charset "UTF-8";
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+.goods-team {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+}
+.goods-team .banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100rpx;
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+.goods-team .banner .title-image {
+  width: 440rpx;
+  height: 48rpx;
+}
+.goods-team .goods-contain {
+  padding: 0 20rpx;
+}
+.goods-team .fixed-contain {
+  position: fixed;
+  right: 20rpx;
+  bottom: 240rpx;
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+  font-size: 26rpx;
+  font-weight: 500;
+  border: 1px solid #E5E5E5;
+  background-color: #ffffff;
+}
+.red_theme .bg--primary {
+  background-image: linear-gradient(90deg, #F95F2F 0%, #FF2C3C 100%);
+}
+.orange_theme .bg--primary {
+  background-image: linear-gradient(90deg, #ffd200 0%, #f7971e 100%);
+}
+.pink_theme .bg--primary {
+  background-image: linear-gradient(90deg, #fd498f 0%, #fa444d 100%);
+}
+.gold_theme .bg--primary {
+  background-image: linear-gradient(90deg, #ebc389 0%, #e0a356 100%);
+}
+.blue_theme .bg--primary {
+  background-image: linear-gradient(90deg, #56ccf2 0%, #2f80ed 100%);
+}
+.green_theme .bg--primary {
+  background-image: linear-gradient(90deg, #3de650 0%, #2ec840 100%);
+}
+.goods {
+  margin-bottom: 20rpx;
+}
+.goods-button {
+  padding: 10rpx 35rpx;
+  border-radius: 60px;
+  font-size: 28rpx;
+  color: #ffffff;
+}
+.red_theme .goods-button {
+  background-color: #ff2c3c;
+}
+.orange_theme .goods-button {
+  background-color: #f7971e;
+}
+.pink_theme .goods-button {
+  background-color: #fa444d;
+}
+.gold_theme .goods-button {
+  background-color: #e0a356;
+}
+.blue_theme .goods-button {
+  background-color: #2f80ed;
+}
+.green_theme .goods-button {
+  background-color: #2ec840;
+}
+
