@@ -18,7 +18,11 @@
     "pages/address/address",
     "pages/address_edit/address_edit",
     "pages/webview/webview",
-    "components/uview-ui/components/u-avatar-cropper/u-avatar-cropper"
+    "components/uview-ui/components/u-avatar-cropper/u-avatar-cropper",
+    "pages/scan/scan",
+    "pages/camera/camera",
+    "pages/photo/photo",
+    "pages/home/home"
   ],
   "subPackages": [
     {

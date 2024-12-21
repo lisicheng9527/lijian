@@ -198,7 +198,7 @@
 </template>
 
 <script>
-import { apiOrderList } from '@/api/order'
+import { apiOrderList, getmodelFileList } from '@/api/order'
 import OrderMixin from '@/mixins/order'
 import { PaymentStatusEnum } from '@/utils/enum'
 import MescrollMixin from '@/components/mescroll-uni/mescroll-mixins'
@@ -402,8 +402,8 @@ export default {
         // 上拉加载更多
         upCallback({ num, size }) {
             const sign = this.currentTab.sign
-            apiOrderList({
-                type: sign,
+            getmodelFileList({
+                file_status: ' ',
                 page_no: num,
                 page_size: size
             })

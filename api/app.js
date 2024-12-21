@@ -73,6 +73,22 @@ export function apiJsConfig() {
 // 公共配置
 export const apiConfig = (params) => request.get('config/getconfig', { params })
 
+// 预签名上传
+export const getPresignedUpload = (params) => request.post('modelfile/getPresignedUpload',
+    {
+        ...params
+    },
+    { headers: { version: '3.3.0' }
+})
+
+// 创建模型文件
+export const createModelFile = (params) => request.post('modelfile/createModelFile',
+    {
+        ...params
+    },
+    { headers: { version: '3.3.0' }
+})
+
 // 支付方式
 export const apiPayway = (params) =>
     request.get('pay/payway', {

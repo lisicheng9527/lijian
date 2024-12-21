@@ -183,6 +183,42 @@
                 "navigationBarTitleText": "头像裁剪",
                 "navigationBarBackgroundColor": "#000000"
             }
+        },
+        {
+            "path": "pages/scan/scan",
+            "style": {
+                "navigationBarTitleText": "扫描"
+            },
+            "meta": {
+                "auth": true
+            }
+        },
+        {
+            "path": "pages/camera/camera",
+            "style": {
+                "navigationBarTitleText": "扫描"
+            },
+            "meta": {
+                "auth": true
+            }
+        },
+        {
+            "path": "pages/photo/photo",
+            "style": {
+                "navigationBarTitleText": "上传图片"
+            },
+            "meta": {
+                "auth": true
+            }
+        },
+        {
+            "path": "pages/home/home",
+            "style": {
+                "navigationBarTitleText": "首页"
+            },
+            "meta": {
+                "auth": false
+            }
         }
     ],
     "subPackages": [

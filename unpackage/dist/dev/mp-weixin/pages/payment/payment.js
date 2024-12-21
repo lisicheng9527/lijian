@@ -2,7 +2,7 @@
 
 /***/ 189:
 /*!************************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/main.js?{"page":"pages%2Fpayment%2Fpayment"} ***!
+  !*** /Users/lisicheng/project/lijian/main.js?{"page":"pages%2Fpayment%2Fpayment"} ***!
   \************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -23,7 +23,7 @@ createPage(_payment.default);
 
 /***/ 190:
 /*!*****************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/pages/payment/payment.vue ***!
+  !*** /Users/lisicheng/project/lijian/pages/payment/payment.vue ***!
   \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -64,7 +64,7 @@ component.options.__file = "pages/payment/payment.vue"
 
 /***/ 191:
 /*!************************************************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/pages/payment/payment.vue?vue&type=template&id=031d9d14&scoped=true& ***!
+  !*** /Users/lisicheng/project/lijian/pages/payment/payment.vue?vue&type=template&id=031d9d14&scoped=true& ***!
   \************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -86,7 +86,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ 192:
 /*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/lisicheng/project/mobile/pages/payment/payment.vue?vue&type=template&id=031d9d14&scoped=true& ***!
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/lisicheng/project/lijian/pages/payment/payment.vue?vue&type=template&id=031d9d14&scoped=true& ***!
   \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -101,34 +101,34 @@ var components
 try {
   components = {
     price: function () {
-      return __webpack_require__.e(/*! import() | components/price/price */ "components/price/price").then(__webpack_require__.bind(null, /*! @/components/price/price.vue */ 1083))
+      return __webpack_require__.e(/*! import() | components/price/price */ "components/price/price").then(__webpack_require__.bind(null, /*! @/components/price/price.vue */ 1099))
     },
     uCountDown: function () {
-      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-count-down/u-count-down */ "components/uview-ui/components/u-count-down/u-count-down").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-count-down/u-count-down.vue */ 1331))
+      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-count-down/u-count-down */ "components/uview-ui/components/u-count-down/u-count-down").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-count-down/u-count-down.vue */ 1347))
     },
     uRadioGroup: function () {
-      return Promise.all(/*! import() | components/uview-ui/components/u-radio-group/u-radio-group */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/uview-ui/components/u-radio-group/u-radio-group")]).then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-radio-group/u-radio-group.vue */ 1338))
+      return Promise.all(/*! import() | components/uview-ui/components/u-radio-group/u-radio-group */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/uview-ui/components/u-radio-group/u-radio-group")]).then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-radio-group/u-radio-group.vue */ 1354))
     },
     uImage: function () {
-      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-image/u-image */ "components/uview-ui/components/u-image/u-image").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-image/u-image.vue */ 1076))
+      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-image/u-image */ "components/uview-ui/components/u-image/u-image").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-image/u-image.vue */ 1092))
     },
     uRadio: function () {
-      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-radio/u-radio */ "components/uview-ui/components/u-radio/u-radio").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-radio/u-radio.vue */ 1345))
+      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-radio/u-radio */ "components/uview-ui/components/u-radio/u-radio").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-radio/u-radio.vue */ 1361))
     },
     uLoading: function () {
-      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-loading/u-loading */ "components/uview-ui/components/u-loading/u-loading").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-loading/u-loading.vue */ 1118))
+      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-loading/u-loading */ "components/uview-ui/components/u-loading/u-loading").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-loading/u-loading.vue */ 1134))
     },
     pageStatus: function () {
-      return __webpack_require__.e(/*! import() | components/page-status/page-status */ "components/page-status/page-status").then(__webpack_require__.bind(null, /*! @/components/page-status/page-status.vue */ 1310))
+      return __webpack_require__.e(/*! import() | components/page-status/page-status */ "components/page-status/page-status").then(__webpack_require__.bind(null, /*! @/components/page-status/page-status.vue */ 1326))
     },
     uEmpty: function () {
-      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-empty/u-empty */ "components/uview-ui/components/u-empty/u-empty").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-empty/u-empty.vue */ 1265))
+      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-empty/u-empty */ "components/uview-ui/components/u-empty/u-empty").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-empty/u-empty.vue */ 1281))
     },
     uPopup: function () {
-      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-popup/u-popup */ "components/uview-ui/components/u-popup/u-popup").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-popup/u-popup.vue */ 1189))
+      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-popup/u-popup */ "components/uview-ui/components/u-popup/u-popup").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-popup/u-popup.vue */ 1205))
     },
     uSkeleton: function () {
-      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-skeleton/u-skeleton */ "components/uview-ui/components/u-skeleton/u-skeleton").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-skeleton/u-skeleton.vue */ 1352))
+      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-skeleton/u-skeleton */ "components/uview-ui/components/u-skeleton/u-skeleton").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-skeleton/u-skeleton.vue */ 1368))
     },
   }
 } catch (e) {
@@ -174,7 +174,7 @@ render._withStripped = true
 
 /***/ 193:
 /*!******************************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/pages/payment/payment.vue?vue&type=script&lang=js& ***!
+  !*** /Users/lisicheng/project/lijian/pages/payment/payment.vue?vue&type=script&lang=js& ***!
   \******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -190,7 +190,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ 194:
 /*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--13-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/lisicheng/project/mobile/pages/payment/payment.vue?vue&type=script&lang=js& ***!
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--13-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/lisicheng/project/lijian/pages/payment/payment.vue?vue&type=script&lang=js& ***!
   \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -660,7 +660,7 @@ exports.default = _default;
 
 /***/ 196:
 /*!***************************************************************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/pages/payment/payment.vue?vue&type=style&index=0&id=031d9d14&lang=scss&scoped=true& ***!
+  !*** /Users/lisicheng/project/lijian/pages/payment/payment.vue?vue&type=style&index=0&id=031d9d14&lang=scss&scoped=true& ***!
   \***************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -676,7 +676,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ 197:
 /*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--8-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--8-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-2!./node_modules/postcss-loader/src??ref--8-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/sass-loader/dist/cjs.js??ref--8-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-5!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/lisicheng/project/mobile/pages/payment/payment.vue?vue&type=style&index=0&id=031d9d14&lang=scss&scoped=true& ***!
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--8-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--8-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-2!./node_modules/postcss-loader/src??ref--8-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/sass-loader/dist/cjs.js??ref--8-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-5!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/lisicheng/project/lijian/pages/payment/payment.vue?vue&type=style&index=0&id=031d9d14&lang=scss&scoped=true& ***!
   \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {

@@ -99,3 +99,8 @@ export function getwxReceiveDetail(params) {
 export function getwechatSyncCheck(params) {
   return request.get("order/wechatSyncCheck", { params });
 }
+
+//获取模型文件
+export function getmodelFileList(params) {
+  return request.get("modelfile/lists", { params });
+}

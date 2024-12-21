@@ -1,8 +1,8 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["bundle/common/vendor"],{
 
-/***/ 1495:
+/***/ 1511:
 /*!**********************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/bundle/static/images/invitation_poster.png ***!
+  !*** /Users/lisicheng/project/lijian/bundle/static/images/invitation_poster.png ***!
   \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -11,9 +11,9 @@ module.exports = __webpack_require__.p + "bundle/static/images/invitation_poster
 
 /***/ }),
 
-/***/ 1529:
+/***/ 1545:
 /*!*********************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/plugin/emoji-awesome/emoji.js ***!
+  !*** /Users/lisicheng/project/lijian/plugin/emoji-awesome/emoji.js ***!
   \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -30,9 +30,9 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 332:
+/***/ 348:
 /*!********************************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/mescroll-uni/mixins/mescroll-more-item.js ***!
+  !*** /Users/lisicheng/project/lijian/components/mescroll-uni/mixins/mescroll-more-item.js ***!
   \********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -110,9 +110,9 @@ exports.default = _default2;
 
 /***/ }),
 
-/***/ 491:
+/***/ 507:
 /*!************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/api/integral_mall.js ***!
+  !*** /Users/lisicheng/project/lijian/api/integral_mall.js ***!
   \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -212,9 +212,9 @@ function getwechatSyncCheck(params) {
 
 /***/ }),
 
-/***/ 600:
+/***/ 616:
 /*!*******************************************************!*\
-  !*** /Users/lisicheng/project/mobile/utils/socket.js ***!
+  !*** /Users/lisicheng/project/lijian/utils/socket.js ***!
   \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -393,9 +393,9 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 601:
+/***/ 617:
 /*!*****************************************************!*\
-  !*** /Users/lisicheng/project/mobile/utils/date.js ***!
+  !*** /Users/lisicheng/project/lijian/utils/date.js ***!
   \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -499,9 +499,9 @@ var isThisWeak = function isThisWeak(date) {
 
 /***/ }),
 
-/***/ 616:
+/***/ 632:
 /*!********************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/bundle/static/images/user_sign_close.png ***!
+  !*** /Users/lisicheng/project/lijian/bundle/static/images/user_sign_close.png ***!
   \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -510,9 +510,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAYAAADn
 
 /***/ }),
 
-/***/ 715:
+/***/ 731:
 /*!*************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/api/live_broadcast.js ***!
+  !*** /Users/lisicheng/project/lijian/api/live_broadcast.js ***!
   \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -536,9 +536,9 @@ exports.apiLiveRoomLists = apiLiveRoomLists;
 
 /***/ }),
 
-/***/ 724:
+/***/ 740:
 /*!********************************************************!*\
-  !*** /Users/lisicheng/project/mobile/api/luck_draw.js ***!
+  !*** /Users/lisicheng/project/lijian/api/luck_draw.js ***!
   \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -584,9 +584,9 @@ exports.apiLuckyDrawStart = apiLuckyDrawStart;
 
 /***/ }),
 
-/***/ 797:
+/***/ 813:
 /*!****************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/mixins/integral_order.js ***!
+  !*** /Users/lisicheng/project/lijian/mixins/integral_order.js ***!
   \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -601,7 +601,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var _regenerator = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/regenerator */ 30));
 var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ 32));
-var _integral_mall = __webpack_require__(/*! @/api/integral_mall */ 491);
+var _integral_mall = __webpack_require__(/*! @/api/integral_mall */ 507);
 var _tools = __webpack_require__(/*! @/utils/tools */ 50);
 var _store = _interopRequireDefault(__webpack_require__(/*! @/store */ 40));
 // 订单Mixins

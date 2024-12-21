@@ -86,7 +86,7 @@ module.exports = _defineProperty, module.exports.__esModule = true, module.expor
 
 /***/ 111:
 /*!**********************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/mescroll-uni/mescroll-mixins.js ***!
+  !*** /Users/lisicheng/project/lijian/components/mescroll-uni/mescroll-mixins.js ***!
   \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -169,7 +169,7 @@ exports.default = _default;
 
 /***/ 112:
 /*!****************************************************!*\
-  !*** /Users/lisicheng/project/mobile/api/goods.js ***!
+  !*** /Users/lisicheng/project/lijian/api/goods.js ***!
   \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -310,9 +310,9 @@ exports.apicheckCanBuy = apicheckCanBuy;
 
 /***/ }),
 
-/***/ 1128:
+/***/ 1144:
 /*!***********************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/icon_portrait.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/icon_portrait.png ***!
   \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -338,9 +338,9 @@ module.exports = toPropertyKey, module.exports.__esModule = true, module.exports
 
 /***/ }),
 
-/***/ 1201:
+/***/ 1217:
 /*!********************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/uview-ui/libs/util/emitter.js ***!
+  !*** /Users/lisicheng/project/lijian/components/uview-ui/libs/util/emitter.js ***!
   \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -407,9 +407,9 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 1207:
+/***/ 1223:
 /*!*******************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/icon_list.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/icon_list.png ***!
   \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -418,9 +418,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABIBAMAAACn
 
 /***/ }),
 
-/***/ 1210:
+/***/ 1226:
 /*!*******************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/icon_home.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/icon_home.png ***!
   \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -429,9 +429,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAABYCAMAAABG
 
 /***/ }),
 
-/***/ 1211:
+/***/ 1227:
 /*!*********************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/icon_search.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/icon_search.png ***!
   \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -440,9 +440,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAABYCAMAAABG
 
 /***/ }),
 
-/***/ 1212:
+/***/ 1228:
 /*!********************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/icon_carts.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/icon_carts.png ***!
   \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -451,9 +451,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAABYCAMAAABG
 
 /***/ }),
 
-/***/ 1213:
+/***/ 1229:
 /*!*******************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/icon_user.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/icon_user.png ***!
   \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -462,55 +462,55 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAABYCAMAAABG
 
 /***/ }),
 
-/***/ 1214:
+/***/ 1230:
 /*!************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images sync ^\.\/.*\.png$ ***!
+  !*** /Users/lisicheng/project/lijian/static/images sync ^\.\/.*\.png$ ***!
   \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./address_icon_del.png": 1215,
-	"./address_icon_edit.png": 1216,
-	"./bg_user.png": 1217,
-	"./bg_user_grade.png": 1218,
-	"./coupon_receive.png": 1219,
-	"./coupon_wrap_bg.png": 1220,
-	"./delivery_die.png": 1221,
-	"./empty/address.png": 1222,
-	"./empty/bank.png": 1223,
-	"./empty/cart.png": 1224,
-	"./empty/collect.png": 1225,
-	"./empty/coupon.png": 1226,
-	"./empty/coupon_icon.png": 1227,
-	"./empty/evaluate.png": 1228,
-	"./empty/gift.png": 1229,
-	"./empty/money.png": 1230,
-	"./empty/notice.png": 1231,
-	"./empty/order.png": 1232,
-	"./empty/shop.png": 1233,
-	"./icon_back.png": 1234,
-	"./icon_carts.png": 1212,
-	"./icon_del.png": 1235,
-	"./icon_fail.png": 1236,
-	"./icon_generate_poster.png": 1237,
-	"./icon_gou.png": 1238,
-	"./icon_home.png": 1210,
-	"./icon_list.png": 1207,
-	"./icon_play.png": 1239,
-	"./icon_portrait.png": 1128,
-	"./icon_search.png": 1211,
-	"./icon_success.png": 1240,
-	"./icon_toutiao.png": 1241,
-	"./icon_user.png": 1213,
-	"./icon_wait.png": 1242,
-	"./icon_wechat.png": 1243,
-	"./icon_zhekou.png": 1244,
-	"./notice_icon.png": 912,
-	"./payment/icon_succeed.png": 1245,
-	"./payment/icon_waiting.png": 1246,
-	"./share_arrow.png": 1247,
-	"./shop_stop.png": 1248
+	"./address_icon_del.png": 1231,
+	"./address_icon_edit.png": 1232,
+	"./bg_user.png": 1233,
+	"./bg_user_grade.png": 1234,
+	"./coupon_receive.png": 1235,
+	"./coupon_wrap_bg.png": 1236,
+	"./delivery_die.png": 1237,
+	"./empty/address.png": 1238,
+	"./empty/bank.png": 1239,
+	"./empty/cart.png": 1240,
+	"./empty/collect.png": 1241,
+	"./empty/coupon.png": 1242,
+	"./empty/coupon_icon.png": 1243,
+	"./empty/evaluate.png": 1244,
+	"./empty/gift.png": 1245,
+	"./empty/money.png": 1246,
+	"./empty/notice.png": 1247,
+	"./empty/order.png": 1248,
+	"./empty/shop.png": 1249,
+	"./icon_back.png": 1250,
+	"./icon_carts.png": 1228,
+	"./icon_del.png": 1251,
+	"./icon_fail.png": 1252,
+	"./icon_generate_poster.png": 1253,
+	"./icon_gou.png": 1254,
+	"./icon_home.png": 1226,
+	"./icon_list.png": 1223,
+	"./icon_play.png": 1255,
+	"./icon_portrait.png": 1144,
+	"./icon_search.png": 1227,
+	"./icon_success.png": 1256,
+	"./icon_toutiao.png": 1257,
+	"./icon_user.png": 1229,
+	"./icon_wait.png": 1258,
+	"./icon_wechat.png": 1259,
+	"./icon_zhekou.png": 1260,
+	"./notice_icon.png": 928,
+	"./payment/icon_succeed.png": 1261,
+	"./payment/icon_waiting.png": 1262,
+	"./share_arrow.png": 1263,
+	"./shop_stop.png": 1264
 };
 
 
@@ -531,13 +531,13 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 1214;
+webpackContext.id = 1230;
 
 /***/ }),
 
-/***/ 1215:
+/***/ 1231:
 /*!**************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/address_icon_del.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/address_icon_del.png ***!
   \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -546,9 +546,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAAp
 
 /***/ }),
 
-/***/ 1216:
+/***/ 1232:
 /*!***************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/address_icon_edit.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/address_icon_edit.png ***!
   \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -557,9 +557,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAAp
 
 /***/ }),
 
-/***/ 1217:
+/***/ 1233:
 /*!*****************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/bg_user.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/bg_user.png ***!
   \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -568,9 +568,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAu4AAAGQAgMAAACM
 
 /***/ }),
 
-/***/ 1218:
+/***/ 1234:
 /*!***********************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/bg_user_grade.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/bg_user_grade.png ***!
   \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -579,9 +579,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAsYAAABSCAMAAABg
 
 /***/ }),
 
-/***/ 1219:
+/***/ 1235:
 /*!************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/coupon_receive.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/coupon_receive.png ***!
   \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -590,9 +590,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGMAAABNCAMAAACF
 
 /***/ }),
 
-/***/ 1220:
+/***/ 1236:
 /*!************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/coupon_wrap_bg.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/coupon_wrap_bg.png ***!
   \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -601,9 +601,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXcAAAC0CAMAAABY
 
 /***/ }),
 
-/***/ 1221:
+/***/ 1237:
 /*!**********************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/delivery_die.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/delivery_die.png ***!
   \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -612,9 +612,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIYAAABiCAMAAACi
 
 /***/ }),
 
-/***/ 1222:
+/***/ 1238:
 /*!***********************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/empty/address.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/empty/address.png ***!
   \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -623,9 +623,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABO
 
 /***/ }),
 
-/***/ 1223:
+/***/ 1239:
 /*!********************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/empty/bank.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/empty/bank.png ***!
   \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -634,9 +634,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABO
 
 /***/ }),
 
-/***/ 1224:
+/***/ 1240:
 /*!********************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/empty/cart.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/empty/cart.png ***!
   \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -645,9 +645,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABO
 
 /***/ }),
 
-/***/ 1225:
+/***/ 1241:
 /*!***********************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/empty/collect.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/empty/collect.png ***!
   \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -656,9 +656,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABO
 
 /***/ }),
 
-/***/ 1226:
+/***/ 1242:
 /*!**********************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/empty/coupon.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/empty/coupon.png ***!
   \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -667,9 +667,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABO
 
 /***/ }),
 
-/***/ 1227:
+/***/ 1243:
 /*!***************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/empty/coupon_icon.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/empty/coupon_icon.png ***!
   \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -678,9 +678,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJIAAACFCAMAAACH
 
 /***/ }),
 
-/***/ 1228:
+/***/ 1244:
 /*!************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/empty/evaluate.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/empty/evaluate.png ***!
   \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -689,9 +689,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABO
 
 /***/ }),
 
-/***/ 1229:
+/***/ 1245:
 /*!********************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/empty/gift.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/empty/gift.png ***!
   \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -700,9 +700,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABO
 
 /***/ }),
 
-/***/ 1230:
+/***/ 1246:
 /*!*********************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/empty/money.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/empty/money.png ***!
   \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -711,9 +711,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABO
 
 /***/ }),
 
-/***/ 1231:
+/***/ 1247:
 /*!**********************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/empty/notice.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/empty/notice.png ***!
   \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -722,9 +722,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABO
 
 /***/ }),
 
-/***/ 1232:
+/***/ 1248:
 /*!*********************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/empty/order.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/empty/order.png ***!
   \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -733,9 +733,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABO
 
 /***/ }),
 
-/***/ 1233:
+/***/ 1249:
 /*!********************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/empty/shop.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/empty/shop.png ***!
   \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -744,9 +744,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABO
 
 /***/ }),
 
-/***/ 1234:
+/***/ 1250:
 /*!*******************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/icon_back.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/icon_back.png ***!
   \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -755,9 +755,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABIBAMAAACn
 
 /***/ }),
 
-/***/ 1235:
+/***/ 1251:
 /*!******************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/icon_del.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/icon_del.png ***!
   \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -766,9 +766,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAMAAACf
 
 /***/ }),
 
-/***/ 1236:
+/***/ 1252:
 /*!*******************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/icon_fail.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/icon_fail.png ***!
   \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -777,9 +777,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFIAAABSCAMAAADw
 
 /***/ }),
 
-/***/ 1237:
+/***/ 1253:
 /*!******************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/icon_generate_poster.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/icon_generate_poster.png ***!
   \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -788,9 +788,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAMAAAAL
 
 /***/ }),
 
-/***/ 1238:
+/***/ 1254:
 /*!******************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/icon_gou.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/icon_gou.png ***!
   \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -799,9 +799,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAMAAAAr
 
 /***/ }),
 
-/***/ 1239:
+/***/ 1255:
 /*!*******************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/icon_play.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/icon_play.png ***!
   \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -810,9 +810,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAMAAAAP
 
 /***/ }),
 
-/***/ 1240:
+/***/ 1256:
 /*!**********************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/icon_success.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/icon_success.png ***!
   \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -821,9 +821,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOAAAADgCAMAAAAt
 
 /***/ }),
 
-/***/ 1241:
+/***/ 1257:
 /*!**********************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/icon_toutiao.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/icon_toutiao.png ***!
   \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -832,9 +832,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABH
 
 /***/ }),
 
-/***/ 1242:
+/***/ 1258:
 /*!*******************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/icon_wait.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/icon_wait.png ***!
   \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -843,9 +843,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHAAAABwCAMAAADx
 
 /***/ }),
 
-/***/ 1243:
+/***/ 1259:
 /*!*********************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/icon_wechat.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/icon_wechat.png ***!
   \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -854,9 +854,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAYAAAA8
 
 /***/ }),
 
-/***/ 1244:
+/***/ 1260:
 /*!*********************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/icon_zhekou.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/icon_zhekou.png ***!
   \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -865,9 +865,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAMAAADV
 
 /***/ }),
 
-/***/ 1245:
+/***/ 1261:
 /*!******************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/payment/icon_succeed.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/payment/icon_succeed.png ***!
   \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -876,9 +876,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHAAAABwCAMAAADx
 
 /***/ }),
 
-/***/ 1246:
+/***/ 1262:
 /*!******************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/payment/icon_waiting.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/payment/icon_waiting.png ***!
   \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -887,9 +887,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHAAAABwCAMAAADx
 
 /***/ }),
 
-/***/ 1247:
+/***/ 1263:
 /*!*********************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/share_arrow.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/share_arrow.png ***!
   \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -898,9 +898,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAAD6CAMAAABE
 
 /***/ }),
 
-/***/ 1248:
+/***/ 1264:
 /*!*******************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/shop_stop.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/shop_stop.png ***!
   \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -909,9 +909,29 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABO
 
 /***/ }),
 
-/***/ 1291:
+/***/ 13:
+/*!*******************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/typeof.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _typeof(o) {
+  "@babel/helpers - typeof";
+
+  return (module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
+    return typeof o;
+  } : function (o) {
+    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports), _typeof(o);
+}
+module.exports = _typeof, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ 1307:
 /*!***************************************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/uview-ui/components/u-parse/libs/MpHtmlParser.js ***!
+  !*** /Users/lisicheng/project/lijian/components/uview-ui/components/u-parse/libs/MpHtmlParser.js ***!
   \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -923,9 +943,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABO
  * @author JinYufeng
  * @listens MIT
  */
-var cfg = __webpack_require__(/*! ./config.js */ 1292),
+var cfg = __webpack_require__(/*! ./config.js */ 1308),
   blankChar = cfg.blankChar,
-  CssHandler = __webpack_require__(/*! ./CssHandler.js */ 1293),
+  CssHandler = __webpack_require__(/*! ./CssHandler.js */ 1309),
   windowWidth = uni.getSystemInfoSync().windowWidth;
 var emoji;
 function MpHtmlParser(data) {
@@ -1489,9 +1509,9 @@ module.exports = MpHtmlParser;
 
 /***/ }),
 
-/***/ 1292:
+/***/ 1308:
 /*!*********************************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/uview-ui/components/u-parse/libs/config.js ***!
+  !*** /Users/lisicheng/project/lijian/components/uview-ui/components/u-parse/libs/config.js ***!
   \*********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -1571,14 +1591,14 @@ module.exports = cfg;
 
 /***/ }),
 
-/***/ 1293:
+/***/ 1309:
 /*!*************************************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/uview-ui/components/u-parse/libs/CssHandler.js ***!
+  !*** /Users/lisicheng/project/lijian/components/uview-ui/components/u-parse/libs/CssHandler.js ***!
   \*************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var cfg = __webpack_require__(/*! ./config.js */ 1292),
+var cfg = __webpack_require__(/*! ./config.js */ 1308),
   isLetter = function isLetter(c) {
     return c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z';
   };
@@ -1677,29 +1697,9 @@ parser.prototype.Content = function () {
 
 /***/ }),
 
-/***/ 13:
-/*!*******************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/typeof.js ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-function _typeof(o) {
-  "@babel/helpers - typeof";
-
-  return (module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
-    return typeof o;
-  } : function (o) {
-    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
-  }, module.exports.__esModule = true, module.exports["default"] = module.exports), _typeof(o);
-}
-module.exports = _typeof, module.exports.__esModule = true, module.exports["default"] = module.exports;
-
-/***/ }),
-
-/***/ 1364:
+/***/ 1380:
 /*!***********************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/tki-qrcode/qrcode.js ***!
+  !*** /Users/lisicheng/project/lijian/components/tki-qrcode/qrcode.js ***!
   \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -2708,9 +2708,9 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 1379:
+/***/ 1395:
 /*!*********************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/uview-ui/libs/util/province.js ***!
+  !*** /Users/lisicheng/project/lijian/components/uview-ui/libs/util/province.js ***!
   \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -2829,9 +2829,9 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 1380:
+/***/ 1396:
 /*!*****************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/uview-ui/libs/util/city.js ***!
+  !*** /Users/lisicheng/project/lijian/components/uview-ui/libs/util/city.js ***!
   \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -4033,9 +4033,9 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 1381:
+/***/ 1397:
 /*!*****************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/uview-ui/libs/util/area.js ***!
+  !*** /Users/lisicheng/project/lijian/components/uview-ui/libs/util/area.js ***!
   \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -15762,9 +15762,9 @@ module.exports = toPrimitive, module.exports.__esModule = true, module.exports["
 
 /***/ }),
 
-/***/ 1405:
+/***/ 1421:
 /*!****************************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/uview-ui/libs/util/async-validator.js ***!
+  !*** /Users/lisicheng/project/lijian/components/uview-ui/libs/util/async-validator.js ***!
   \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -16964,9 +16964,27 @@ module.exports = _construct, module.exports.__esModule = true, module.exports["d
 
 /***/ }),
 
-/***/ 1596:
+/***/ 16:
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/setPrototypeOf.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _setPrototypeOf(o, p) {
+  module.exports = _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports;
+  return _setPrototypeOf(o, p);
+}
+module.exports = _setPrototypeOf, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ 1612:
 /*!*******************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/widgets/category/category.js ***!
+  !*** /Users/lisicheng/project/lijian/components/widgets/category/category.js ***!
   \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -17012,27 +17030,28 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 16:
-/*!***************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/setPrototypeOf.js ***!
-  \***************************************************************/
+/***/ 17:
+/*!*************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/isNativeReflectConstruct.js ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-function _setPrototypeOf(o, p) {
-  module.exports = _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) {
-    o.__proto__ = p;
-    return o;
-  }, module.exports.__esModule = true, module.exports["default"] = module.exports;
-  return _setPrototypeOf(o, p);
+function _isNativeReflectConstruct() {
+  try {
+    var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
+  } catch (t) {}
+  return (module.exports = _isNativeReflectConstruct = function _isNativeReflectConstruct() {
+    return !!t;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports)();
 }
-module.exports = _setPrototypeOf, module.exports.__esModule = true, module.exports["default"] = module.exports;
+module.exports = _isNativeReflectConstruct, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
 
-/***/ 1693:
+/***/ 1709:
 /*!**********************************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/uni_modules/lime-painter/components/common/relation.js ***!
+  !*** /Users/lisicheng/project/lijian/uni_modules/lime-painter/components/common/relation.js ***!
   \**********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -17198,9 +17217,9 @@ function children(parent) {
 
 /***/ }),
 
-/***/ 1694:
+/***/ 1710:
 /*!**********************************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/uni_modules/lime-painter/components/l-painter/props.js ***!
+  !*** /Users/lisicheng/project/lijian/uni_modules/lime-painter/components/l-painter/props.js ***!
   \**********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -17255,9 +17274,9 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 1695:
+/***/ 1711:
 /*!**********************************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/uni_modules/lime-painter/components/l-painter/utils.js ***!
+  !*** /Users/lisicheng/project/lijian/uni_modules/lime-painter/components/l-painter/utils.js ***!
   \**********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -17534,9 +17553,9 @@ function downloadFile(url) {
 
 /***/ }),
 
-/***/ 1696:
+/***/ 1712:
 /*!************************************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/uni_modules/lime-painter/components/l-painter/painter.js ***!
+  !*** /Users/lisicheng/project/lijian/uni_modules/lime-painter/components/l-painter/painter.js ***!
   \************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -19620,28 +19639,9 @@ n.WEB == B && (window.Painter = yt);
 
 /***/ }),
 
-/***/ 17:
-/*!*************************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/isNativeReflectConstruct.js ***!
-  \*************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-function _isNativeReflectConstruct() {
-  try {
-    var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
-  } catch (t) {}
-  return (module.exports = _isNativeReflectConstruct = function _isNativeReflectConstruct() {
-    return !!t;
-  }, module.exports.__esModule = true, module.exports["default"] = module.exports)();
-}
-module.exports = _isNativeReflectConstruct, module.exports.__esModule = true, module.exports["default"] = module.exports;
-
-/***/ }),
-
 /***/ 175:
 /*!*********************************************************!*\
-  !*** /Users/lisicheng/project/mobile/mixins/service.js ***!
+  !*** /Users/lisicheng/project/lijian/mixins/service.js ***!
   \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -19741,7 +19741,7 @@ module.exports = _toConsumableArray, module.exports.__esModule = true, module.ex
 
 /***/ 184:
 /*!****************************************************!*\
-  !*** /Users/lisicheng/project/mobile/api/order.js ***!
+  !*** /Users/lisicheng/project/lijian/api/order.js ***!
   \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -19754,6 +19754,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.apiVerificationOrderList = exports.apiVerificationOrderDetail = exports.apiVerificationOrderConfirm = exports.apiOrderPlace = exports.apiOrderLogistics = exports.apiOrderList = exports.apiOrderDetail = exports.apiOrderDelete = exports.apiOrderConfirm = exports.apiOrderClose = exports.apiExpressInfo = exports.apiDeliveryType = exports.apiCommentLists = exports.apiCommentGoodsLists = exports.apiCommentGoodsInfo = exports.apiCommentCategory = exports.apiCommentAdd = exports.apiAfterSalePost = exports.apiAfterSaleList = exports.apiAfterSaleGoods = exports.apiAfterSaleDetail = exports.apiAfterSaleCancel = void 0;
+exports.getmodelFileList = getmodelFileList;
 exports.getwechatSyncCheck = getwechatSyncCheck;
 exports.getwxReceiveDetail = getwxReceiveDetail;
 var _request = _interopRequireDefault(__webpack_require__(/*! @/utils/request */ 35));
@@ -19933,11 +19934,18 @@ function getwechatSyncCheck(params) {
   });
 }
 
+//获取模型文件
+function getmodelFileList(params) {
+  return _request.default.get("modelfile/lists", {
+    params: params
+  });
+}
+
 /***/ }),
 
 /***/ 185:
 /*!*******************************************************!*\
-  !*** /Users/lisicheng/project/mobile/api/activity.js ***!
+  !*** /Users/lisicheng/project/lijian/api/activity.js ***!
   \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -19993,7 +20001,7 @@ exports.apiPresellLists = apiPresellLists;
 
 /***/ 186:
 /*!******************************************************!*\
-  !*** /Users/lisicheng/project/mobile/api/bargain.js ***!
+  !*** /Users/lisicheng/project/lijian/api/bargain.js ***!
   \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -20096,7 +20104,7 @@ module.exports = _arrayWithoutHoles, module.exports.__esModule = true, module.ex
 
 /***/ 195:
 /*!****************************************************!*\
-  !*** /Users/lisicheng/project/mobile/utils/pay.js ***!
+  !*** /Users/lisicheng/project/lijian/utils/pay.js ***!
   \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -22783,7 +22791,7 @@ module.exports = _nonIterableSpread, module.exports.__esModule = true, module.ex
 
 /***/ 212:
 /*!*******************************************************!*\
-  !*** /Users/lisicheng/project/mobile/mixins/order.js ***!
+  !*** /Users/lisicheng/project/lijian/mixins/order.js ***!
   \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -23744,7 +23752,7 @@ module.exports = _createClass, module.exports.__esModule = true, module.exports[
 
 /***/ 243:
 /*!****************************************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/uview-ui/components/u-avatar-cropper/weCropper.js ***!
+  !*** /Users/lisicheng/project/lijian/components/uview-ui/components/u-avatar-cropper/weCropper.js ***!
   \****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -30901,7 +30909,7 @@ internalMixin(Vue);
 
 /***/ 26:
 /*!**************************************************!*\
-  !*** /Users/lisicheng/project/mobile/pages.json ***!
+  !*** /Users/lisicheng/project/lijian/pages.json ***!
   \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -32577,7 +32585,7 @@ module.exports = index_cjs;
 
 /***/ 34:
 /*!***************************************************!*\
-  !*** /Users/lisicheng/project/mobile/api/user.js ***!
+  !*** /Users/lisicheng/project/lijian/api/user.js ***!
   \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -33013,7 +33021,7 @@ exports.apiupdateRegisterAward = apiupdateRegisterAward;
 
 /***/ 35:
 /*!********************************************************!*\
-  !*** /Users/lisicheng/project/mobile/utils/request.js ***!
+  !*** /Users/lisicheng/project/lijian/utils/request.js ***!
   \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -33137,7 +33145,7 @@ exports.default = _default;
 
 /***/ 36:
 /*!*****************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/js_sdk/uniapp-axios/dist/uni-axios.js ***!
+  !*** /Users/lisicheng/project/lijian/js_sdk/uniapp-axios/dist/uni-axios.js ***!
   \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -35042,7 +35050,7 @@ module.exports = _interopRequireDefault, module.exports.__esModule = true, modul
 
 /***/ 40:
 /*!******************************************************!*\
-  !*** /Users/lisicheng/project/mobile/store/index.js ***!
+  !*** /Users/lisicheng/project/lijian/store/index.js ***!
   \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -35072,7 +35080,7 @@ exports.default = _default;
 
 /***/ 41:
 /*!**************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/store/modules/index.js ***!
+  !*** /Users/lisicheng/project/lijian/store/modules/index.js ***!
   \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -35099,7 +35107,7 @@ exports.default = _default;
 
 /***/ 42:
 /*!************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/store/modules/app.js ***!
+  !*** /Users/lisicheng/project/lijian/store/modules/app.js ***!
   \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -35221,7 +35229,7 @@ exports.default = _default;
 
 /***/ 43:
 /*!**************************************************!*\
-  !*** /Users/lisicheng/project/mobile/api/app.js ***!
+  !*** /Users/lisicheng/project/lijian/api/app.js ***!
   \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -35235,7 +35243,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.apiInvitePosterConfig = exports.apiGoodsPosterConfig = exports.apiConfig = exports.apiCodeUrlGet = exports.apiCheckMobile = exports.apiAuthLogin = exports.apiAppWxLogin = exports.apiAccountRegister = exports.apiAccountLogin = void 0;
 exports.apiJsConfig = apiJsConfig;
-exports.apishareConfig = exports.apiserviceConfig = exports.apiVisit = exports.apiUpdateUser = exports.apiTtQrCode = exports.apiToutiaoSilentLogin = exports.apiToutiaoAuthLogin = exports.apiSubscribe = exports.apiSilentLogin = exports.apiResetPasswordCaptcha = exports.apiResetPassword = exports.apiRegisterCaptcha = exports.apiPrepay = exports.apiPolicyAgreement = exports.apiPayway = exports.apiPayStatus = exports.apiPayResult = exports.apiOALogin = exports.apiMnpQrCode = exports.apiLoginCaptcha = void 0;
+exports.getPresignedUpload = exports.createModelFile = exports.apishareConfig = exports.apiserviceConfig = exports.apiVisit = exports.apiUpdateUser = exports.apiTtQrCode = exports.apiToutiaoSilentLogin = exports.apiToutiaoAuthLogin = exports.apiSubscribe = exports.apiSilentLogin = exports.apiResetPasswordCaptcha = exports.apiResetPassword = exports.apiRegisterCaptcha = exports.apiPrepay = exports.apiPolicyAgreement = exports.apiPayway = exports.apiPayStatus = exports.apiPayResult = exports.apiOALogin = exports.apiMnpQrCode = exports.apiLoginCaptcha = void 0;
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/defineProperty */ 11));
 var _request = _interopRequireDefault(__webpack_require__(/*! @/utils/request */ 35));
 var _wechath = _interopRequireDefault(__webpack_require__(/*! @/utils/wechath5 */ 44));
@@ -35359,8 +35367,28 @@ var apiConfig = function apiConfig(params) {
   });
 };
 
-// 支付方式
+// 预签名上传
 exports.apiConfig = apiConfig;
+var getPresignedUpload = function getPresignedUpload(params) {
+  return _request.default.post('modelfile/getPresignedUpload', _objectSpread({}, params), {
+    headers: {
+      version: '3.3.0'
+    }
+  });
+};
+
+// 创建模型文件
+exports.getPresignedUpload = getPresignedUpload;
+var createModelFile = function createModelFile(params) {
+  return _request.default.post('modelfile/createModelFile', _objectSpread({}, params), {
+    headers: {
+      version: '3.3.0'
+    }
+  });
+};
+
+// 支付方式
+exports.createModelFile = createModelFile;
 var apiPayway = function apiPayway(params) {
   return _request.default.get('pay/payway', {
     params: _objectSpread(_objectSpread({}, params), {}, {
@@ -35467,7 +35495,7 @@ exports.apishareConfig = apishareConfig;
 
 /***/ 44:
 /*!*********************************************************!*\
-  !*** /Users/lisicheng/project/mobile/utils/wechath5.js ***!
+  !*** /Users/lisicheng/project/lijian/utils/wechath5.js ***!
   \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -35478,7 +35506,7 @@ exports.apishareConfig = apishareConfig;
 
 /***/ 45:
 /*!**********************************************************!*\
-  !*** /Users/lisicheng/project/mobile/config/cachekey.js ***!
+  !*** /Users/lisicheng/project/lijian/config/cachekey.js ***!
   \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -35501,7 +35529,7 @@ module.exports = {
 
 /***/ 46:
 /*!******************************************************!*\
-  !*** /Users/lisicheng/project/mobile/utils/cache.js ***!
+  !*** /Users/lisicheng/project/lijian/utils/cache.js ***!
   \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -35565,7 +35593,7 @@ exports.default = _default;
 
 /***/ 47:
 /*!*************************************************!*\
-  !*** /Users/lisicheng/project/mobile/router.js ***!
+  !*** /Users/lisicheng/project/lijian/router.js ***!
   \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -35605,7 +35633,7 @@ var router = (0, _uniSimpleRouter.createRouter)({
     router.$lockStatus = false;
   },
   debugger: false,
-  routes: [].concat((0, _toConsumableArray2.default)([{"path":"/pages/index/index","aliasPath":"/","meta":{"auth":false}},{"path":"/pages/page/page","meta":{"auth":false}},{"path":"/pages/category/category","meta":{"auth":false}},{"path":"/pages/shop_cart/shop_cart","meta":{"auth":false}},{"path":"/pages/user/user","meta":{"auth":false}},{"path":"/pages/login/login","meta":{"auth":false}},{"path":"/pages/register/register","meta":{"auth":false}},{"path":"/pages/forget_pwd/forget_pwd","meta":{"auth":false}},{"path":"/pages/bind_mobile/bind_mobile","meta":{"auth":false}},{"path":"/pages/goods_search/goods_search","meta":{"auth":false}},{"path":"/pages/goods_detail/goods_detail","meta":{"auth":false}},{"path":"/pages/goods_order/goods_order","meta":{"auth":true}},{"path":"/pages/payment/payment","meta":{"auth":true}},{"path":"/pages/payment_result/payment_result","meta":{"auth":true}},{"path":"/pages/order_detail/order_detail","meta":{"auth":true}},{"path":"/pages/address/address","meta":{"auth":true}},{"path":"/pages/address_edit/address_edit","meta":{"auth":true}},{"path":"/pages/webview/webview","meta":{"auth":false}},{"path":"/components/uview-ui/components/u-avatar-cropper/u-avatar-cropper"},{"path":"/bundle/pages/user_order/user_order","meta":{"auth":false}},{"path":"/bundle/pages/luck_draw_good/luck_draw_good","meta":{"auth":false}},{"path":"/bundle/pages/goods_seckill/goods_seckill","meta":{"auth":false}},{"path":"/bundle/pages/goods_presell/goods_presell","meta":{"auth":false}},{"path":"/bundle/pages/toAlipay/toAlipay","meta":{"auth":false}},{"path":"/bundle/pages/user_set/user_set","meta":{"auth":true}},{"path":"/bundle/pages/seckill_detail/seckill_detail","meta":{"auth":false}},{"path":"/bundle/pages/presell_detail/presell_detail","meta":{"auth":false}},{"path":"/bundle/pages/user_profile/user_profile","meta":{"auth":true}},{"path":"/bundle/pages/user_vip/user_vip","meta":{"auth":true}},{"path":"/bundle/pages/goods_comment/goods_comment","meta":{"auth":true}},{"path":"/bundle/pages/goods_comment_he/goods_comment_he","meta":{"auth":true}},{"path":"/bundle/pages/post_comment/post_comment","meta":{"auth":true}},{"path":"/bundle/pages/after_sale/after_sale","meta":{"auth":true}},{"path":"/bundle/pages/after_sale_detail/after_sale_detail","meta":{"auth":true}},{"path":"/bundle/pages/post_after_sale/post_after_sale","meta":{"auth":true}},{"path":"/bundle/pages/input_express_info/input_express_info","meta":{"auth":true}},{"path":"/bundle/pages/coupon/coupon","meta":{"auth":true}},{"path":"/bundle/pages/coupon_get/coupon_get","meta":{"auth":false}},{"path":"/bundle/pages/user_wallet/user_wallet","meta":{"auth":true}},{"path":"/bundle/pages/user_recharge/user_recharge","meta":{"auth":true}},{"path":"/bundle/pages/balance_transfer/balance_transfer","meta":{"auth":true}},{"path":"/bundle/pages/user_bill/user_bill","meta":{"auth":true}},{"path":"/bundle/pages/transfer_record/transfer_record","meta":{"auth":true}},{"path":"/bundle/pages/user_recharge_record/user_recharge_record","meta":{"auth":true}},{"path":"/bundle/pages/message_center/message_center","meta":{"auth":true}},{"path":"/bundle/pages/notice/notice","meta":{"auth":true}},{"path":"/bundle/pages/server_explan/server_explan","meta":{"auth":false}},{"path":"/bundle/pages/pay_pwd/pay_pwd","meta":{"auth":false}},{"path":"/bundle/pages/store_list/store_list","meta":{"auth":true}},{"path":"/bundle/pages/order_logistics/order_logistics","meta":{"auth":true}},{"path":"/bundle/pages/goods_collects/goods_collects","meta":{"auth":true}},{"path":"/bundle/pages/store_notice/store_notice","meta":{"auth":false}},{"path":"/bundle/pages/store_notice_detail/store_notice_detail","meta":{"auth":false}},{"path":"/bundle/pages/user_spread/user_spread","meta":{"auth":true}},{"path":"/bundle/pages/invite_poster/invite_poster","meta":{"auth":true}},{"path":"/bundle/pages/user_spread_order/user_spread_order","meta":{"auth":true}},{"path":"/bundle/pages/user_fans/user_fans","meta":{"auth":true}},{"path":"/bundle/pages/monthly_bill/monthly_bill","meta":{"auth":true}},{"path":"/bundle/pages/monthly_bill_detail/monthly_bill_detail","meta":{"auth":true}},{"path":"/bundle/pages/commission_details/commission_details","meta":{"auth":true}},{"path":"/bundle/pages/user_withdraw/user_withdraw","meta":{"auth":true}},{"path":"/bundle/pages/withdraw_success/withdraw_success","meta":{"auth":true}},{"path":"/bundle/pages/withdraw_record/withdraw_record","meta":{"auth":true}},{"path":"/bundle/pages/service/service","meta":{"auth":true}},{"path":"/bundle/pages/artificial_service/artificial_service","meta":{"auth":true}},{"path":"/bundle/pages/user_sign/user_sign","meta":{"auth":true}},{"path":"/bundle/pages/sign_rule/sign_rule","meta":{"auth":true}},{"path":"/bundle/pages/sign_detail/sign_detail","meta":{"auth":true}},{"path":"/bundle/pages/verification_detail/verification_detail","meta":{"auth":true}},{"path":"/bundle/pages/verification_list/verification_list","meta":{"auth":true}},{"path":"/bundle/pages/goods_bargain/goods_bargain","meta":{"auth":false}},{"path":"/bundle/pages/bargain_progress/bargain_progress","meta":{"auth":true}},{"path":"/bundle/pages/bargain_code/bargain_code","meta":{"auth":true}},{"path":"/bundle/pages/goods_team/goods_team","meta":{"auth":false}},{"path":"/bundle/pages/goods_team_detail/goods_team_detail","meta":{"auth":false}},{"path":"/bundle/pages/goods_team_history/goods_team_history","meta":{"auth":true}},{"path":"/bundle/pages/h5_pay_query/h5_pay_query"},{"path":"/bundle/pages/live_broadcast/live_broadcast"},{"path":"/bundle/pages/luck_draw/luck_draw"},{"path":"/bundle/pages/luck_draw_code/luck_draw_code","meta":{"auth":true}},{"path":"/bundle/pages/win_prize_code/win_prize_code","meta":{"auth":true}},{"path":"/bundle/pages/business_suspended/business_suspended","meta":{"auth":true}},{"path":"/bundle/pages/license/license","meta":{"auth":true}},{"path":"/bundle/pages/article_lists/article_lists","meta":{"auth":true}},{"path":"/bundle/pages/integral_mall/integral_mall","meta":{"auth":true}},{"path":"/bundle/pages/integral_goods_details/integral_goods_details","meta":{"auth":true}},{"path":"/bundle/pages/integral_settlement/integral_settlement","meta":{"auth":true}},{"path":"/bundle/pages/exchange_order/exchange_order","meta":{"auth":true}},{"path":"/bundle/pages/exchange_order_details/exchange_order_details","meta":{"auth":true}},{"path":"/bundle/pages/cancel/cancel","meta":{"auth":true}},{"path":"/bundle/pages/cancel_result/cancel_result","meta":{"auth":false}}]), [{
+  routes: [].concat((0, _toConsumableArray2.default)([{"path":"/pages/index/index","aliasPath":"/","meta":{"auth":false}},{"path":"/pages/page/page","meta":{"auth":false}},{"path":"/pages/category/category","meta":{"auth":false}},{"path":"/pages/shop_cart/shop_cart","meta":{"auth":false}},{"path":"/pages/user/user","meta":{"auth":false}},{"path":"/pages/login/login","meta":{"auth":false}},{"path":"/pages/register/register","meta":{"auth":false}},{"path":"/pages/forget_pwd/forget_pwd","meta":{"auth":false}},{"path":"/pages/bind_mobile/bind_mobile","meta":{"auth":false}},{"path":"/pages/goods_search/goods_search","meta":{"auth":false}},{"path":"/pages/goods_detail/goods_detail","meta":{"auth":false}},{"path":"/pages/goods_order/goods_order","meta":{"auth":true}},{"path":"/pages/payment/payment","meta":{"auth":true}},{"path":"/pages/payment_result/payment_result","meta":{"auth":true}},{"path":"/pages/order_detail/order_detail","meta":{"auth":true}},{"path":"/pages/address/address","meta":{"auth":true}},{"path":"/pages/address_edit/address_edit","meta":{"auth":true}},{"path":"/pages/webview/webview","meta":{"auth":false}},{"path":"/components/uview-ui/components/u-avatar-cropper/u-avatar-cropper"},{"path":"/pages/scan/scan","meta":{"auth":true}},{"path":"/pages/camera/camera","meta":{"auth":true}},{"path":"/pages/photo/photo","meta":{"auth":true}},{"path":"/pages/home/home","meta":{"auth":false}},{"path":"/bundle/pages/user_order/user_order","meta":{"auth":false}},{"path":"/bundle/pages/luck_draw_good/luck_draw_good","meta":{"auth":false}},{"path":"/bundle/pages/goods_seckill/goods_seckill","meta":{"auth":false}},{"path":"/bundle/pages/goods_presell/goods_presell","meta":{"auth":false}},{"path":"/bundle/pages/toAlipay/toAlipay","meta":{"auth":false}},{"path":"/bundle/pages/user_set/user_set","meta":{"auth":true}},{"path":"/bundle/pages/seckill_detail/seckill_detail","meta":{"auth":false}},{"path":"/bundle/pages/presell_detail/presell_detail","meta":{"auth":false}},{"path":"/bundle/pages/user_profile/user_profile","meta":{"auth":true}},{"path":"/bundle/pages/user_vip/user_vip","meta":{"auth":true}},{"path":"/bundle/pages/goods_comment/goods_comment","meta":{"auth":true}},{"path":"/bundle/pages/goods_comment_he/goods_comment_he","meta":{"auth":true}},{"path":"/bundle/pages/post_comment/post_comment","meta":{"auth":true}},{"path":"/bundle/pages/after_sale/after_sale","meta":{"auth":true}},{"path":"/bundle/pages/after_sale_detail/after_sale_detail","meta":{"auth":true}},{"path":"/bundle/pages/post_after_sale/post_after_sale","meta":{"auth":true}},{"path":"/bundle/pages/input_express_info/input_express_info","meta":{"auth":true}},{"path":"/bundle/pages/coupon/coupon","meta":{"auth":true}},{"path":"/bundle/pages/coupon_get/coupon_get","meta":{"auth":false}},{"path":"/bundle/pages/user_wallet/user_wallet","meta":{"auth":true}},{"path":"/bundle/pages/user_recharge/user_recharge","meta":{"auth":true}},{"path":"/bundle/pages/balance_transfer/balance_transfer","meta":{"auth":true}},{"path":"/bundle/pages/user_bill/user_bill","meta":{"auth":true}},{"path":"/bundle/pages/transfer_record/transfer_record","meta":{"auth":true}},{"path":"/bundle/pages/user_recharge_record/user_recharge_record","meta":{"auth":true}},{"path":"/bundle/pages/message_center/message_center","meta":{"auth":true}},{"path":"/bundle/pages/notice/notice","meta":{"auth":true}},{"path":"/bundle/pages/server_explan/server_explan","meta":{"auth":false}},{"path":"/bundle/pages/pay_pwd/pay_pwd","meta":{"auth":false}},{"path":"/bundle/pages/store_list/store_list","meta":{"auth":true}},{"path":"/bundle/pages/order_logistics/order_logistics","meta":{"auth":true}},{"path":"/bundle/pages/goods_collects/goods_collects","meta":{"auth":true}},{"path":"/bundle/pages/store_notice/store_notice","meta":{"auth":false}},{"path":"/bundle/pages/store_notice_detail/store_notice_detail","meta":{"auth":false}},{"path":"/bundle/pages/user_spread/user_spread","meta":{"auth":true}},{"path":"/bundle/pages/invite_poster/invite_poster","meta":{"auth":true}},{"path":"/bundle/pages/user_spread_order/user_spread_order","meta":{"auth":true}},{"path":"/bundle/pages/user_fans/user_fans","meta":{"auth":true}},{"path":"/bundle/pages/monthly_bill/monthly_bill","meta":{"auth":true}},{"path":"/bundle/pages/monthly_bill_detail/monthly_bill_detail","meta":{"auth":true}},{"path":"/bundle/pages/commission_details/commission_details","meta":{"auth":true}},{"path":"/bundle/pages/user_withdraw/user_withdraw","meta":{"auth":true}},{"path":"/bundle/pages/withdraw_success/withdraw_success","meta":{"auth":true}},{"path":"/bundle/pages/withdraw_record/withdraw_record","meta":{"auth":true}},{"path":"/bundle/pages/service/service","meta":{"auth":true}},{"path":"/bundle/pages/artificial_service/artificial_service","meta":{"auth":true}},{"path":"/bundle/pages/user_sign/user_sign","meta":{"auth":true}},{"path":"/bundle/pages/sign_rule/sign_rule","meta":{"auth":true}},{"path":"/bundle/pages/sign_detail/sign_detail","meta":{"auth":true}},{"path":"/bundle/pages/verification_detail/verification_detail","meta":{"auth":true}},{"path":"/bundle/pages/verification_list/verification_list","meta":{"auth":true}},{"path":"/bundle/pages/goods_bargain/goods_bargain","meta":{"auth":false}},{"path":"/bundle/pages/bargain_progress/bargain_progress","meta":{"auth":true}},{"path":"/bundle/pages/bargain_code/bargain_code","meta":{"auth":true}},{"path":"/bundle/pages/goods_team/goods_team","meta":{"auth":false}},{"path":"/bundle/pages/goods_team_detail/goods_team_detail","meta":{"auth":false}},{"path":"/bundle/pages/goods_team_history/goods_team_history","meta":{"auth":true}},{"path":"/bundle/pages/h5_pay_query/h5_pay_query"},{"path":"/bundle/pages/live_broadcast/live_broadcast"},{"path":"/bundle/pages/luck_draw/luck_draw"},{"path":"/bundle/pages/luck_draw_code/luck_draw_code","meta":{"auth":true}},{"path":"/bundle/pages/win_prize_code/win_prize_code","meta":{"auth":true}},{"path":"/bundle/pages/business_suspended/business_suspended","meta":{"auth":true}},{"path":"/bundle/pages/license/license","meta":{"auth":true}},{"path":"/bundle/pages/article_lists/article_lists","meta":{"auth":true}},{"path":"/bundle/pages/integral_mall/integral_mall","meta":{"auth":true}},{"path":"/bundle/pages/integral_goods_details/integral_goods_details","meta":{"auth":true}},{"path":"/bundle/pages/integral_settlement/integral_settlement","meta":{"auth":true}},{"path":"/bundle/pages/exchange_order/exchange_order","meta":{"auth":true}},{"path":"/bundle/pages/exchange_order_details/exchange_order_details","meta":{"auth":true}},{"path":"/bundle/pages/cancel/cancel","meta":{"auth":true}},{"path":"/bundle/pages/cancel_result/cancel_result","meta":{"auth":false}}]), [{
     path: '*',
     redirect: function redirect(to) {
       return {
@@ -35636,7 +35664,7 @@ router.afterEach(function (to, from, next) {});
 
 /***/ 48:
 /*!********************************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/js_sdk/hhyang-uni-simple-router/uni-simple-router.js ***!
+  !*** /Users/lisicheng/project/lijian/js_sdk/hhyang-uni-simple-router/uni-simple-router.js ***!
   \********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -37416,7 +37444,7 @@ router.afterEach(function (to, from, next) {});
 
 /***/ 49:
 /*!******************************************************!*\
-  !*** /Users/lisicheng/project/mobile/utils/login.js ***!
+  !*** /Users/lisicheng/project/lijian/utils/login.js ***!
   \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -37552,7 +37580,7 @@ module.exports = _slicedToArray, module.exports.__esModule = true, module.export
 
 /***/ 50:
 /*!******************************************************!*\
-  !*** /Users/lisicheng/project/mobile/utils/tools.js ***!
+  !*** /Users/lisicheng/project/lijian/utils/tools.js ***!
   \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -38099,13 +38127,13 @@ exports.isEmpty = isEmpty;
 
 /***/ 51:
 /*!*****************************************************!*\
-  !*** /Users/lisicheng/project/mobile/config/app.js ***!
+  !*** /Users/lisicheng/project/lijian/config/app.js ***!
   \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
 // 开发者环境：开|关	【注：方便微信小程序发行测试】
-var SWITCH_DEVELOPMENT = false;
+var SWITCH_DEVELOPMENT = true;
 
 /** S 是否H5端 **/
 
@@ -38116,9 +38144,9 @@ var IS_H5 = false;
 /** S API BaseURL **/
 var baseURLMap = {
   // 开发环境
-  development: 'http://120.76.119.24:8881',
+  development: 'https://test.zhihuischool.com.cn',
   // 生产环境https://b2cplus.likeshop.cn
-  production: IS_H5 ? location.origin : 'http://120.76.119.24:8881'
+  production: IS_H5 ? location.origin : 'https://test.zhihuischool.com.cn'
 };
 var baseURL = SWITCH_DEVELOPMENT ? baseURLMap['development'] : baseURLMap["development"];
 
@@ -38136,7 +38164,7 @@ module.exports = {
 
 /***/ 52:
 /*!*****************************************************!*\
-  !*** /Users/lisicheng/project/mobile/utils/enum.js ***!
+  !*** /Users/lisicheng/project/lijian/utils/enum.js ***!
   \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -38961,7 +38989,7 @@ function genPropsAccessExp(name) {
 
 /***/ 54:
 /*!*****************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/store/modules/decorate.js ***!
+  !*** /Users/lisicheng/project/lijian/store/modules/decorate.js ***!
   \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -39008,7 +39036,7 @@ exports.default = _default;
 
 /***/ 55:
 /*!************************************************!*\
-  !*** /Users/lisicheng/project/mobile/uni.scss ***!
+  !*** /Users/lisicheng/project/lijian/uni.scss ***!
   \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -39022,7 +39050,7 @@ module.exports = {"red_theme":"#FF2C3C","orange_theme":"#f7971e","pink_theme":"#
 
 /***/ 56:
 /*!****************************************************!*\
-  !*** /Users/lisicheng/project/mobile/api/store.js ***!
+  !*** /Users/lisicheng/project/lijian/api/store.js ***!
   \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -39212,7 +39240,7 @@ exports.apiregisterAward = apiregisterAward;
 
 /***/ 57:
 /*!*************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/store/modules/cart.js ***!
+  !*** /Users/lisicheng/project/lijian/store/modules/cart.js ***!
   \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -39264,7 +39292,7 @@ exports.default = _default;
 
 /***/ 58:
 /*!********************************************************!*\
-  !*** /Users/lisicheng/project/mobile/store/getters.js ***!
+  !*** /Users/lisicheng/project/lijian/store/getters.js ***!
   \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -39482,7 +39510,7 @@ function normalizeComponent (
 
 /***/ 62:
 /*!********************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/uview-ui/index.js ***!
+  !*** /Users/lisicheng/project/lijian/components/uview-ui/index.js ***!
   \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -39617,7 +39645,7 @@ exports.default = _default;
 
 /***/ 63:
 /*!*******************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/uview-ui/libs/mixin/mixin.js ***!
+  !*** /Users/lisicheng/project/lijian/components/uview-ui/libs/mixin/mixin.js ***!
   \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -39693,7 +39721,7 @@ exports.default = _default;
 
 /***/ 64:
 /*!*********************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/uview-ui/libs/request/index.js ***!
+  !*** /Users/lisicheng/project/lijian/components/uview-ui/libs/request/index.js ***!
   \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -39905,7 +39933,7 @@ exports.default = _default;
 
 /***/ 65:
 /*!**************************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/uview-ui/libs/function/deepMerge.js ***!
+  !*** /Users/lisicheng/project/lijian/components/uview-ui/libs/function/deepMerge.js ***!
   \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -39955,7 +39983,7 @@ exports.default = _default;
 
 /***/ 66:
 /*!**************************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/uview-ui/libs/function/deepClone.js ***!
+  !*** /Users/lisicheng/project/lijian/components/uview-ui/libs/function/deepClone.js ***!
   \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -39997,7 +40025,7 @@ exports.default = _default;
 
 /***/ 67:
 /*!*********************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/uview-ui/libs/function/test.js ***!
+  !*** /Users/lisicheng/project/lijian/components/uview-ui/libs/function/test.js ***!
   \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -40246,7 +40274,7 @@ exports.default = _default;
 
 /***/ 68:
 /*!****************************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/uview-ui/libs/function/queryParams.js ***!
+  !*** /Users/lisicheng/project/lijian/components/uview-ui/libs/function/queryParams.js ***!
   \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -40328,7 +40356,7 @@ exports.default = _default;
 
 /***/ 69:
 /*!**********************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/uview-ui/libs/function/route.js ***!
+  !*** /Users/lisicheng/project/lijian/components/uview-ui/libs/function/route.js ***!
   \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -40550,7 +40578,7 @@ module.exports = _iterableToArrayLimit, module.exports.__esModule = true, module
 
 /***/ 70:
 /*!***************************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/uview-ui/libs/function/timeFormat.js ***!
+  !*** /Users/lisicheng/project/lijian/components/uview-ui/libs/function/timeFormat.js ***!
   \***************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -40627,7 +40655,7 @@ exports.default = _default;
 
 /***/ 71:
 /*!*************************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/uview-ui/libs/function/timeFrom.js ***!
+  !*** /Users/lisicheng/project/lijian/components/uview-ui/libs/function/timeFrom.js ***!
   \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -40692,7 +40720,7 @@ exports.default = _default;
 
 /***/ 72:
 /*!******************************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/uview-ui/libs/function/colorGradient.js ***!
+  !*** /Users/lisicheng/project/lijian/components/uview-ui/libs/function/colorGradient.js ***!
   \******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -40846,7 +40874,7 @@ exports.default = _default;
 
 /***/ 73:
 /*!*********************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/uview-ui/libs/function/guid.js ***!
+  !*** /Users/lisicheng/project/lijian/components/uview-ui/libs/function/guid.js ***!
   \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -40907,7 +40935,7 @@ exports.default = _default;
 
 /***/ 74:
 /*!**********************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/uview-ui/libs/function/color.js ***!
+  !*** /Users/lisicheng/project/lijian/components/uview-ui/libs/function/color.js ***!
   \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -40956,7 +40984,7 @@ exports.default = _default;
 
 /***/ 75:
 /*!**************************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/uview-ui/libs/function/type2icon.js ***!
+  !*** /Users/lisicheng/project/lijian/components/uview-ui/libs/function/type2icon.js ***!
   \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -41010,7 +41038,7 @@ exports.default = _default;
 
 /***/ 76:
 /*!****************************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/uview-ui/libs/function/randomArray.js ***!
+  !*** /Users/lisicheng/project/lijian/components/uview-ui/libs/function/randomArray.js ***!
   \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -41037,7 +41065,7 @@ exports.default = _default;
 
 /***/ 77:
 /*!************************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/uview-ui/libs/function/addUnit.js ***!
+  !*** /Users/lisicheng/project/lijian/components/uview-ui/libs/function/addUnit.js ***!
   \************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -41064,7 +41092,7 @@ function addUnit() {
 
 /***/ 78:
 /*!***********************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/uview-ui/libs/function/random.js ***!
+  !*** /Users/lisicheng/project/lijian/components/uview-ui/libs/function/random.js ***!
   \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -41091,7 +41119,7 @@ exports.default = _default;
 
 /***/ 79:
 /*!*********************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/uview-ui/libs/function/trim.js ***!
+  !*** /Users/lisicheng/project/lijian/components/uview-ui/libs/function/trim.js ***!
   \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -41144,7 +41172,7 @@ module.exports = _unsupportedIterableToArray, module.exports.__esModule = true, 
 
 /***/ 80:
 /*!**********************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/uview-ui/libs/function/toast.js ***!
+  !*** /Users/lisicheng/project/lijian/components/uview-ui/libs/function/toast.js ***!
   \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -41172,7 +41200,7 @@ exports.default = _default;
 
 /***/ 81:
 /*!**************************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/uview-ui/libs/function/getParent.js ***!
+  !*** /Users/lisicheng/project/lijian/components/uview-ui/libs/function/getParent.js ***!
   \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -41242,7 +41270,7 @@ function getParent(name, keys) {
 
 /***/ 82:
 /*!************************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/uview-ui/libs/function/$parent.js ***!
+  !*** /Users/lisicheng/project/lijian/components/uview-ui/libs/function/$parent.js ***!
   \************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -41276,9 +41304,83 @@ function $parent() {
 
 /***/ }),
 
-/***/ 829:
+/***/ 83:
+/*!********************************************************************************!*\
+  !*** /Users/lisicheng/project/lijian/components/uview-ui/libs/function/sys.js ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.os = os;
+exports.sys = sys;
+function os() {
+  return uni.getSystemInfoSync().platform;
+}
+;
+function sys() {
+  return uni.getSystemInfoSync();
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
+
+/***/ }),
+
+/***/ 84:
+/*!*************************************************************************************!*\
+  !*** /Users/lisicheng/project/lijian/components/uview-ui/libs/function/debounce.js ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var timeout = null;
+
+/**
+ * 防抖原理：一定时间内，只有最后一次操作，再过wait毫秒后才执行函数
+ * 
+ * @param {Function} func 要执行的回调函数 
+ * @param {Number} wait 延时的时间
+ * @param {Boolean} immediate 是否立即执行 
+ * @return null
+ */
+function debounce(func) {
+  var wait = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 500;
+  var immediate = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+  // 清除定时器
+  if (timeout !== null) clearTimeout(timeout);
+  // 立即执行，此类情况一般用不到
+  if (immediate) {
+    var callNow = !timeout;
+    timeout = setTimeout(function () {
+      timeout = null;
+    }, wait);
+    if (callNow) typeof func === 'function' && func();
+  } else {
+    // 设置定时器，当最后一次操作后，timeout不会再被清除，所以在延时wait毫秒后执行func回调方法
+    timeout = setTimeout(function () {
+      typeof func === 'function' && func();
+    }, wait);
+  }
+}
+var _default = debounce;
+exports.default = _default;
+
+/***/ }),
+
+/***/ 845:
 /*!*******************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/mescroll-uni/mescroll-uni.js ***!
+  !*** /Users/lisicheng/project/lijian/components/mescroll-uni/mescroll-uni.js ***!
   \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -42178,35 +42280,9 @@ MeScroll.prototype.preventDefault = function (e) {
 
 /***/ }),
 
-/***/ 83:
-/*!********************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/uview-ui/libs/function/sys.js ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.os = os;
-exports.sys = sys;
-function os() {
-  return uni.getSystemInfoSync().platform;
-}
-;
-function sys() {
-  return uni.getSystemInfoSync();
-}
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
-
-/***/ }),
-
-/***/ 830:
+/***/ 846:
 /*!**************************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/mescroll-uni/mescroll-uni-option.js ***!
+  !*** /Users/lisicheng/project/lijian/components/mescroll-uni/mescroll-uni-option.js ***!
   \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -42278,9 +42354,9 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 831:
+/***/ 847:
 /*!*****************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/mescroll-uni/wxs/mixins.js ***!
+  !*** /Users/lisicheng/project/lijian/components/mescroll-uni/wxs/mixins.js ***!
   \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -42403,57 +42479,9 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 84:
-/*!*************************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/uview-ui/libs/function/debounce.js ***!
-  \*************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var timeout = null;
-
-/**
- * 防抖原理：一定时间内，只有最后一次操作，再过wait毫秒后才执行函数
- * 
- * @param {Function} func 要执行的回调函数 
- * @param {Number} wait 延时的时间
- * @param {Boolean} immediate 是否立即执行 
- * @return null
- */
-function debounce(func) {
-  var wait = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 500;
-  var immediate = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
-  // 清除定时器
-  if (timeout !== null) clearTimeout(timeout);
-  // 立即执行，此类情况一般用不到
-  if (immediate) {
-    var callNow = !timeout;
-    timeout = setTimeout(function () {
-      timeout = null;
-    }, wait);
-    if (callNow) typeof func === 'function' && func();
-  } else {
-    // 设置定时器，当最后一次操作后，timeout不会再被清除，所以在延时wait毫秒后执行func回调方法
-    timeout = setTimeout(function () {
-      typeof func === 'function' && func();
-    }, wait);
-  }
-}
-var _default = debounce;
-exports.default = _default;
-
-/***/ }),
-
 /***/ 85:
 /*!*************************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/uview-ui/libs/function/throttle.js ***!
+  !*** /Users/lisicheng/project/lijian/components/uview-ui/libs/function/throttle.js ***!
   \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -42505,7 +42533,7 @@ exports.default = _default;
 
 /***/ 86:
 /*!*********************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/uview-ui/libs/config/config.js ***!
+  !*** /Users/lisicheng/project/lijian/components/uview-ui/libs/config/config.js ***!
   \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -42531,7 +42559,7 @@ exports.default = _default;
 
 /***/ 87:
 /*!*********************************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/components/uview-ui/libs/config/zIndex.js ***!
+  !*** /Users/lisicheng/project/lijian/components/uview-ui/libs/config/zIndex.js ***!
   \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -42568,7 +42596,7 @@ exports.default = _default;
 
 /***/ 88:
 /*!*****************************************************!*\
-  !*** /Users/lisicheng/project/mobile/mixins/app.js ***!
+  !*** /Users/lisicheng/project/lijian/mixins/app.js ***!
   \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -42638,9 +42666,9 @@ module.exports = _arrayLikeToArray, module.exports.__esModule = true, module.exp
 
 /***/ }),
 
-/***/ 912:
+/***/ 928:
 /*!*********************************************************************!*\
-  !*** /Users/lisicheng/project/mobile/static/images/notice_icon.png ***!
+  !*** /Users/lisicheng/project/lijian/static/images/notice_icon.png ***!
   \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
