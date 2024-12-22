@@ -100,11 +100,17 @@ __webpack_require__.r(__webpack_exports__);
 var components
 try {
   components = {
+    uSticky: function () {
+      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-sticky/u-sticky */ "components/uview-ui/components/u-sticky/u-sticky").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-sticky/u-sticky.vue */ 898))
+    },
+    uNavbar: function () {
+      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-navbar/u-navbar */ "components/uview-ui/components/u-navbar/u-navbar").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-navbar/u-navbar.vue */ 905))
+    },
     uImage: function () {
-      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-image/u-image */ "components/uview-ui/components/u-image/u-image").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-image/u-image.vue */ 1092))
+      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-image/u-image */ "components/uview-ui/components/u-image/u-image").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-image/u-image.vue */ 912))
     },
     tabbar: function () {
-      return Promise.all(/*! import() | components/tabbar/tabbar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/tabbar/tabbar")]).then(__webpack_require__.bind(null, /*! @/components/tabbar/tabbar.vue */ 1022))
+      return Promise.all(/*! import() | components/tabbar/tabbar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/tabbar/tabbar")]).then(__webpack_require__.bind(null, /*! @/components/tabbar/tabbar.vue */ 919))
     },
   }
 } catch (e) {
@@ -167,6 +173,13 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //

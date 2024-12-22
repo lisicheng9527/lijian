@@ -125,6 +125,15 @@
             }
         },
         {
+            "path": "pages/model_goods_order/model_goods_order",
+            "style": {
+                "navigationBarTitleText": "模型结算"
+            },
+            "meta": {
+                "auth": true
+            }
+        },
+        {
             "path": "pages/payment/payment",
             "style": {
                 "navigationBarTitleText": "订单支付"
@@ -147,6 +156,36 @@
             "path": "pages/order_detail/order_detail",
             "style": {
                 "navigationBarTitleText": "订单详情",
+                "navigationStyle": "custom"
+            },
+            "meta": {
+                "auth": true
+            }
+        },
+        {
+            "path": "pages/model_detail/model_detail",
+            "style": {
+                "navigationBarTitleText": "模型详情",
+                "navigationStyle": "custom"
+            },
+            "meta": {
+                "auth": true
+            }
+        },
+        {
+            "path": "pages/model_preview/model_preview",
+            "style": {
+                "navigationBarTitleText": "模型预览",
+                "navigationStyle": "custom"
+            },
+            "meta": {
+                "auth": true
+            }
+        },
+        {
+            "path": "pages/model_goods_detail/model_goods_detail",
+            "style": {
+                "navigationBarTitleText": "模型商品详情",
                 "navigationStyle": "custom"
             },
             "meta": {
@@ -239,6 +278,16 @@
                     },
                     "meta": {
                         "auth": false
+                    }
+                },
+                {
+                    "path": "pages/model_list/model_list",
+                    "style": {
+                        "navigationBarTitleText": "模型列表",
+                        "navigationStyle": "custom"
+                    },
+                    "meta": {
+                        "auth": true
                     }
                 },
                 {

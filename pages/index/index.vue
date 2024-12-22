@@ -1,5 +1,12 @@
 <template>
   <view>
+    <!-- #ifndef  H5 -->
+    <u-sticky offset-top="0" h5-nav-height="0" bg-color="transparent">
+        <u-navbar :is-back="false" title="首页" :title-bold="true" :is-fixed="false" :border-bottom="false"
+          :background="{ background: 'rgba(256,256, 256, 1)' }"
+          title-color="#000"></u-navbar>
+    </u-sticky>
+    <!-- #endif -->
     <view class="home-page-header">
       <view class="swiper-wrap">
         <swiper

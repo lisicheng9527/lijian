@@ -101,25 +101,25 @@ var components
 try {
   components = {
     uSticky: function () {
-      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-sticky/u-sticky */ "components/uview-ui/components/u-sticky/u-sticky").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-sticky/u-sticky.vue */ 857))
+      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-sticky/u-sticky */ "components/uview-ui/components/u-sticky/u-sticky").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-sticky/u-sticky.vue */ 898))
     },
     uNavbar: function () {
-      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-navbar/u-navbar */ "components/uview-ui/components/u-navbar/u-navbar").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-navbar/u-navbar.vue */ 864))
+      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-navbar/u-navbar */ "components/uview-ui/components/u-navbar/u-navbar").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-navbar/u-navbar.vue */ 905))
     },
     uField: function () {
-      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-field/u-field */ "components/uview-ui/components/u-field/u-field").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-field/u-field.vue */ 1163))
+      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-field/u-field */ "components/uview-ui/components/u-field/u-field").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-field/u-field.vue */ 1148))
     },
     uVerificationCode: function () {
-      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-verification-code/u-verification-code */ "components/uview-ui/components/u-verification-code/u-verification-code").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-verification-code/u-verification-code.vue */ 1170))
+      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-verification-code/u-verification-code */ "components/uview-ui/components/u-verification-code/u-verification-code").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-verification-code/u-verification-code.vue */ 1155))
     },
     uIcon: function () {
-      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-icon/u-icon */ "components/uview-ui/components/u-icon/u-icon").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-icon/u-icon.vue */ 871))
+      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-icon/u-icon */ "components/uview-ui/components/u-icon/u-icon").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-icon/u-icon.vue */ 1169))
     },
     uCheckbox: function () {
-      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-checkbox/u-checkbox */ "components/uview-ui/components/u-checkbox/u-checkbox").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-checkbox/u-checkbox.vue */ 1085))
+      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-checkbox/u-checkbox */ "components/uview-ui/components/u-checkbox/u-checkbox").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-checkbox/u-checkbox.vue */ 1077))
     },
     uModal: function () {
-      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-modal/u-modal */ "components/uview-ui/components/u-modal/u-modal").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-modal/u-modal.vue */ 1120))
+      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-modal/u-modal */ "components/uview-ui/components/u-modal/u-modal").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-modal/u-modal.vue */ 1105))
     },
   }
 } catch (e) {

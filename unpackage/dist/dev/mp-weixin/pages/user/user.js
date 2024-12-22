@@ -99,19 +99,19 @@ var components
 try {
   components = {
     wUserinfo: function () {
-      return Promise.all(/*! import() | components/widgets/userinfo/userinfo */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/widgets/userinfo/userinfo")]).then(__webpack_require__.bind(null, /*! @/components/widgets/userinfo/userinfo.vue */ 1141))
+      return Promise.all(/*! import() | components/widgets/userinfo/userinfo */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/widgets/userinfo/userinfo")]).then(__webpack_require__.bind(null, /*! @/components/widgets/userinfo/userinfo.vue */ 1126))
     },
     wUserorder: function () {
-      return __webpack_require__.e(/*! import() | components/widgets/userorder/userorder */ "components/widgets/userorder/userorder").then(__webpack_require__.bind(null, /*! @/components/widgets/userorder/userorder.vue */ 1149))
+      return __webpack_require__.e(/*! import() | components/widgets/userorder/userorder */ "components/widgets/userorder/userorder").then(__webpack_require__.bind(null, /*! @/components/widgets/userorder/userorder.vue */ 1134))
     },
     wUserserve: function () {
-      return Promise.all(/*! import() | components/widgets/userserve/userserve */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/widgets/userserve/userserve")]).then(__webpack_require__.bind(null, /*! @/components/widgets/userserve/userserve.vue */ 1156))
+      return Promise.all(/*! import() | components/widgets/userserve/userserve */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/widgets/userserve/userserve")]).then(__webpack_require__.bind(null, /*! @/components/widgets/userserve/userserve.vue */ 1141))
     },
     wGoodsrecom: function () {
-      return __webpack_require__.e(/*! import() | components/widgets/goodsrecom/goodsrecom */ "components/widgets/goodsrecom/goodsrecom").then(__webpack_require__.bind(null, /*! @/components/widgets/goodsrecom/goodsrecom.vue */ 1113))
+      return __webpack_require__.e(/*! import() | components/widgets/goodsrecom/goodsrecom */ "components/widgets/goodsrecom/goodsrecom").then(__webpack_require__.bind(null, /*! @/components/widgets/goodsrecom/goodsrecom.vue */ 1098))
     },
     tabbar: function () {
-      return Promise.all(/*! import() | components/tabbar/tabbar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/tabbar/tabbar")]).then(__webpack_require__.bind(null, /*! @/components/tabbar/tabbar.vue */ 1022))
+      return Promise.all(/*! import() | components/tabbar/tabbar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/tabbar/tabbar")]).then(__webpack_require__.bind(null, /*! @/components/tabbar/tabbar.vue */ 919))
     },
   }
 } catch (e) {

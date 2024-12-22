@@ -17,67 +17,67 @@ var components
 try {
   components = {
     lazyComponent: function () {
-      return __webpack_require__.e(/*! import() | components/lazy-component/lazy-component */ "components/lazy-component/lazy-component").then(__webpack_require__.bind(null, /*! @/components/lazy-component/lazy-component.vue */ 885))
+      return __webpack_require__.e(/*! import() | components/lazy-component/lazy-component */ "components/lazy-component/lazy-component").then(__webpack_require__.bind(null, /*! @/components/lazy-component/lazy-component.vue */ 926))
     },
     wSearch: function () {
-      return __webpack_require__.e(/*! import() | components/widgets/search/search */ "components/widgets/search/search").then(__webpack_require__.bind(null, /*! @/components/widgets/search/search.vue */ 890))
+      return __webpack_require__.e(/*! import() | components/widgets/search/search */ "components/widgets/search/search").then(__webpack_require__.bind(null, /*! @/components/widgets/search/search.vue */ 931))
     },
     wNavigation: function () {
-      return __webpack_require__.e(/*! import() | components/widgets/navigation/navigation */ "components/widgets/navigation/navigation").then(__webpack_require__.bind(null, /*! @/components/widgets/navigation/navigation.vue */ 897))
+      return __webpack_require__.e(/*! import() | components/widgets/navigation/navigation */ "components/widgets/navigation/navigation").then(__webpack_require__.bind(null, /*! @/components/widgets/navigation/navigation.vue */ 938))
     },
     wBanner: function () {
-      return __webpack_require__.e(/*! import() | components/widgets/banner/banner */ "components/widgets/banner/banner").then(__webpack_require__.bind(null, /*! @/components/widgets/banner/banner.vue */ 904))
+      return __webpack_require__.e(/*! import() | components/widgets/banner/banner */ "components/widgets/banner/banner").then(__webpack_require__.bind(null, /*! @/components/widgets/banner/banner.vue */ 945))
     },
     wTitle: function () {
-      return __webpack_require__.e(/*! import() | components/widgets/title/title */ "components/widgets/title/title").then(__webpack_require__.bind(null, /*! @/components/widgets/title/title.vue */ 911))
+      return __webpack_require__.e(/*! import() | components/widgets/title/title */ "components/widgets/title/title").then(__webpack_require__.bind(null, /*! @/components/widgets/title/title.vue */ 952))
     },
     wRubik: function () {
-      return __webpack_require__.e(/*! import() | components/widgets/rubik/rubik */ "components/widgets/rubik/rubik").then(__webpack_require__.bind(null, /*! @/components/widgets/rubik/rubik.vue */ 918))
+      return __webpack_require__.e(/*! import() | components/widgets/rubik/rubik */ "components/widgets/rubik/rubik").then(__webpack_require__.bind(null, /*! @/components/widgets/rubik/rubik.vue */ 959))
     },
     wNotice: function () {
-      return Promise.all(/*! import() | components/widgets/notice/notice */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/widgets/notice/notice")]).then(__webpack_require__.bind(null, /*! @/components/widgets/notice/notice.vue */ 925))
+      return Promise.all(/*! import() | components/widgets/notice/notice */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/widgets/notice/notice")]).then(__webpack_require__.bind(null, /*! @/components/widgets/notice/notice.vue */ 966))
     },
     wBlank: function () {
-      return __webpack_require__.e(/*! import() | components/widgets/blank/blank */ "components/widgets/blank/blank").then(__webpack_require__.bind(null, /*! @/components/widgets/blank/blank.vue */ 933))
+      return __webpack_require__.e(/*! import() | components/widgets/blank/blank */ "components/widgets/blank/blank").then(__webpack_require__.bind(null, /*! @/components/widgets/blank/blank.vue */ 974))
     },
     wSeparate: function () {
-      return __webpack_require__.e(/*! import() | components/widgets/separate/separate */ "components/widgets/separate/separate").then(__webpack_require__.bind(null, /*! @/components/widgets/separate/separate.vue */ 940))
+      return __webpack_require__.e(/*! import() | components/widgets/separate/separate */ "components/widgets/separate/separate").then(__webpack_require__.bind(null, /*! @/components/widgets/separate/separate.vue */ 981))
     },
     wGoodsgroup: function () {
-      return __webpack_require__.e(/*! import() | components/widgets/goodsgroup/goodsgroup */ "components/widgets/goodsgroup/goodsgroup").then(__webpack_require__.bind(null, /*! @/components/widgets/goodsgroup/goodsgroup.vue */ 947))
+      return __webpack_require__.e(/*! import() | components/widgets/goodsgroup/goodsgroup */ "components/widgets/goodsgroup/goodsgroup").then(__webpack_require__.bind(null, /*! @/components/widgets/goodsgroup/goodsgroup.vue */ 988))
     },
     wTabs: function () {
-      return __webpack_require__.e(/*! import() | components/widgets/tabs/tabs */ "components/widgets/tabs/tabs").then(__webpack_require__.bind(null, /*! @/components/widgets/tabs/tabs.vue */ 952))
+      return __webpack_require__.e(/*! import() | components/widgets/tabs/tabs */ "components/widgets/tabs/tabs").then(__webpack_require__.bind(null, /*! @/components/widgets/tabs/tabs.vue */ 993))
     },
     wPresell: function () {
-      return __webpack_require__.e(/*! import() | components/widgets/presell/presell */ "components/widgets/presell/presell").then(__webpack_require__.bind(null, /*! @/components/widgets/presell/presell.vue */ 973))
+      return __webpack_require__.e(/*! import() | components/widgets/presell/presell */ "components/widgets/presell/presell").then(__webpack_require__.bind(null, /*! @/components/widgets/presell/presell.vue */ 1000))
     },
     wHotarea: function () {
-      return __webpack_require__.e(/*! import() | components/widgets/hotarea/hotarea */ "components/widgets/hotarea/hotarea").then(__webpack_require__.bind(null, /*! @/components/widgets/hotarea/hotarea.vue */ 1001))
+      return __webpack_require__.e(/*! import() | components/widgets/hotarea/hotarea */ "components/widgets/hotarea/hotarea").then(__webpack_require__.bind(null, /*! @/components/widgets/hotarea/hotarea.vue */ 1007))
     },
     wCoupon: function () {
-      return __webpack_require__.e(/*! import() | components/widgets/coupon/coupon */ "components/widgets/coupon/coupon").then(__webpack_require__.bind(null, /*! @/components/widgets/coupon/coupon.vue */ 959))
+      return __webpack_require__.e(/*! import() | components/widgets/coupon/coupon */ "components/widgets/coupon/coupon").then(__webpack_require__.bind(null, /*! @/components/widgets/coupon/coupon.vue */ 1014))
     },
     wSeckill: function () {
-      return __webpack_require__.e(/*! import() | components/widgets/seckill/seckill */ "components/widgets/seckill/seckill").then(__webpack_require__.bind(null, /*! @/components/widgets/seckill/seckill.vue */ 966))
+      return __webpack_require__.e(/*! import() | components/widgets/seckill/seckill */ "components/widgets/seckill/seckill").then(__webpack_require__.bind(null, /*! @/components/widgets/seckill/seckill.vue */ 1021))
     },
     wSpellgroup: function () {
-      return __webpack_require__.e(/*! import() | components/widgets/spellgroup/spellgroup */ "components/widgets/spellgroup/spellgroup").then(__webpack_require__.bind(null, /*! @/components/widgets/spellgroup/spellgroup.vue */ 980))
+      return __webpack_require__.e(/*! import() | components/widgets/spellgroup/spellgroup */ "components/widgets/spellgroup/spellgroup").then(__webpack_require__.bind(null, /*! @/components/widgets/spellgroup/spellgroup.vue */ 1028))
     },
     wVideo: function () {
-      return __webpack_require__.e(/*! import() | components/widgets/video/video */ "components/widgets/video/video").then(__webpack_require__.bind(null, /*! @/components/widgets/video/video.vue */ 987))
+      return __webpack_require__.e(/*! import() | components/widgets/video/video */ "components/widgets/video/video").then(__webpack_require__.bind(null, /*! @/components/widgets/video/video.vue */ 1035))
     },
     wGraphic: function () {
-      return __webpack_require__.e(/*! import() | components/widgets/graphic/graphic */ "components/widgets/graphic/graphic").then(__webpack_require__.bind(null, /*! @/components/widgets/graphic/graphic.vue */ 994))
+      return __webpack_require__.e(/*! import() | components/widgets/graphic/graphic */ "components/widgets/graphic/graphic").then(__webpack_require__.bind(null, /*! @/components/widgets/graphic/graphic.vue */ 1042))
     },
     wEditor: function () {
-      return __webpack_require__.e(/*! import() | components/widgets/editor/editor */ "components/widgets/editor/editor").then(__webpack_require__.bind(null, /*! @/components/widgets/editor/editor.vue */ 1008))
+      return __webpack_require__.e(/*! import() | components/widgets/editor/editor */ "components/widgets/editor/editor").then(__webpack_require__.bind(null, /*! @/components/widgets/editor/editor.vue */ 1049))
     },
     wMnplive: function () {
-      return __webpack_require__.e(/*! import() | components/widgets/mnplive/mnplive */ "components/widgets/mnplive/mnplive").then(__webpack_require__.bind(null, /*! @/components/widgets/mnplive/mnplive.vue */ 1015))
+      return __webpack_require__.e(/*! import() | components/widgets/mnplive/mnplive */ "components/widgets/mnplive/mnplive").then(__webpack_require__.bind(null, /*! @/components/widgets/mnplive/mnplive.vue */ 1056))
     },
     tabbar: function () {
-      return Promise.all(/*! import() | components/tabbar/tabbar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/tabbar/tabbar")]).then(__webpack_require__.bind(null, /*! @/components/tabbar/tabbar.vue */ 1022))
+      return Promise.all(/*! import() | components/tabbar/tabbar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/tabbar/tabbar")]).then(__webpack_require__.bind(null, /*! @/components/tabbar/tabbar.vue */ 919))
     },
   }
 } catch (e) {

@@ -2,13 +2,13 @@
   <view class="container">
 
     <view class="video-group">
-      <button>第二步：拍摄或上传照片</button>
+      <view class="tit">第二步：拍摄或上传照片</view>
       <view>拍摄示例：</view>
       <image src="https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png" class="sample-image" mode="aspectFit"></image>
     </view>
 
     <view class="img-container" v-if="imgList.length">
-      <image style="width: 80px; height: 80px; margin: 0 10px 10px 0;" v-for="item in imgList" :key="item" :src="item"></image>
+      <image style="width: 80px; height: 80px; margin: 0 10px 10px 0;" v-for="item in imgList" :key="item.uri" :src="item.uri"></image>
       <image style="width: 80px; height: 80px; margin-bottom: 10px;" @click="chooseVideo" v-if="imgList.length < 8" src="https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215150516846201004.png"></image>
     </view>
 
@@ -20,18 +20,63 @@
       </view>
     </view>
 
-    <button class="next-button" @click="nextStep">下一步</button>
+    <view style="padding-bottom: 20px;">照片和视频上传过程中，请不要关闭本页！建模过程通常需要20分钟以上，照片和视频将会存在手机上，创建好的模型可以在我的-我的手办中查看。</view>
+    
+    <view class="photo-template">
+      <view class="temp-pic">
+        <view class="pic-item">
+          <image src="https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png" mode="aspectFit" />
+          <view class="pic-txt">正脸照</view>
+        </view>
+        <view class="pic-item">
+          <image src="https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png" mode="aspectFit" />
+          <view class="pic-txt">左侧脸</view>
+        </view>
+        <view class="pic-item">
+          <image src="https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png" mode="aspectFit" />
+          <view class="pic-txt">右侧脸</view>
+        </view>
+        <view class="pic-item">
+          <image src="https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png" mode="aspectFit" />
+          <view class="pic-txt">后脑</view>
+        </view>
+      </view>
+      <view class="temp-pic">
+        <view class="pic-item">
+          <image src="https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png" mode="aspectFit" />
+          <view class="pic-txt">头顶</view>
+        </view>
+        <view class="pic-item">
+          <image src="https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png" mode="aspectFit" />
+          <view class="pic-txt">眼睛</view>
+        </view>
+        <view class="pic-item">
+          <image src="https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png" mode="aspectFit" />
+          <view class="pic-txt">左手</view>
+        </view>
+        <view class="pic-item">
+          <image src="https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png" mode="aspectFit" />
+          <view class="pic-txt">右手</view>
+        </view>
+      </view>
+    </view>
+
+    <view>
+      <button class="next-button" @click="nextStep">下一步</button>
+    </view>
   </view>
 </template>
 
 <script>
-import { getPresignedUpload, createModelFile } from '@/api/app'
+import { getPresignedUpload, createModelFile, presignedUpload } from '@/api/model'
 export default {
   data() {
     return {
       formName: "",
       temporaryUrl: "",
-      imgList: []
+      imgList: [],
+      fileName: '',
+      fileType: ''
     };
   },
   methods: {
@@ -41,20 +86,27 @@ export default {
         this.$forceUpdate();
       })
     },
-    // 选择或拍摄视频
+    // 选择或拍摄照片
     chooseVideo() {
       uni.chooseImage({
+        count: 1,
         success: (chooseImageRes) => {
+          console.log(chooseImageRes)
           var file = chooseImageRes.tempFiles[0];
           if (!file) return;
           // 获取要上传的本地文件路径
           var fileUrl = chooseImageRes.tempFilePaths[0];
           console.log(fileUrl)
           this.temporaryUrl = fileUrl;
-          const fileType = fileUrl.split('.')[1];
-          const filePath = fileType[0].split('/');
-          const fileName = filePath[filePath.length - 1];
-          getPresignedUpload({ type: 'image', filename: fileName, filetype: fileType }).then((res) => {
+          if(fileUrl.includes('blob')){
+            this.fileType = file?.type?.split('/')[1];
+            this.fileName = file.name
+          }else{
+            this.fileType = fileUrl.split('.')[1];
+            const filePath = this.fileType[0].split('/');
+            this.fileName = filePath[filePath.length - 1];
+          }
+          getPresignedUpload({ type: 'image', filename: this.fileName, filetype: this.fileType }).then((res) => {
             this.uploadFile(res);
           });
         }
@@ -88,11 +140,19 @@ export default {
           formData: formData,
           success: (res) => {
             if (![200, 204].includes(res.statusCode)) return callback && callback(res);
-            var fileUrl = 'https://' + opt.cosHost + '/' + camSafeUrlEncode(opt.cosKey).replace(/%2F/g, '/');
-            console.log(fileUrl)
-            if(fileUrl) {
-              this.imgList.push(fileUrl);
-            }
+            presignedUpload({
+              name: this.fileName,
+              type: 'image',
+              fileuri: opt.cosKey
+            }).then((result) => {
+              if(result.url) {
+                this.imgList.push({
+                  uri: result.uri,
+                  url: result.url,
+                  pos: (this.imgList.length + 1)
+                });
+              }
+            })
           },
           error(err) {
             console.log(err)
@@ -122,7 +182,7 @@ export default {
           })
           setTimeout(() => {
             this.$Router.replace({
-              path: "/bundle/pages/user_order/user_order"
+              path: "/bundle/pages/model_list/model_list"
             });
           }, 1000)
         }
@@ -136,9 +196,29 @@ export default {
 .container {
   padding: 20px;
 }
+.photo-template {
+  .temp-pic {
+    display: flex;
+    height: 90px;
+    .pic-item {
+      flex: 1;
+      height: 58px;
+      padding: 0 5px;
+      text-align: center;
+    }
+  }
+  uni-image {
+    width: 100%;
+    height: 100%;
+  }
+}
 .video-con {
   text-align: center;
   margin-bottom: 20px;
+}
+.video-group .tit{
+  font-size: 24px;
+  padding-bottom: 10px;
 }
 .video-con video {
   width: 100%;

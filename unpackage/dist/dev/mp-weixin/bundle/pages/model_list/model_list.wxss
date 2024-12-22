@@ -1,0 +1,86 @@
+@charset "UTF-8"
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+
+@charset "UTF-8";
+/* 颜色变量 */
+/** S Font's size **/
+/** E Font's size **/
+.data-v-59ce3f65:export {
+  red_theme: #FF2C3C;
+  orange_theme: #f7971e;
+  pink_theme: #fa444d;
+  gold_theme: #e0a356;
+  blue_theme: #2f80ed;
+  green_theme: #2ec840;
+}
+page.data-v-59ce3f65 {
+  height: 100%;
+  padding: 0;
+}
+.order-list.data-v-59ce3f65 {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.order-list .order-item.data-v-59ce3f65 {
+  flex: 1;
+  min-height: 0;
+}
+.order-contain.data-v-59ce3f65 {
+  padding: 0 20rpx;
+}
+.order-contain .order-main-contain.data-v-59ce3f65 {
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+.order-contain .order-main-contain .order-tit.data-v-59ce3f65 {
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx 20rpx 20rpx;
+}
+.order-contain .order-main-contain .model-status text.data-v-59ce3f65 {
+  color: #FF2C3C;
+}
+.order-contain .order-main-contain .order-btn.data-v-59ce3f65 {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20rpx 20rpx;
+}
+.order-contain .order-main.data-v-59ce3f65 {
+  border-radius: 5px;
+  overflow: hidden;
+}
+.order-contain .order-main uni-image.data-v-59ce3f65 {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.login.data-v-59ce3f65 {
+  margin: 400rpx auto;
+  padding: 10rpx 20rpx;
+  color: white;
+  width: 200rpx;
+}
+.red_theme .login.data-v-59ce3f65 {
+  background-color: #ff2c3c;
+}
+.orange_theme .login.data-v-59ce3f65 {
+  background-color: #f7971e;
+}
+.pink_theme .login.data-v-59ce3f65 {
+  background-color: #fa444d;
+}
+.gold_theme .login.data-v-59ce3f65 {
+  background-color: #e0a356;
+}
+.blue_theme .login.data-v-59ce3f65 {
+  background-color: #2f80ed;
+}
+.green_theme .login.data-v-59ce3f65 {
+  background-color: #2ec840;
+}
+

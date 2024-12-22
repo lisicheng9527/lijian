@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import { getPresignedUpload } from '@/api/app'
+import { getPresignedUpload, presignedUpload } from '@/api/model'
 export default {
   data() {
     return {
@@ -70,6 +70,8 @@ export default {
 				sourceType: ['album'],
 				success: function (res) {
           console.log(res)
+          self.fileName = res.name
+          self.fileType = res?.tempFile?.type?.split('/')[1];
 					self.temporaryUrl = res.tempFilePath;
 				}
 			});
@@ -108,16 +110,22 @@ export default {
           formData: formData,
           success: (res) => {
             if (![200, 204].includes(res.statusCode)) return callback && callback(res);
-            var fileUrl = 'https://' + opt.cosHost + '/' + camSafeUrlEncode(opt.cosKey).replace(/%2F/g, '/');
-            console.log(fileUrl)
-            if(fileUrl) {
-              uni.hideLoading()
-              uni.setStorageSync('formName', this.formName)
-              uni.setStorageSync('fileUrl', fileUrl)
-              this.$Router.push({
-                path: '/pages/photo/photo'
-              })
-            }
+            console.log(opt)
+            presignedUpload({
+              name: this.fileName,
+              type: 'video',
+              fileuri: opt.cosKey
+            }).then((result) => {
+              console.log(result)
+              if(result.url) {
+                uni.hideLoading()
+                uni.setStorageSync('formName', this.formName)
+                uni.setStorageSync('fileUrl', result.url)
+                this.$Router.push({
+                  path: '/pages/photo/photo'
+                })
+              }
+            })
           },
           error(err) {
             console.log(err)
@@ -133,25 +141,24 @@ export default {
         });
         return;
       }
-      let fileName = '';
-      let fileType = '';
-      if(this.temporaryUrl) {
-        console.log(this.temporaryUrl)
-        fileType = this.temporaryUrl.split('.')[1];
-        const filePath = fileType[0].split('/');
-        fileName = filePath[filePath.length - 1];
-      }else{
+      if(!this.temporaryUrl) {
         uni.showToast({
           title: '请先拍摄视频',
           icon: 'none'
         });
         return;
       }
+      if(!this.temporaryUrl.includes('blob')) {
+        console.log(this.temporaryUrl)
+        this.fileType = this.temporaryUrl.split('.')[1];
+        const filePath = this.fileType[0].split('/');
+        this.fileName = filePath[filePath.length - 1];
+      }
       uni.showLoading({
         title: '视频上传中...',
         mask: true
       })
-      getPresignedUpload({ type: 'video', filename: fileName, filetype: fileType }).then((res) => {
+      getPresignedUpload({ type: 'video', filename: this.fileName, filetype: this.fileType }).then((res) => {
         this.uploadFile(res);
       });
     }
@@ -164,7 +171,7 @@ export default {
   padding: 20px;
 }
 .video-title {
-  font-size: 20px;
+  font-size: 24px;
   margin-bottom: 10px;
 }
 .video-con {

@@ -1,0 +1,1 @@
+.page{width:100vw;overflow-x:hidden}.content{padding:20rpx;font-size:28rpx}.btnBox{width:100%;display:flex;align-items:center;margin-top:20rpx;margin-bottom:30rpx}

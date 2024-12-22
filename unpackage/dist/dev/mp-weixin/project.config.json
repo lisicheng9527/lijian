@@ -21,17 +21,7 @@
   "libVersion": "latest",
   "appid": "wxa6c7f27a010ab0c9",
   "projectname": "LikeShopPlus",
-  "condition": {
-    "miniprogram": {
-      "list": [
-        {
-          "name": "pages/scan/scan",
-          "pathName": "pages/scan/scan",
-          "query": ""
-        }
-      ]
-    }
-  },
+  "condition": {},
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2

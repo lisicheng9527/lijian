@@ -10,22 +10,28 @@
     "pages/forget_pwd/forget_pwd",
     "pages/bind_mobile/bind_mobile",
     "pages/goods_search/goods_search",
-    "pages/goods_detail/goods_detail",
-    "pages/goods_order/goods_order",
+    "pages/model_goods_order/model_goods_order",
     "pages/payment/payment",
     "pages/payment_result/payment_result",
     "pages/order_detail/order_detail",
+    "pages/model_detail/model_detail",
+    "pages/model_preview/model_preview",
+    "pages/model_goods_detail/model_goods_detail",
     "pages/address/address",
     "pages/address_edit/address_edit",
     "pages/webview/webview",
     "components/uview-ui/components/u-avatar-cropper/u-avatar-cropper",
-    "pages/scan/scan"
+    "pages/scan/scan",
+    "pages/camera/camera",
+    "pages/photo/photo",
+    "pages/home/home"
   ],
   "subPackages": [
     {
       "root": "bundle",
       "pages": [
         "pages/user_order/user_order",
+        "pages/model_list/model_list",
         "pages/luck_draw_good/luck_draw_good",
         "pages/goods_seckill/goods_seckill",
         "pages/goods_presell/goods_presell",

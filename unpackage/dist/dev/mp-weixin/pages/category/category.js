@@ -101,19 +101,19 @@ var components
 try {
   components = {
     uSticky: function () {
-      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-sticky/u-sticky */ "components/uview-ui/components/u-sticky/u-sticky").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-sticky/u-sticky.vue */ 857))
+      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-sticky/u-sticky */ "components/uview-ui/components/u-sticky/u-sticky").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-sticky/u-sticky.vue */ 898))
     },
     uNavbar: function () {
-      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-navbar/u-navbar */ "components/uview-ui/components/u-navbar/u-navbar").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-navbar/u-navbar.vue */ 864))
+      return __webpack_require__.e(/*! import() | components/uview-ui/components/u-navbar/u-navbar */ "components/uview-ui/components/u-navbar/u-navbar").then(__webpack_require__.bind(null, /*! @/components/uview-ui/components/u-navbar/u-navbar.vue */ 905))
     },
     wSearch: function () {
-      return __webpack_require__.e(/*! import() | components/widgets/search/search */ "components/widgets/search/search").then(__webpack_require__.bind(null, /*! @/components/widgets/search/search.vue */ 890))
+      return __webpack_require__.e(/*! import() | components/widgets/search/search */ "components/widgets/search/search").then(__webpack_require__.bind(null, /*! @/components/widgets/search/search.vue */ 931))
     },
     wCategory: function () {
-      return __webpack_require__.e(/*! import() | components/widgets/category/category */ "components/widgets/category/category").then(__webpack_require__.bind(null, /*! @/components/widgets/category/category.vue */ 1071))
+      return __webpack_require__.e(/*! import() | components/widgets/category/category */ "components/widgets/category/category").then(__webpack_require__.bind(null, /*! @/components/widgets/category/category.vue */ 1063))
     },
     tabbar: function () {
-      return Promise.all(/*! import() | components/tabbar/tabbar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/tabbar/tabbar")]).then(__webpack_require__.bind(null, /*! @/components/tabbar/tabbar.vue */ 1022))
+      return Promise.all(/*! import() | components/tabbar/tabbar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/tabbar/tabbar")]).then(__webpack_require__.bind(null, /*! @/components/tabbar/tabbar.vue */ 919))
     },
   }
 } catch (e) {

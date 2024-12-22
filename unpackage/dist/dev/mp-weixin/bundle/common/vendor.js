@@ -1,6 +1,6 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["bundle/common/vendor"],{
 
-/***/ 1511:
+/***/ 1582:
 /*!**********************************************************************************!*\
   !*** /Users/lisicheng/project/lijian/bundle/static/images/invitation_poster.png ***!
   \**********************************************************************************/
@@ -11,7 +11,7 @@ module.exports = __webpack_require__.p + "bundle/static/images/invitation_poster
 
 /***/ }),
 
-/***/ 1545:
+/***/ 1616:
 /*!*********************************************************************!*\
   !*** /Users/lisicheng/project/lijian/plugin/emoji-awesome/emoji.js ***!
   \*********************************************************************/
@@ -30,7 +30,7 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 348:
+/***/ 389:
 /*!********************************************************************************************!*\
   !*** /Users/lisicheng/project/lijian/components/mescroll-uni/mixins/mescroll-more-item.js ***!
   \********************************************************************************************/
@@ -110,7 +110,7 @@ exports.default = _default2;
 
 /***/ }),
 
-/***/ 507:
+/***/ 548:
 /*!************************************************************!*\
   !*** /Users/lisicheng/project/lijian/api/integral_mall.js ***!
   \************************************************************/
@@ -212,7 +212,7 @@ function getwechatSyncCheck(params) {
 
 /***/ }),
 
-/***/ 616:
+/***/ 657:
 /*!*******************************************************!*\
   !*** /Users/lisicheng/project/lijian/utils/socket.js ***!
   \*******************************************************/
@@ -393,7 +393,7 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 617:
+/***/ 658:
 /*!*****************************************************!*\
   !*** /Users/lisicheng/project/lijian/utils/date.js ***!
   \*****************************************************/
@@ -499,7 +499,7 @@ var isThisWeak = function isThisWeak(date) {
 
 /***/ }),
 
-/***/ 632:
+/***/ 673:
 /*!********************************************************************************!*\
   !*** /Users/lisicheng/project/lijian/bundle/static/images/user_sign_close.png ***!
   \********************************************************************************/
@@ -510,7 +510,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAYAAADn
 
 /***/ }),
 
-/***/ 731:
+/***/ 772:
 /*!*************************************************************!*\
   !*** /Users/lisicheng/project/lijian/api/live_broadcast.js ***!
   \*************************************************************/
@@ -536,7 +536,7 @@ exports.apiLiveRoomLists = apiLiveRoomLists;
 
 /***/ }),
 
-/***/ 740:
+/***/ 781:
 /*!********************************************************!*\
   !*** /Users/lisicheng/project/lijian/api/luck_draw.js ***!
   \********************************************************/
@@ -584,7 +584,7 @@ exports.apiLuckyDrawStart = apiLuckyDrawStart;
 
 /***/ }),
 
-/***/ 813:
+/***/ 854:
 /*!****************************************************************!*\
   !*** /Users/lisicheng/project/lijian/mixins/integral_order.js ***!
   \****************************************************************/
@@ -601,7 +601,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var _regenerator = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/regenerator */ 30));
 var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ 32));
-var _integral_mall = __webpack_require__(/*! @/api/integral_mall */ 507);
+var _integral_mall = __webpack_require__(/*! @/api/integral_mall */ 548);
 var _tools = __webpack_require__(/*! @/utils/tools */ 50);
 var _store = _interopRequireDefault(__webpack_require__(/*! @/store */ 40));
 // 订单Mixins

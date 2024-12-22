@@ -53,6 +53,7 @@ export default {
     },
     methods: {
         handleClick(link) {
+            if(link?.params?.url) link.path = link.params.url
             navigateTo(link)
         }
     },
