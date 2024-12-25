@@ -1,42 +1,118 @@
 <template>
     <view class="model-detail" :class="themeName">
         <navbar title="模型详情"></navbar>
-        <view class="media">
-            <view class="media-title">我的视频</view>
-            <view class="media-list">
-                <video class="video-container" :src="videoUrl" :autoplay="true"></video>
+        <view class="media-section">
+            <view class="section-title">
+                <text class="title-text">我的视频</text>
+                <view class="title-line"></view>
+            </view>
+            <view class="media-content">
+                <video class="video-player" :src="videoUrl" :autoplay="true"></video>
             </view>
         </view>
 
-        <view class="media">
-            <view class="media-title">我的图片</view>
-            <view class="media-list">
-                <view class="image-container" v-for="(item, index) in imgList" :key="index">
-                    <image class="image" :src="item.url" />
-                    <view class="image-text">{{ item.pos_desc }}</view>
+        <view class="media-section">
+            <view class="section-title">
+                <text class="title-text">我的图片</text> 
+                <view class="title-line"></view>
+            </view>
+            <view class="media-content">
+                <view class="image-item" v-for="(item, index) in imgList" :key="index">
+                    <image class="image" mode="widthFix" :src="item.url" />
+                    <view class="image-desc">{{ item.pos_desc }}</view>
                 </view>
             </view>
         </view>
 
-        <view class="media-btn">
-            <u-button size="medium" type="primary" @click="modelDelete">删除</u-button>
-            <u-button size="medium" type="error" @click="goPrint">查看模型商品详情</u-button>
+        <view class="action-buttons">
+            <u-button 
+                class="delete-btn"
+                size="large" 
+                type="primary" 
+                @click="modelDelete"
+            >删除模型</u-button>
+            <u-button 
+                class="detail-btn"
+                size="large" 
+                type="error" 
+                @click="goPrint"
+            >查看商品详情</u-button>
         </view>
+
+        <!-- 规格选择Popup -->
+        <goods-spec
+            v-model="showGoodsSpec"
+            :isNoMarking="true"
+            :defaultInfo="{
+                image: goodsInfo.image,
+                price: goodsInfo.sell_price,
+                stock: goodsInfo.total_stock,
+                unit: goodsInfo.unit_name,
+                limit_type: goodsInfo.limit_type,
+                limit_value: goodsInfo.limit_value,
+                buy_num: goodsInfo.buy_num,
+                cart_goods_num: goodsInfo.cart_goods_num
+            }"
+            @closer="showGoodsSpec = false"
+            :stock_show="goodsInfo.stock_show"
+            :reCheck="0"
+            :cartId="0"
+            :buttons="specButtonsList"
+            :spec-list="goodsInfo.spec_value"
+            :spec-map="goodsInfo.spec_value_list"
+            @buy="handleBuy"
+        />
+        <!-- E 规格 -->
     </view>
 </template>
 
 <script>
 import { getmodelDetail, apiModelDelete, apiModelGoodsDetail } from '@/api/model'
+import { OrderTypeEnum } from '@/utils/enum'
 export default {
     name: 'ModelDetail',
     data() {
         return {
             videoUrl: '',
             model_id: '',
-            imgList: []
+            imgList: [],
+            showGoodsSpec: false,
+            goodsInfo: {
+                free_shipping_tips: '',
+                service_guarantee: [],
+                member_level: {},
+                address: {},
+                stock_show: true
+            }, // 商品信息
+            specButtonsList: [
+                {
+                    event: 'buy',
+                    text: '立即购买'
+                }
+            ]
         }
     },
     methods: {
+        // 处理 立即购买
+        handleBuy({ spec, number }) {
+            const form = this.goodsInfo.type == 1 ? 'GOODS' : 'VIRTUAL'
+            this.$Router.push({
+                path: '/pages/model_goods_order/model_goods_order',
+                query: {
+                    from: OrderTypeEnum[form],
+                    model_id: this.model_id,
+                    payload: {
+                        source: 'buy_now',
+                        goods: [
+                            {
+                                goods_num: number,
+                                item_id: spec.id
+                            }
+                        ]
+                    }
+                }
+            })
+        },
         getmodelDetail() {
             getmodelDetail({
                 model_id: this.model_id
@@ -51,10 +127,8 @@ export default {
             apiModelGoodsDetail({
                 model_id: this.model_id
             }).then((data) => {
-                this.$Router.push({
-                    path: '/pages/model_goods_detail/model_goods_detail',
-                    query: { id: data.id, model_id: this.model_id }
-                })
+                this.goodsInfo = data
+                this.showGoodsSpec = true
             }).catch((err) => {})
         },
         modelDelete() {
@@ -69,12 +143,9 @@ export default {
                         }).then((res) => {
                             this.$toast({ title: "删除成功" });
                             setTimeout(() => {
-                                this.$Router.back(1, {
-                                    success: () => {
-                                        const { onLoad, options } = currentPage()
-                                        // 刷新上一个页面
-                                        onLoad && onLoad(options)
-                                    }
+                                uni.$emit('refreshData');
+                                uni.navigateBack({
+                                    delta: 1
                                 })
                             }, 1.2 * 1000);
                         }).catch((err) => {
@@ -96,43 +167,88 @@ export default {
 <style lang="scss">
 page {
     height: 100%;
-    padding: 0;
+    background: #f8f8f8;
 }
+
 .model-detail {
-    padding: 0 30rpx;
-    .media {
-        .media-title {
-            padding: 30rpx 0;
-            font-size: 48rpx;
-        }
-        .media-list {
+    padding: 20rpx;
+    
+    .media-section {
+        background: #fff;
+        border-radius: 16rpx;
+        margin-bottom: 20rpx;
+        padding: 30rpx 30rpx 60rpx;
+        box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.05);
+
+        .section-title {
             display: flex;
-            flex-direction: column;
-            .video-container {
-                width: 100%;
+            align-items: center;
+            margin-bottom: 30rpx;
+            
+            .title-text {
+                font-size: 32rpx;
+                font-weight: 600;
+                color: #333;
+                margin-right: 20rpx;
             }
-            .image-container {
+            
+            .title-line {
+                flex: 1;
+                height: 2rpx;
+                background: linear-gradient(to right, #eee, transparent);
+            }
+        }
+
+        .media-content {
+            .video-player {
                 width: 100%;
-                border: 1rpx solid #ccc;
-                margin-bottom: 30rpx;
-                border-radius: 5px;
-                background-color: #fff;
+                border-radius: 12rpx;
+            }
+
+            .image-item {
+                background: #fff;
+                border-radius: 12rpx;
                 overflow: hidden;
-                padding: 20rpx;
+                margin-bottom: 20rpx;
+                box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+
                 .image {
                     width: 100%;
+                    height: auto;
                 }
-                .image-text {
+
+                .image-desc {
+                    padding: 20rpx;
+                    font-size: 28rpx;
+                    color: #666;
                     text-align: center;
-                    padding-top: 20rpx;
+                    border-top: 2rpx solid #f5f5f5;
                 }
             }
         }
     }
-    .media-btn {
+
+    .action-buttons {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
         display: flex;
         justify-content: space-between;
-        padding-bottom: 30rpx;
+        padding: 20rpx;
+        background: #fff;
+        box-shadow: 0 -2rpx 10rpx rgba(0, 0, 0, 0.05);
+
+        .delete-btn, .detail-btn {
+            width: 48%;
+            border-radius: 80rpx;
+            font-size: 28rpx;
+            padding: 20rpx 0;
+            
+            &::after {
+                border: none;
+            }
+        }
     }
 }
 </style>

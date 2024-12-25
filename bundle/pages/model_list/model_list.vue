@@ -168,7 +168,7 @@ export default {
             console.log(id)
             this.$Router.push({
                 path: '/pages/model_detail/model_detail',
-                query: { model_id: id }
+                query: { model_id: id, mode: this.tabsIndex }
             })
         },
         // 模型预览
@@ -188,6 +188,9 @@ export default {
             return
         }
         this.changeCurrentTab(tabIndex)
+        uni.$on('refreshData',() => {
+            this.changeCurrentTab(tabIndex)
+        })
     },
     onUnload() {
         uni.$off('duringPayment')

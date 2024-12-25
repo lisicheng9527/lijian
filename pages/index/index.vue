@@ -33,9 +33,8 @@
 
     <view class="scan-menu">
       <view class="menu-list">
-        <view class="menu-item" @click="takeScan">
+        <view class="menu-item" @click="handleScan">
           <image
-            @click="takeScan"
             class="img-bg"
             src="https://28737108.s61i.faimallusr.com/4/AD0I1PzZDRAEGAAgjNjMkAYo0czxnQYwzgI4owE.png?_tm=3"
           />
@@ -110,6 +109,14 @@ export default {
     };
   },
   methods: {
+    async handleScan() {
+      // 检查登录状态
+      const token = uni.getStorageSync('token');
+      if (!token) {
+        await this.$store.dispatch('user/login');
+      }
+      this.takeScan();
+    },
     takeScan() {
       this.$Router.push({
         path: '/pages/scan/scan'

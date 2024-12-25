@@ -1,67 +1,47 @@
 <template>
   <view class="container">
-
     <view class="video-group">
-      <view class="tit">第二步：拍摄或上传照片</view>
-      <view>拍摄示例：</view>
+      <view class="title">第二步：拍摄或上传照片</view>
+      <view class="sub-title">拍摄示例：</view>
       <image src="https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png" class="sample-image" mode="aspectFit"></image>
     </view>
 
     <view class="img-container" v-if="imgList.length">
-      <image style="width: 80px; height: 80px; margin: 0 10px 10px 0;" v-for="item in imgList" :key="item.uri" :src="item.uri"></image>
-      <image style="width: 80px; height: 80px; margin-bottom: 10px;" @click="chooseVideo" v-if="imgList.length < 8" src="https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215150516846201004.png"></image>
+      
+      <view class="preview-img" v-for="(item, index) in imgList" :key="item.uri">
+        <image class="img-item" :src="item.uri"></image>
+        <u-icon @click="imgList.splice(index, 1)" class="close-btn" name="close-circle-fill" size="48rpx" />
+      </view>
+      
+      <image class="upload-btn" @click="chooseVideo" v-if="imgList.length < 8" src="https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215150516846201004.png"></image>
     </view>
 
     <view class="tips-section" v-else>
       <image @click="chooseVideo" src="https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215150516846201004.png" class="plus-icon" mode="aspectFit"></image>
       <view class="tips-list">
-        <text>1、尽量在光线充足的环境下拍摄</text>
-        <text>2、不要带反光的配饰</text>
+        <text class="tip-item">1、尽量在光线充足的环境下拍摄</text>
+        <text class="tip-item">2、不要带反光的配饰</text>
       </view>
     </view>
 
-    <view style="padding-bottom: 20px;">照片和视频上传过程中，请不要关闭本页！建模过程通常需要20分钟以上，照片和视频将会存在手机上，创建好的模型可以在我的-我的手办中查看。</view>
+    <view class="notice">照片和视频上传过程中，请不要关闭本页！建模过程通常需要20分钟以上，照片和视频将会存在手机上，创建好的模型可以在我的-我的手办中查看。</view>
     
     <view class="photo-template">
       <view class="temp-pic">
-        <view class="pic-item">
-          <image src="https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png" mode="aspectFit" />
-          <view class="pic-txt">正脸照</view>
-        </view>
-        <view class="pic-item">
-          <image src="https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png" mode="aspectFit" />
-          <view class="pic-txt">左侧脸</view>
-        </view>
-        <view class="pic-item">
-          <image src="https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png" mode="aspectFit" />
-          <view class="pic-txt">右侧脸</view>
-        </view>
-        <view class="pic-item">
-          <image src="https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png" mode="aspectFit" />
-          <view class="pic-txt">后脑</view>
+        <view class="pic-item" v-for="(item, index) in photoTemplates1" :key="index">
+          <image :src="item.src" mode="aspectFit" />
+          <view class="pic-txt">{{item.text}}</view>
         </view>
       </view>
       <view class="temp-pic">
-        <view class="pic-item">
-          <image src="https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png" mode="aspectFit" />
-          <view class="pic-txt">头顶</view>
-        </view>
-        <view class="pic-item">
-          <image src="https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png" mode="aspectFit" />
-          <view class="pic-txt">眼睛</view>
-        </view>
-        <view class="pic-item">
-          <image src="https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png" mode="aspectFit" />
-          <view class="pic-txt">左手</view>
-        </view>
-        <view class="pic-item">
-          <image src="https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png" mode="aspectFit" />
-          <view class="pic-txt">右手</view>
+        <view class="pic-item" v-for="(item, index) in photoTemplates2" :key="index">
+          <image :src="item.src" mode="aspectFit" />
+          <view class="pic-txt">{{item.text}}</view>
         </view>
       </view>
     </view>
 
-    <view>
+    <view class="btn-wrapper">
       <button class="next-button" @click="nextStep">下一步</button>
     </view>
   </view>
@@ -76,7 +56,19 @@ export default {
       temporaryUrl: "",
       imgList: [],
       fileName: '',
-      fileType: ''
+      fileType: '',
+      photoTemplates1: [
+        {src: 'https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png', text: '正脸照'},
+        {src: 'https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png', text: '左侧脸'},
+        {src: 'https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png', text: '右侧脸'},
+        {src: 'https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png', text: '后脑'}
+      ],
+      photoTemplates2: [
+        {src: 'https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png', text: '头顶'},
+        {src: 'https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png', text: '眼睛'},
+        {src: 'https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png', text: '左手'},
+        {src: 'https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png', text: '右手'}
+      ]
     };
   },
   methods: {
@@ -112,7 +104,7 @@ export default {
         }
       });
     },
-    uploadFile(opt) { // 接口文档：https://cloud.tencent.com/document/product/436/14690#.E7.AD.BE.E5.90.8D.E4.BF.9D.E6.8A.A4
+    uploadFile(opt) {
       var camSafeUrlEncode = function (str) {
         return encodeURIComponent(str)
         .replace(/!/g, '%21')
@@ -123,7 +115,7 @@ export default {
       };
       var formData = {
           key: opt.cosKey,
-          policy: opt.policy, // 这个传 policy 的 base64 字符串
+          policy: opt.policy,
           name: "x-cos-return-body",
           success_action_status: 200,
           'q-sign-algorithm': opt.qSignAlgorithm,
@@ -131,10 +123,9 @@ export default {
           'q-key-time': opt.qKeyTime,
           'q-signature': opt.qSignature,
       };
-      // 如果服务端用了临时密钥计算，需要传 x-cos-security-token
       if (opt.securityToken) formData['x-cos-security-token'] = opt.securityToken;
       uni.uploadFile({
-          url: 'https://' + opt.cosHost, //仅为示例，非真实的接口地址
+          url: 'https://' + opt.cosHost,
           filePath: this.temporaryUrl,
           name: 'file',
           formData: formData,
@@ -181,8 +172,8 @@ export default {
             icon: 'none'
           })
           setTimeout(() => {
-            this.$Router.replace({
-              path: "/bundle/pages/model_list/model_list"
+            uni.reLaunch({
+              url: "/bundle/pages/model_list/model_list"
             });
           }, 1000)
         }
@@ -194,92 +185,149 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-  padding: 20px;
+  padding: 20rpx 30rpx;
+  background: #f8f8f8;
+  min-height: 100vh;
 }
-.photo-template {
-  .temp-pic {
-    display: flex;
-    height: 90px;
-    .pic-item {
-      flex: 1;
-      height: 58px;
-      padding: 0 5px;
-      text-align: center;
-    }
+
+.video-group {
+  margin-bottom: 40rpx;
+  
+  .title {
+    font-size: 36rpx;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20rpx;
   }
-  uni-image {
-    width: 100%;
-    height: 100%;
-  }
-}
-.video-con {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.video-group .tit{
-  font-size: 24px;
-  padding-bottom: 10px;
-}
-.video-con video {
-  width: 100%;
-}
-.form-group {
-  margin-bottom: 20px;
-  .label {
-    font-size: 20px;
-  }
-  .model-input {
-    padding: 10px;
-    border: 1px solid #000;
+
+  .sub-title {
+    font-size: 28rpx;
+    color: #666;
+    margin-bottom: 16rpx;
   }
 }
-.btn {
-  border: 1px solid #333;
-  margin-bottom: 20px;
-}
-.example-section {
-  margin-bottom: 20px;
-}
-.example-title {
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  display: block;
-}
-.example-description {
-  font-size: 14px;
-  color: #666;
-  margin-top: 10px;
-}
+
 .sample-image {
   width: 100%;
-  margin-bottom: 10px;
+  height: 300rpx;
+  border-radius: 12rpx;
 }
+
+.img-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20rpx;
+  margin-bottom: 40rpx;
+
+  .preview-img {
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 8rpx;
+    position: relative;
+    .img-item {
+      width: 100%;
+      height: inherit;
+    }
+    .close-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  .upload-btn {
+    width: 160rpx;
+    height: 160rpx;
+  }
+}
+
 .tips-section {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  background: #fff;
+  padding: 20rpx;
+  border-radius: 12rpx;
+  margin-bottom: 40rpx;
+
+  .plus-icon {
+    width: 160rpx;
+    height: 160rpx;
+    margin-right: 20rpx;
+  }
+
+  .tips-list {
+    flex: 1;
+
+    .tip-item {
+      display: block;
+      font-size: 28rpx;
+      color: #666;
+      line-height: 1.6;
+    }
+  }
 }
-.plus-icon {
-  width: 100px;
-  height: 100px;
-  margin-right: 10px;
+
+.notice {
+  font-size: 26rpx;
+  color: #999;
+  line-height: 1.6;
+  padding: 20rpx;
+  background: rgba(255,247,231,0.6);
+  border-radius: 8rpx;
+  margin-bottom: 40rpx;
 }
-.tips-list {
-  flex: 1;
+
+.photo-template {
+  background: #fff;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  margin-bottom: 40rpx;
+
+  .temp-pic {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30rpx;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .pic-item {
+      width: 160rpx;
+      text-align: center;
+
+      image {
+        width: 100%;
+        height: 160rpx;
+        border-radius: 8rpx;
+        margin-bottom: 10rpx;
+      }
+
+      .pic-txt {
+        font-size: 24rpx;
+        color: #666;
+      }
+    }
+  }
 }
-.tips-list text {
-  display: block;
-  font-size: 14px;
-  color: #333;
-  margin-bottom: 5px;
-}
-.next-button {
-  background-color: #007aff;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  border: none;
-  border-radius: 5px;
+
+.btn-wrapper {
+  padding: 40rpx 0;
+
+  .next-button {
+    width: 100%;
+    height: 88rpx;
+    line-height: 88rpx;
+    background: #007aff;
+    color: #fff;
+    font-size: 32rpx;
+    border-radius: 44rpx;
+    text-align: center;
+    border: none;
+
+    &:active {
+      opacity: 0.8;
+    }
+  }
 }
 </style>
