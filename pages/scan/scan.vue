@@ -40,7 +40,7 @@
     </view>
 
     <view class="video-preview" v-if="temporaryUrl">
-      <video :src="temporaryUrl" controls class="preview-video"></video>
+      <video :src="temporaryUrl" controls :autoplay="true" class="preview-video"></video>
       <view class="btn-wrapper">
         <button class="btn-secondary" @click="reset">重新选择</button>
       </view>

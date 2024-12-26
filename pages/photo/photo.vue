@@ -156,6 +156,13 @@ export default {
       let fileUrl = uni.getStorageSync('fileUrl');
       console.log(formName)
       console.log(fileUrl)
+      if(!this.imgList.length) {
+        uni.showToast({
+          title: '请先拍摄或上传照片',
+          icon: 'none'
+        })
+        return
+      }
       uni.showLoading({
         title: '文件上传中...',
         mask: true
@@ -220,10 +227,11 @@ export default {
   margin-bottom: 40rpx;
 
   .preview-img {
-    width: 160rpx;
-    height: 160rpx;
+    width: 158rpx;
+    height: 158rpx;
     border-radius: 8rpx;
     position: relative;
+    border: 3rpx solid #999;
     .img-item {
       width: 100%;
       height: inherit;

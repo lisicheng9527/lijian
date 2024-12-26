@@ -36,7 +36,7 @@
                 size="large" 
                 type="error" 
                 @click="goPrint"
-            >查看商品详情</u-button>
+            >查看商品规格</u-button>
         </view>
 
         <!-- 规格选择Popup -->

@@ -8,13 +8,13 @@
 				<view class="navbar-lists" @tap.stop="showFloat = !showFloat">
 					<u-icon :name="require('@/static/images/icon_list.png')" :size="32"></u-icon>
 					<view class="navbar-float" v-show="showFloat">
-						<router-link v-for="(item, index) in navLists" :key="index" :to="item.url" :nav-type="item.type"
+						<view v-for="(item, index) in navLists" :key="index" @click="linkJump(item.url)"
 							class="float-item">
 							<view class="flex">
 								<u-icon :name="item.icon" :size="44"></u-icon>
 								<text class="m-l-20">{{ item.name }}</text>
 							</view>
-						</router-link>
+						</view>
 					</view>
 				</view>
 			</view>
@@ -55,19 +55,9 @@
 			return {
 				isIndex: false,
 				navLists: [{
-					url: '/pages/index/index',
+					url: '/',
 					name: '首页',
 					icon: require('@/static/images/icon_home.png'),
-					type: 'replaceAll'
-				}, {
-					url: '/pages/goods_search/goods_search',
-					name: '搜索',
-					icon: require('@/static/images/icon_search.png'),
-					type: 'push'
-				}, {
-					url: '/pages/shop_cart/shop_cart',
-					name: '购物车',
-					icon: require('@/static/images/icon_carts.png'),
 					type: 'replaceAll'
 				}, {
 					url: '/pages/user/user',
@@ -79,12 +69,15 @@
 			};
 		},
 		methods: {
+			linkJump(url) {
+				this.$Router.replaceAll(url)
+			},
 			goBack() {
 				if (!this.isIndex) {
 					this.$Router.back()
 					return
 				}
-				this.$Router.replaceAll('/pages/index/index')
+				this.$Router.replaceAll('/')
 			}
 		},
 		computed: {

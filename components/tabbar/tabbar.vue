@@ -61,6 +61,8 @@ export default {
     },
     methods: {
         changeTab(link) {
+            console.log(link);
+            console.log(this.basePages);
             if (this.basePages.includes(link.path)) {
                 uni.switchTab({
                     url: link.path
@@ -103,6 +105,7 @@ export default {
             return '/' + currentPage().route
         },
         isShow() {
+            console.log(this.content.data);
             return (
                 this.content.data &&
                 this.content.data.some((item) => item.link.path == this.currentPath)
