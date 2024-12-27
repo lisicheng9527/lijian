@@ -1,48 +1,166 @@
 <template>
-  <view class="container">
-    <view class="video-group">
-      <view class="title">第二步：拍摄或上传照片</view>
-      <view class="sub-title">拍摄示例：</view>
-      <image src="https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png" class="sample-image" mode="aspectFit"></image>
-    </view>
-
-    <view class="img-container" v-if="imgList.length">
-      
-      <view class="preview-img" v-for="(item, index) in imgList" :key="item.uri">
-        <image class="img-item" :src="item.uri"></image>
-        <u-icon @click="imgList.splice(index, 1)" class="close-btn" name="close-circle-fill" size="48rpx" />
-      </view>
-      
-      <image class="upload-btn" @click="chooseVideo" v-if="imgList.length < 8" src="https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215150516846201004.png"></image>
-    </view>
-
-    <view class="tips-section" v-else>
-      <image @click="chooseVideo" src="https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215150516846201004.png" class="plus-icon" mode="aspectFit"></image>
-      <view class="tips-list">
-        <text class="tip-item">1、尽量在光线充足的环境下拍摄</text>
-        <text class="tip-item">2、不要带反光的配饰</text>
-      </view>
-    </view>
-
-    <view class="notice">照片和视频上传过程中，请不要关闭本页！建模过程通常需要20分钟以上，照片和视频将会存在手机上，创建好的模型可以在我的-我的手办中查看。</view>
+  <view class="photo-container">
+    <navbar title="创建模型" :background="{ background: '#fff' }" />
     
-    <view class="photo-template">
-      <view class="temp-pic">
-        <view class="pic-item" v-for="(item, index) in photoTemplates1" :key="index">
-          <image :src="item.src" mode="aspectFit" />
-          <view class="pic-txt">{{item.text}}</view>
+    <!-- 步骤指示器 -->
+    <view class="step-indicator">
+      <view class="step-wrapper">
+        <view 
+          class="step completed" 
+          @click="goToStep(1)"
+        >
+          <view class="step-content">
+            <view class="step-num">1</view>
+            <view class="step-info">
+              <text class="step-name">拍摄视频</text>
+              <text class="step-desc">上传一段完整视频</text>
+            </view>
+          </view>
+          <view class="step-progress"></view>
         </view>
-      </view>
-      <view class="temp-pic">
-        <view class="pic-item" v-for="(item, index) in photoTemplates2" :key="index">
-          <image :src="item.src" mode="aspectFit" />
-          <view class="pic-txt">{{item.text}}</view>
+        
+        <view 
+          class="step active"
+          @click="goToStep(2)"
+        >
+          <view class="step-content">
+            <view class="step-num">2</view>
+            <view class="step-info">
+              <text class="step-name">拍摄照片</text>
+              <text class="step-desc">拍摄8张不同角度照片</text>
+            </view>
+          </view>
+          <view class="step-progress"></view>
+        </view>
+        
+        <view 
+          class="step" 
+          :class="{ 'disabled': imgList.length < 8 }"
+          @click="goToStep(3)"
+        >
+          <view class="step-content">
+            <view class="step-num">3</view>
+            <view class="step-info">
+              <text class="step-name">生成模型</text>
+              <text class="step-desc">AI自动生成3D模型</text>
+            </view>
+          </view>
         </view>
       </view>
     </view>
 
-    <view class="btn-wrapper">
-      <button class="next-button" @click="nextStep">下一步</button>
+    <!-- 上传区域 -->
+    <view class="upload-section">
+      <view class="section-title">
+        <view class="title-main">
+          <view class="title-left">
+            <text class="title-text">拍摄或上传照片</text>
+            <text class="title-desc">请按照示例拍摄8张不同角度的照片</text>
+          </view>
+          <view class="upload-count">{{ imgList.length }}/8</view>
+        </view>
+      </view>
+
+      <view class="photo-grid">
+        <view 
+          class="photo-item" 
+          v-for="(item, index) in imgList" 
+          :key="item.uri"
+        >
+          <image class="photo-img" :src="item.uri" mode="aspectFill"></image>
+          <view class="delete-btn" @click="imgList.splice(index, 1)">
+            <u-icon name="close" color="#fff" size="24"></u-icon>
+          </view>
+        </view>
+
+        <view 
+          class="upload-card" 
+          @click="chooseVideo" 
+          v-if="imgList.length < 8"
+        >
+          <u-icon name="camera-fill" size="56" color="#FF4D4F"></u-icon>
+          <text class="card-title">添加照片</text>
+          <text class="card-desc">支持拍摄或上传</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 拍摄示例 -->
+    <view class="example-section">
+      <view class="section-title">
+        <view class="title-main">
+          <view class="title-left">
+            <text class="title-text">拍摄示例</text>
+            <text class="title-desc">请参考以下示例进行拍摄</text>
+          </view>
+        </view>
+      </view>
+
+      <view class="example-grid">
+        <view 
+          class="example-item" 
+          v-for="(item, index) in photoTemplates1" 
+          :key="index"
+        >
+          <image 
+            :src="item.src" 
+            mode="aspectFill" 
+            class="example-img"
+            @error="handleImageError(index, 1)"
+          ></image>
+          <text class="example-text">{{item.text}}</text>
+        </view>
+      </view>
+
+      <view class="example-grid">
+        <view 
+          class="example-item" 
+          v-for="(item, index) in photoTemplates2" 
+          :key="index"
+        >
+          <image 
+            :src="item.src" 
+            mode="aspectFill" 
+            class="example-img"
+            @error="handleImageError(index, 2)"
+          ></image>
+          <text class="example-text">{{item.text}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 拍摄提示 -->
+    <view class="tips-section">
+      <view class="section-title">
+        <text class="title-text">拍摄注意事项</text>
+      </view>
+      <view class="tips-list">
+        <view class="tip-item">
+          <u-icon name="checkmark-circle" size="32" color="#FF4D4F"></u-icon>
+          <text class="tip-text">尽量在光线充足的环境下拍摄</text>
+        </view>
+        <view class="tip-item">
+          <u-icon name="checkmark-circle" size="32" color="#FF4D4F"></u-icon>
+          <text class="tip-text">不要带反光的配饰</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 重要提示 -->
+    <view class="notice-section">
+      <view class="notice-content">
+        <u-icon name="info-circle" size="36" color="#FF4D4F"></u-icon>
+        <text class="notice-text">照片和视频上传过程中，请不要关闭本页！建模过程通常需要20分钟以上，照片和视频将会存在手机上创建好的模型可以在我的-我的模型中查看。</text>
+      </view>
+    </view>
+
+    <!-- 底部按钮 -->
+    <view class="bottom-button">
+      <button 
+        class="submit-btn" 
+        :class="{'submit-btn--disabled': imgList.length < 8}"
+        @click="nextStep"
+      >下一步</button>
     </view>
   </view>
 </template>
@@ -58,17 +176,18 @@ export default {
       fileName: '',
       fileType: '',
       photoTemplates1: [
-        {src: 'https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png', text: '正脸照'},
-        {src: 'https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png', text: '左侧脸'},
-        {src: 'https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png', text: '右侧脸'},
-        {src: 'https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png', text: '后脑'}
+        {src: 'https://testfile.zhihuischool.com.cn/uploads/images/20241225/20241225175640c55946963.png', text: '正脸照'},
+        {src: 'https://testfile.zhihuischool.com.cn/uploads/images/20241226/202412262000162.jpg', text: '左侧脸'},
+        {src: 'https://testfile.zhihuischool.com.cn/uploads/images/20241226/202412262000163.jpg', text: '右侧脸'},
+        {src: 'https://testfile.zhihuischool.com.cn/uploads/images/20241226/202412262000164.jpg', text: '后脑'}
       ],
       photoTemplates2: [
-        {src: 'https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png', text: '头顶'},
-        {src: 'https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png', text: '眼睛'},
-        {src: 'https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png', text: '左手'},
-        {src: 'https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png', text: '右手'}
-      ]
+        {src: 'https://testfile.zhihuischool.com.cn/uploads/images/20241226/202412262000165.jpg', text: '头顶'},
+        {src: 'https://testfile.zhihuischool.com.cn/uploads/images/20241226/202412262000166.jpg', text: '眼睛'},
+        {src: 'https://testfile.zhihuischool.com.cn/uploads/images/20241226/202412262000167.jpg', text: '左手'},
+        {src: 'https://testfile.zhihuischool.com.cn/uploads/images/20241226/202412262000168.jpg', text: '右手'}
+      ],
+      defaultImage: 'https://testfile.zhihuischool.com.cn/uploads/images/default/example_photo.jpg'
     };
   },
   methods: {
@@ -185,156 +304,389 @@ export default {
           }, 1000)
         }
       })
+    },
+    goToStep(step) {
+      if (step === 1) {
+        this.$Router.back();
+      } else if (step === 3) {
+        if (this.imgList.length < 8) {
+          uni.showToast({
+            title: '请先完成8张照片的拍摄',
+            icon: 'none'
+          });
+          return;
+        }
+        this.nextStep();
+      }
+    },
+    handleImageError(index, group) {
+      console.error(`示例图片加载失败 - 组${group} 索引${index}`);
+      if (group === 1) {
+        this.$set(this.photoTemplates1[index], 'src', this.defaultImage);
+      } else {
+        this.$set(this.photoTemplates2[index], 'src', this.defaultImage);
+      }
+      // 尝试预加载默认图片
+      uni.getImageInfo({
+        src: this.defaultImage,
+        success: () => {
+          console.log('默认图片预加载成功');
+        },
+        fail: (err) => {
+          console.error('默认图片预加载失败：', err);
+        }
+      });
     }
+  },
+  created() {
+    // 预加载所有示例图片
+    const allImages = [...this.photoTemplates1, ...this.photoTemplates2];
+    allImages.forEach(item => {
+      uni.getImageInfo({
+        src: item.src,
+        success: () => {
+          console.log(`图片预加载成功: ${item.text}`);
+        },
+        fail: (err) => {
+          console.error(`图片预加载失败: ${item.text}`, err);
+        }
+      });
+    });
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.container {
-  padding: 20rpx 30rpx;
-  background: #f8f8f8;
+.photo-container {
   min-height: 100vh;
+  background: #f8f8f8;
+  padding-bottom: calc(140rpx + env(safe-area-inset-bottom));
 }
 
-.video-group {
-  margin-bottom: 40rpx;
-  
-  .title {
-    font-size: 36rpx;
+.step-indicator {
+  padding: 40rpx 30rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+
+  .step-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 32rpx;
+  }
+
+  .step {
+    position: relative;
+    
+    &.active {
+      .step-num {
+        background: #FF4D4F;
+        color: #fff;
+      }
+      .step-name {
+        color: #FF4D4F;
+      }
+      .step-progress {
+        background: #FF4D4F;
+      }
+    }
+
+    &.completed {
+      .step-num {
+        background: #52c41a;
+        color: #fff;
+      }
+      .step-name {
+        color: #52c41a;
+      }
+      .step-progress {
+        background: #52c41a;
+      }
+    }
+    
+    &.disabled {
+      opacity: 0.5;
+      .step-progress {
+        background: #eee;
+      }
+    }
+
+    .step-content {
+      display: flex;
+      align-items: center;
+      gap: 24rpx;
+      padding: 16rpx 0;
+    }
+
+    .step-num {
+      width: 48rpx;
+      height: 48rpx;
+      border-radius: 50%;
+      background: #f5f5f5;
+      color: #999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26rpx;
+      font-weight: 600;
+    }
+
+    .step-info {
+      flex: 1;
+    }
+
+    .step-name {
+      font-size: 28rpx;
+      font-weight: 600;
+      color: #999;
+      margin-bottom: 4rpx;
+    }
+
+    .step-desc {
+      font-size: 24rpx;
+      color: #999;
+    }
+
+    .step-progress {
+      position: absolute;
+      left: 24rpx;
+      top: 80rpx;
+      width: 2rpx;
+      height: calc(100% - 32rpx);
+      background: #eee;
+    }
+
+    &:last-child {
+      .step-progress {
+        display: none;
+      }
+    }
+  }
+}
+
+.section-title {
+  margin-bottom: 24rpx;
+
+  .title-text {
+    font-size: 32rpx;
     font-weight: 600;
     color: #333;
-    margin-bottom: 20rpx;
+    display: block;
   }
 
-  .sub-title {
-    font-size: 28rpx;
-    color: #666;
-    margin-bottom: 16rpx;
-  }
-}
-
-.sample-image {
-  width: 100%;
-  height: 300rpx;
-  border-radius: 12rpx;
-}
-
-.img-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20rpx;
-  margin-bottom: 40rpx;
-
-  .preview-img {
-    width: 158rpx;
-    height: 158rpx;
-    border-radius: 8rpx;
-    position: relative;
-    border: 3rpx solid #999;
-    .img-item {
-      width: 100%;
-      height: inherit;
-    }
-    .close-btn {
-      position: absolute;
-      top: 0;
-      right: 0;
-    }
-  }
-
-  .upload-btn {
-    width: 160rpx;
-    height: 160rpx;
+  .title-desc {
+    font-size: 24rpx;
+    color: #999;
+    margin-top: 8rpx;
+    display: block;
   }
 }
 
-.tips-section {
-  display: flex;
-  align-items: center;
+.upload-section {
   background: #fff;
-  padding: 20rpx;
-  border-radius: 12rpx;
-  margin-bottom: 40rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
 
-  .plus-icon {
-    width: 160rpx;
-    height: 160rpx;
+  .title-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24rpx;
+  }
+
+  .title-left {
+    flex: 1;
     margin-right: 20rpx;
   }
 
-  .tips-list {
-    flex: 1;
+  .upload-count {
+    font-size: 32rpx;
+    font-weight: 600;
+    color: #FF4D4F;
+  }
 
-    .tip-item {
-      display: block;
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20rpx;
+  }
+
+  .photo-item {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 12rpx;
+    overflow: hidden;
+
+    .photo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .delete-btn {
+      position: absolute;
+      top: 8rpx;
+      right: 8rpx;
+      width: 40rpx;
+      height: 40rpx;
+      background: rgba(0,0,0,0.5);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .upload-card {
+    aspect-ratio: 1;
+    background: #FFF7F7;
+    border-radius: 12rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+
+    &:active {
+      transform: scale(0.98);
+    }
+
+    .card-title {
+      margin-top: 24rpx;
       font-size: 28rpx;
-      color: #666;
-      line-height: 1.6;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .card-desc {
+      margin-top: 8rpx;
+      font-size: 24rpx;
+      color: #999;
     }
   }
 }
 
-.notice {
-  font-size: 26rpx;
-  color: #999;
-  line-height: 1.6;
-  padding: 20rpx;
-  background: rgba(255,247,231,0.6);
-  border-radius: 8rpx;
-  margin-bottom: 40rpx;
-}
-
-.photo-template {
+.example-section {
   background: #fff;
-  border-radius: 12rpx;
-  padding: 20rpx;
-  margin-bottom: 40rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
 
-  .temp-pic {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 30rpx;
+  .example-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20rpx;
+    margin-bottom: 20rpx;
 
     &:last-child {
       margin-bottom: 0;
     }
+  }
 
-    .pic-item {
-      width: 160rpx;
-      text-align: center;
+  .example-item {
+    text-align: center;
 
-      image {
+    .example-img {
+      width: 100%;
+      height: 160rpx;
+      border-radius: 8rpx;
+      margin-bottom: 8rpx;
+      background: #f8f8f8;
+      position: relative;
+      overflow: hidden;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
-        height: 160rpx;
-        border-radius: 8rpx;
-        margin-bottom: 10rpx;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.03);
       }
+    }
 
-      .pic-txt {
-        font-size: 24rpx;
+    .example-text {
+      font-size: 24rpx;
+      color: #666;
+      line-height: 1.4;
+      display: block;
+      padding: 0 8rpx;
+    }
+  }
+}
+
+.tips-section {
+  background: #fff;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+
+  .tips-list {
+    .tip-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20rpx;
+
+      .tip-text {
+        margin-left: 12rpx;
+        font-size: 26rpx;
         color: #666;
       }
     }
   }
 }
 
-.btn-wrapper {
-  padding: 40rpx 0;
+.notice-section {
+  background: #fff;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
 
-  .next-button {
+  .notice-content {
+    display: flex;
+    padding: 20rpx;
+    background: rgba(255,247,231,0.6);
+    border-radius: 12rpx;
+
+    .notice-text {
+      flex: 1;
+      margin-left: 12rpx;
+      font-size: 26rpx;
+      color: #666;
+      line-height: 1.6;
+    }
+  }
+}
+
+.bottom-button {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 20rpx 30rpx;
+  padding-bottom: calc(20rpx + env(safe-area-inset-bottom));
+  background: #fff;
+  box-shadow: 0 -2rpx 10rpx rgba(0, 0, 0, 0.05);
+
+  .submit-btn {
     width: 100%;
     height: 88rpx;
-    line-height: 88rpx;
-    background: #007aff;
+    border-radius: 44rpx;
     color: #fff;
     font-size: 32rpx;
-    border-radius: 44rpx;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: none;
+    background: linear-gradient(to right, #FF4D4F, #FF7875);
+    box-shadow: 0 8rpx 16rpx rgba(255, 77, 79, 0.2);
+    transition: all 0.3s ease;
+
+    &--disabled {
+      opacity: 0.5;
+      box-shadow: none;
+    }
 
     &:active {
-      opacity: 0.8;
+      transform: translateY(2rpx);
+      box-shadow: 0 4rpx 8rpx rgba(255, 77, 79, 0.2);
     }
   }
 }

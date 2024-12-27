@@ -1,45 +1,70 @@
 <template>
     <view class="model-detail" :class="themeName">
-        <navbar title="模型详情"></navbar>
-        <view class="media-section">
-            <view class="section-title">
-                <text class="title-text">我的视频</text>
-                <view class="title-line"></view>
+        <navbar title="模型详情" class="custom-navbar"></navbar>
+        
+        <!-- 视频部分 -->
+        <view class="content-container">
+            <view class="media-section" v-if="videoUrl">
+                <view class="section-header">
+                    <text class="section-title">模型视频</text>
+                    <view class="section-divider"></view>
+                </view>
+                <view class="video-wrapper">
+                    <video 
+                        class="video-player" 
+                        :src="videoUrl" 
+                        :autoplay="true"
+                        object-fit="cover"
+                    ></video>
+                </view>
             </view>
-            <view class="media-content">
-                <video class="video-player" :src="videoUrl" :autoplay="true"></video>
-            </view>
-        </view>
 
-        <view class="media-section">
-            <view class="section-title">
-                <text class="title-text">我的图片</text> 
-                <view class="title-line"></view>
-            </view>
-            <view class="media-content">
-                <view class="image-item" v-for="(item, index) in imgList" :key="index">
-                    <image class="image" mode="widthFix" :src="item.url" />
-                    <view class="image-desc">{{ item.pos_desc }}</view>
+            <!-- 图片部分 -->
+            <view class="media-section">
+                <view class="section-header">
+                    <text class="section-title">模型图片</text>
+                    <view class="section-divider"></view>
+                </view>
+                <view class="image-grid">
+                    <view 
+                        class="image-card" 
+                        v-for="(item, index) in imgList" 
+                        :key="index"
+                    >
+                        <image 
+                            class="preview-image" 
+                            mode="aspectFill" 
+                            :src="item.url" 
+                        />
+                        <view class="image-overlay">
+                            <text class="image-desc">{{ item.pos_desc }}</text>
+                        </view>
+                    </view>
                 </view>
             </view>
         </view>
 
-        <view class="action-buttons">
-            <u-button 
-                class="delete-btn"
-                size="large" 
-                type="primary" 
-                @click="modelDelete"
-            >删除模型</u-button>
-            <u-button 
-                class="detail-btn"
-                size="large" 
-                type="error" 
-                @click="goPrint"
-            >查看商品规格</u-button>
+        <!-- 底部操作按钮 -->
+        <view class="action-footer">
+            <view class="action-buttons">
+                <button 
+                    class="action-btn delete-btn"
+                    @click="modelDelete"
+                >
+                    <text class="btn-icon">🗑️</text>
+                    <text>删除模型</text>
+                </button>
+                <button 
+                    class="action-btn spec-btn"
+                    @click="goPrint"
+                >
+                    <text class="btn-icon">📋</text>
+                    <text>立即购买</text>
+                </button>
+            </view>
         </view>
 
-        <!-- 规格选择Popup -->
+        <!-- 规格选择弹窗 -->
         <goods-spec
             v-model="showGoodsSpec"
             :isNoMarking="true"
@@ -62,7 +87,6 @@
             :spec-map="goodsInfo.spec_value_list"
             @buy="handleBuy"
         />
-        <!-- E 规格 -->
     </view>
 </template>
 
@@ -164,89 +188,166 @@ export default {
 }
 </script>
 
-<style lang="scss">
-page {
-    height: 100%;
-    background: #f8f8f8;
-}
-
+<style lang="scss" scoped>
 .model-detail {
-    padding: 20rpx;
+    min-height: 100vh;
+    background: #f8fafc;
+    
+    .custom-navbar {
+        backdrop-filter: blur(8px);
+        background: rgba(255, 255, 255, 0.8);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+    
+    .content-container {
+        padding: 24rpx;
+    }
     
     .media-section {
         background: #fff;
-        border-radius: 16rpx;
-        margin-bottom: 20rpx;
-        padding: 30rpx 30rpx 60rpx;
-        box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.05);
-
-        .section-title {
+        border-radius: 24rpx;
+        margin-bottom: 24rpx;
+        padding: 24rpx;
+        box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.05);
+        
+        .section-header {
             display: flex;
             align-items: center;
-            margin-bottom: 30rpx;
+            margin-bottom: 24rpx;
             
-            .title-text {
+            .section-title {
                 font-size: 32rpx;
                 font-weight: 600;
-                color: #333;
-                margin-right: 20rpx;
+                color: #1e293b;
+                position: relative;
+                padding-left: 24rpx;
+                
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 6rpx;
+                    height: 28rpx;
+                    background: linear-gradient(135deg, #6366f1, #818cf8);
+                    border-radius: 3rpx;
+                }
             }
             
-            .title-line {
+            .section-divider {
                 flex: 1;
                 height: 2rpx;
-                background: linear-gradient(to right, #eee, transparent);
+                background: linear-gradient(to right, #e2e8f0, transparent);
+                margin-left: 24rpx;
             }
         }
-
-        .media-content {
+        
+        .video-wrapper {
+            border-radius: 16rpx;
+            overflow: hidden;
+            box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+            
             .video-player {
                 width: 100%;
-                border-radius: 12rpx;
+                height: 400rpx;
+                background: #000;
             }
-
-            .image-item {
-                background: #fff;
-                border-radius: 12rpx;
+        }
+        
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300rpx, 1fr));
+            gap: 20rpx;
+            
+            .image-card {
+                position: relative;
+                border-radius: 16rpx;
                 overflow: hidden;
-                margin-bottom: 20rpx;
-                box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
-
-                .image {
+                box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+                aspect-ratio: 1;
+                
+                .preview-image {
                     width: 100%;
-                    height: auto;
+                    height: 100%;
+                    transition: transform 0.3s ease;
+                    
+                    &:hover {
+                        transform: scale(1.05);
+                    }
                 }
-
-                .image-desc {
-                    padding: 20rpx;
-                    font-size: 28rpx;
-                    color: #666;
-                    text-align: center;
-                    border-top: 2rpx solid #f5f5f5;
+                
+                .image-overlay {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    padding: 16rpx;
+                    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+                    
+                    .image-desc {
+                        color: #fff;
+                        font-size: 26rpx;
+                        text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.3);
+                    }
                 }
             }
         }
     }
-
-    .action-buttons {
+    
+    .action-footer {
         position: fixed;
         bottom: 0;
         left: 0;
         right: 0;
-        display: flex;
-        justify-content: space-between;
-        padding: 20rpx;
-        background: #fff;
-        box-shadow: 0 -2rpx 10rpx rgba(0, 0, 0, 0.05);
-
-        .delete-btn, .detail-btn {
-            width: 48%;
-            border-radius: 80rpx;
-            font-size: 28rpx;
-            padding: 20rpx 0;
+        padding: 24rpx;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(8px);
+        box-shadow: 0 -4rpx 20rpx rgba(0, 0, 0, 0.05);
+        
+        .action-buttons {
+            display: flex;
+            gap: 20rpx;
             
-            &::after {
+            .action-btn {
+                flex: 1;
+                height: 88rpx;
                 border: none;
+                border-radius: 44rpx;
+                color: #fff;
+                font-size: 28rpx;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 12rpx;
+                transition: all 0.3s ease;
+                
+                .btn-icon {
+                    font-size: 32rpx;
+                }
+                
+                &.delete-btn {
+                    background: linear-gradient(135deg, #6366f1, #818cf8);
+                    box-shadow: 0 4rpx 12rpx rgba(99, 102, 241, 0.2);
+                    
+                    &:active {
+                        transform: translateY(2rpx);
+                        box-shadow: 0 2rpx 6rpx rgba(99, 102, 241, 0.1);
+                    }
+                }
+                
+                &.spec-btn {
+                    background: linear-gradient(135deg, #ef4444, #dc2626);
+                    box-shadow: 0 4rpx 12rpx rgba(239, 68, 68, 0.2);
+                    
+                    &:active {
+                        transform: translateY(2rpx);
+                        box-shadow: 0 2rpx 6rpx rgba(239, 68, 68, 0.1);
+                    }
+                }
             }
         }
     }

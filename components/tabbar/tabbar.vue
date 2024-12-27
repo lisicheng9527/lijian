@@ -105,7 +105,6 @@ export default {
             return '/' + currentPage().route
         },
         isShow() {
-            console.log(this.content.data);
             return (
                 this.content.data &&
                 this.content.data.some((item) => item.link.path == this.currentPath)

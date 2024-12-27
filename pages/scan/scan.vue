@@ -1,76 +1,225 @@
 <template>
-  <view class="container">
-    <view class="form-group">
+  <view class="scan-container">
+    <navbar title="创建模型" :background="{ background: '#fff' }" />
+    
+    <!-- 步骤指示器 -->
+    <view class="step-indicator">
+      <view class="step-wrapper">
+        <view 
+          class="step" 
+          :class="{ 'active': true }" 
+          @click="goToStep(1)"
+        >
+          <view class="step-content">
+            <view class="step-num">1</view>
+            <view class="step-info">
+              <text class="step-name">拍摄视频</text>
+              <text class="step-desc">上传一段完整视频</text>
+            </view>
+          </view>
+          <view class="step-progress"></view>
+        </view>
+        
+        <view 
+          class="step" 
+          :class="{ 'disabled': !temporaryUrl }"
+          @click="goToStep(2)"
+        >
+          <view class="step-content">
+            <view class="step-num">2</view>
+            <view class="step-info">
+              <text class="step-name">拍摄照片</text>
+              <text class="step-desc">拍摄8张不同角度照片</text>
+            </view>
+          </view>
+          <view class="step-progress"></view>
+        </view>
+        
+        <view 
+          class="step" 
+          :class="{ 'disabled': true }"
+          @click="goToStep(3)"
+        >
+          <view class="step-content">
+            <view class="step-num">3</view>
+            <view class="step-info">
+              <text class="step-name">生成模型</text>
+              <text class="step-desc">AI自动生成3D模型</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 表单区域 -->
+    <view class="form-section">
       <view class="form-item">
-        <text class="label">手办名称</text>
-        <input class="input" type="text" placeholder="请输入手办名称" v-model="formName" />
+        <input 
+          class="form-input" 
+          type="text" 
+          v-model="formName"
+          placeholder="给你的模型起个名字" 
+          placeholder-class="input-placeholder"
+        />
+        <view class="form-icon">
+          <u-icon name="edit-pen" size="40" color="#999"></u-icon>
+        </view>
       </view>
     </view>
 
-    <view class="video-group">
-      <view class="section-title">第一步：拍摄或上传视频</view>
-      <view class="sub-title">拍摄示例：</view>
-      <image src="https://testfile.zhihuischool.com.cn/uploads/images/20241215/20241215144313f68b38659.png" class="sample-image" mode="aspectFit"></image>
+    <!-- 视频预览/上传区域 -->
+    <view class="upload-section">
+      <view class="section-title">
+        <view class="title-main">
+          <view class="title-left">
+            <text class="title-text">拍摄或上传视频</text>
+            <text class="title-desc">请按照示例拍摄，确保视频清晰完整</text>
+          </view>
+          <view class="watch-example" @click="showExampleVideo = true">
+            <u-icon name="play-circle-fill" size="32" color="#FF4D4F"></u-icon>
+            <text>观看示例</text>
+          </view>
+        </view>
+      </view>
+      
+      <view class="video-area" v-if="temporaryUrl">
+        <video 
+          id="previewVideo"
+          :src="temporaryUrl" 
+          class="preview-video"
+          :autoplay="true"
+          controls
+          :enable-play-gesture="true"
+          :show-center-play-btn="true"
+          :show-play-btn="true"
+          :initial-time="0"
+          :enable-progress-gesture="true"
+          :show-progress="true"
+          :direction="0"
+          :codec="hardware"
+          @error="handleVideoError"
+          @play="handleVideoPlay"
+          @pause="handleVideoPause"
+        ></video>
+        <view class="video-actions">
+          <button class="action-btn delete" @click="reset">
+            <u-icon name="trash" size="36"></u-icon>
+            <text>删除视频</text>
+          </button>
+          <button class="action-btn reupload" @click="localUpload">
+            <u-icon name="reload" size="36"></u-icon>
+            <text>重新上传</text>
+          </button>
+        </view>
+      </view>
+      
+      <view class="upload-options" v-else>
+        <view class="upload-card camera" @click="takePhoto">
+          <u-icon name="camera-fill" size="56" color="#FF4D4F"></u-icon>
+          <text class="card-title">使用相机拍摄</text>
+          <text class="card-desc">立即开始录制视频</text>
+        </view>
+        <view class="upload-card gallery" @click="localUpload">
+          <u-icon name="folder-fill" size="56" color="#FF4D4F"></u-icon>
+          <text class="card-title">本地上传</text>
+          <text class="card-desc">从相册选择视频</text>
+        </view>
+      </view>
     </view>
 
+    <!-- 拍摄示例 -->
+    <u-popup
+      v-model="showExampleVideo"
+      mode="center"
+      width="90%"
+      height="auto"
+      border-radius="12"
+      :mask-close-able="true"
+      :safe-area-inset-bottom="true"
+    >
+      <view class="example-popup">
+        <view class="popup-header">
+          <text class="popup-title">拍摄示例</text>
+          <u-icon 
+            name="close" 
+            size="32" 
+            @click="showExampleVideo = false"
+          ></u-icon>
+        </view>
+        <video
+          id="exampleVideo"
+          src="https://testfile.zhihuischool.com.cn/uploads/video/20241226/20241226200016e57332396.mp4"
+          class="popup-video"
+          :controls="true"
+          :show-center-play-btn="true"
+          :enable-progress-gesture="true"
+          :show-progress="true"
+          :direction="0"
+          :codec="hardware"
+          object-fit="cover"
+          @fullscreenchange="handleFullscreenChange"
+          @error="handleExampleVideoError"
+        ></video>
+        <view class="popup-tips">
+          <text class="tips-title">拍摄要求：</text>
+          <text class="tips-content">请按照示例视频进行拍摄，确保拍摄环境光线充足，画面清晰。</text>
+        </view>
+      </view>
+    </u-popup>
+
+    <!-- 拍摄提示 -->
     <view class="tips-section">
-      <view class="tips-header">拍摄注意事项</view>
+      <view class="section-title">
+        <text class="title-text">拍摄注意事项</text>
+      </view>
       <view class="tips-list">
-        <view class="tip-item">
-          <text class="tip-dot">•</text>
-          <text class="tip-text">尽量在光线充足的环境下拍摄</text>
-        </view>
-        <view class="tip-item">
-          <text class="tip-dot">•</text>
-          <text class="tip-text">拍摄时以站姿为主，拍摄效果更佳</text>
-        </view>
-        <view class="tip-item">
-          <text class="tip-dot">•</text>
-          <text class="tip-text">肢体越垂直地面，模型手办精度越高</text>
-        </view>
-        <view class="tip-item">
-          <text class="tip-dot">•</text>
-          <text class="tip-text">拍摄时尽量让手指并拢</text>
-        </view>
-        <view class="tip-item">
-          <text class="tip-dot">•</text>
-          <text class="tip-text">等等</text>
+        <view class="tip-item" v-for="(tip, index) in tips" :key="index">
+          <u-icon name="checkmark-circle" size="32" :color="themeColor"></u-icon>
+          <text class="tip-text">{{tip}}</text>
         </view>
       </view>
     </view>
 
-    <view class="video-preview" v-if="temporaryUrl">
-      <video :src="temporaryUrl" controls :autoplay="true" class="preview-video"></video>
-      <view class="btn-wrapper">
-        <button class="btn-secondary" @click="reset">重新选择</button>
-      </view>
+    <!-- 底部按钮 -->
+    <view class="bottom-button">
+      <button 
+        class="submit-btn" 
+        :class="{'submit-btn--disabled': !canSubmit}"
+        @click="nextStep"
+      >下一步</button>
     </view>
-    <view class="upload-btns" v-else>
-      <button class="btn-primary" @click="takePhoto">
-        <text class="btn-icon">📸</text>
-        <text>使用相机拍摄</text>
-      </button>
-      <button class="btn-primary" @click="localUpload">
-        <text class="btn-icon">📁</text>
-        <text>本地上传</text>
-      </button>
-    </view>
-
-    <button class="btn-submit" @click="nextStep">下一步</button>
   </view>
 </template>
 
 <script>
 import { getPresignedUpload, presignedUpload } from '@/api/model'
+
 export default {
   data() {
     return {
-      formName: '',
+      formName: '我的模型' + new Date().getTime().toString().slice(-4),
       temporaryUrl: '',
       fileType: '',
-      fileName: ''
-    };
+      fileName: '',
+      showExampleVideo: false,
+      previewVideoContext: null,
+      exampleVideoContext: null,
+      tips: [
+        '尽量在光线充足的环境下拍摄',
+        '拍摄时以站姿为主，拍摄效果更佳',
+        '肢体越垂直地面，模型模型精度越高',
+        '拍摄时尽量让手指并拢',
+        '保持拍摄环境整洁，避免杂物干扰'
+      ]
+    }
   },
+
+  computed: {
+    canSubmit() {
+      return this.formName && this.temporaryUrl
+    }
+  },
+
   onShow(){
     const pages = getCurrentPages();
     if(pages && pages.length && pages[1] && pages[1].data) {
@@ -93,11 +242,39 @@ export default {
       var self = this;
       uni.chooseVideo({
         sourceType: ['album'],
+        compressed: false,
+        camera: 'back',
+        maxDuration: 60,
         success: function (res) {
-          console.log(res)
-          self.fileName = res.name
-          self.fileType = res?.tempFile?.type?.split('/')[1];
+          console.log('选择视频成功：', res)
+          if (res.size > 100 * 1024 * 1024) {
+            uni.showToast({
+              title: '视频大小不能超过100MB',
+              icon: 'none'
+            });
+            return;
+          }
+          if (res.duration > 60) {
+            uni.showToast({
+              title: '视频时长不能超过60秒',
+              icon: 'none'
+            });
+            return;
+          }
+          self.fileName = res.name || `video_${Date.now()}.mp4`
+          self.fileType = 'mp4'
           self.temporaryUrl = res.tempFilePath;
+          
+          self.$nextTick(() => {
+            self.previewVideoContext = uni.createVideoContext('previewVideo')
+          })
+        },
+        fail: function(err) {
+          console.error('选择视频失败：', err)
+          uni.showToast({
+            title: '选择视频失败',
+            icon: 'none'
+          })
         }
       });
     },
@@ -132,14 +309,22 @@ export default {
           name: 'file',
           formData: formData,
           success: (res) => {
-            if (![200, 204].includes(res.statusCode)) return callback && callback(res);
-            console.log(opt)
+            if (![200, 204].includes(res.statusCode)) {
+              console.error('上传失败：', res)
+              uni.hideLoading()
+              uni.showToast({
+                title: '上传失败，请重试',
+                icon: 'none'
+              })
+              return callback && callback(res);
+            }
+            console.log('上传成功：', opt)
             presignedUpload({
               name: this.fileName,
               type: 'video',
               fileuri: opt.cosKey
             }).then((result) => {
-              console.log(result)
+              console.log('预签名上传结果：', result)
               if(result.url) {
                 uni.hideLoading()
                 uni.setStorageSync('formName', this.formName)
@@ -149,16 +334,29 @@ export default {
                 })
               }
             })
+            .catch(err => {
+              console.error('预签名上传失败：', err)
+              uni.hideLoading()
+              uni.showToast({
+                title: '上传失败，请重试',
+                icon: 'none'
+              })
+            })
           },
           error(err) {
-            console.log(err)
+            console.error('上传错误：', err)
+            uni.hideLoading()
+            uni.showToast({
+              title: '上传失败，请重试',
+              icon: 'none'
+            })
           },
       });
     },
     nextStep() {
       if(!this.formName){
         uni.showToast({
-          title: '请输入手办名称',
+          title: '请输入模型名称',
           icon: 'none'
         });
         return;
@@ -183,149 +381,371 @@ export default {
       getPresignedUpload({ type: 'video', filename: this.fileName, filetype: this.fileType }).then((res) => {
         this.uploadFile(res);
       });
+    },
+    goToStep(step) {
+      if (step === 2) {
+        if (!this.formName || !this.temporaryUrl) {
+          uni.showToast({
+            title: '请先完成视频拍摄',
+            icon: 'none'
+          });
+          return;
+        }
+        this.$Router.push({
+          path: '/pages/photo/photo'
+        });
+      } else if (step === 3) {
+        uni.showToast({
+          title: '请先完成视频拍摄',
+          icon: 'none'
+        });
+      }
+    },
+    handleFullscreenChange(e) {
+      console.log('fullscreen change:', e)
+    },
+    handleVideoError(e) {
+      console.error('视频播放错误：', e)
+      uni.showToast({
+        title: '视频加载失败，请重试',
+        icon: 'none'
+      })
+    },
+    handleExampleVideoError(e) {
+      console.error('示例视频播放错误：', e)
+      uni.showToast({
+        title: '示例视频加载失败，请检查网络',
+        icon: 'none'
+      })
+    },
+    handleVideoPlay() {
+      console.log('视频开始播放')
+      if (this.exampleVideoContext) {
+        this.exampleVideoContext.pause()
+      }
+    },
+    handleVideoPause() {
+      console.log('视频暂停播放')
+    }
+  },
+  onReady() {
+    this.previewVideoContext = uni.createVideoContext('previewVideo')
+    this.exampleVideoContext = uni.createVideoContext('exampleVideo')
+  },
+  onHide() {
+    if (this.previewVideoContext) {
+      this.previewVideoContext.pause()
+    }
+    if (this.exampleVideoContext) {
+      this.exampleVideoContext.pause()
     }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.container {
-  padding: 30rpx;
+.scan-container {
+  min-height: 100vh;
   background: #f8f8f8;
+  padding-bottom: calc(140rpx + env(safe-area-inset-bottom));
 }
 
-.form-group {
-  margin-bottom: 40rpx;
-  
-  .form-item {
-    background: #fff;
-    padding: 20rpx;
-    border-radius: 12rpx;
+.step-indicator {
+  background: #fff;
+  padding: 40rpx 30rpx;
+  margin-bottom: 20rpx;
+
+  .step-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 32rpx;
+  }
+
+  .step {
+    position: relative;
     
-    .label {
-      font-size: 28rpx;
-      color: #333;
-      margin-bottom: 16rpx;
-      display: block;
+    &.active {
+      .step-num {
+        background: #FF4D4F;
+        color: #fff;
+      }
+      .step-name {
+        color: #FF4D4F;
+      }
+      .step-progress {
+        background: #FF4D4F;
+      }
     }
     
-    .input {
-      height: 80rpx;
-      padding: 0 20rpx;
-      border: 2rpx solid #eee;
-      border-radius: 8rpx;
+    &.disabled {
+      opacity: 0.5;
+      .step-progress {
+        background: #eee;
+      }
+    }
+
+    .step-content {
+      display: flex;
+      align-items: center;
+      gap: 24rpx;
+      padding: 16rpx 0;
+    }
+
+    .step-num {
+      width: 48rpx;
+      height: 48rpx;
+      border-radius: 24rpx;
+      background: #f5f5f5;
+      color: #999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26rpx;
+      font-weight: 600;
+    }
+
+    .step-info {
+      flex: 1;
+    }
+
+    .step-name {
       font-size: 28rpx;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 4rpx;
+    }
+
+    .step-desc {
+      font-size: 24rpx;
+      color: #999;
+    }
+
+    .step-progress {
+      position: absolute;
+      left: 24rpx;
+      top: 80rpx;
+      width: 2rpx;
+      height: calc(100% - 32rpx);
+      background: #eee;
+    }
+
+    &:last-child {
+      .step-progress {
+        display: none;
+      }
     }
   }
 }
 
-.section-title {
-  font-size: 32rpx;
-  font-weight: 600;
-  color: #333;
+.form-section {
+  background: #fff;
+  padding: 30rpx;
   margin-bottom: 20rpx;
+
+  .form-item {
+    position: relative;
+    
+    .form-input {
+      width: 100%;
+      height: 96rpx;
+      background: #f8f8f8;
+      border-radius: 16rpx;
+      padding: 0 88rpx 0 32rpx;
+      font-size: 30rpx;
+      color: #333;
+    }
+
+    .form-icon {
+      position: absolute;
+      right: 24rpx;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .input-placeholder {
+      color: #999;
+    }
+  }
 }
 
-.sub-title {
-  font-size: 28rpx;
-  color: #666;
-  margin: 20rpx 0;
+.upload-section {
+  background: #fff;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+
+  .video-area {
+    .preview-video {
+      width: 100%;
+      height: 480rpx;
+      border-radius: 16rpx;
+      background: #000;
+      object-fit: contain;
+      z-index: 1;
+    }
+
+    .video-actions {
+      margin-top: 24rpx;
+      display: flex;
+      justify-content: center;
+      gap: 24rpx;
+
+      .action-btn {
+        display: flex;
+        align-items: center;
+        padding: 20rpx 32rpx;
+        border-radius: 12rpx;
+        border: none;
+        
+        &.delete {
+          background: #FFF2F2;
+          color: #FF4D4F;
+        }
+        
+        &.reupload {
+          background: #F6F6F6;
+          color: #666;
+        }
+
+        text {
+          font-size: 26rpx;
+          margin-left: 8rpx;
+        }
+      }
+    }
+  }
+
+  .upload-options {
+    display: flex;
+    gap: 24rpx;
+    padding: 24rpx 0;
+
+    .upload-card {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 48rpx 24rpx;
+      background: #FFF7F7;
+      border-radius: 16rpx;
+      transition: all 0.3s ease;
+
+      &:active {
+        transform: scale(0.98);
+      }
+
+      .card-title {
+        margin-top: 24rpx;
+        font-size: 28rpx;
+        font-weight: 600;
+        color: #333;
+      }
+
+      .card-desc {
+        margin-top: 8rpx;
+        font-size: 24rpx;
+        color: #999;
+      }
+    }
+  }
 }
 
-.sample-image {
+.example-popup {
+  background: #fff;
   width: 100%;
-  border-radius: 12rpx;
-  margin-bottom: 30rpx;
+  
+  .popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30rpx;
+    border-bottom: 2rpx solid #f5f5f5;
+    
+    .popup-title {
+      font-size: 32rpx;
+      font-weight: 600;
+      color: #333;
+    }
+  }
+  
+  .popup-video {
+    width: 100%;
+    height: 400rpx;
+    background: #000;
+    z-index: 100;
+  }
+  
+  .popup-tips {
+    padding: 30rpx;
+    
+    .tips-title {
+      font-size: 28rpx;
+      font-weight: 500;
+      color: #333;
+      margin-bottom: 12rpx;
+      display: block;
+    }
+    
+    .tips-content {
+      font-size: 26rpx;
+      color: #666;
+      line-height: 1.6;
+    }
+  }
 }
 
 .tips-section {
   background: #fff;
   padding: 30rpx;
-  border-radius: 12rpx;
-  margin-bottom: 40rpx;
-  
-  .tips-header {
-    font-size: 30rpx;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 20rpx;
-  }
-  
-  .tip-item {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 16rpx;
-    
-    .tip-dot {
-      color: #ff4d4f;
-      margin-right: 10rpx;
-    }
-    
-    .tip-text {
-      font-size: 26rpx;
-      color: #666;
-      flex: 1;
+
+  .tips-list {
+    .tip-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20rpx;
+
+      .tip-text {
+        margin-left: 12rpx;
+        font-size: 26rpx;
+        color: #666;
+      }
     }
   }
 }
 
-.video-preview {
+.bottom-button {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 20rpx 30rpx;
+  padding-bottom: calc(20rpx + env(safe-area-inset-bottom));
   background: #fff;
-  padding: 20rpx;
-  border-radius: 12rpx;
-  margin-bottom: 40rpx;
-  
-  .preview-video {
+  box-shadow: 0 -2rpx 10rpx rgba(0, 0, 0, 0.05);
+
+  .submit-btn {
     width: 100%;
-    border-radius: 8rpx;
+    height: 88rpx;
+    border-radius: 44rpx;
+    color: #fff;
+    font-size: 32rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: linear-gradient(to right, #FF4D4F, #FF7875);
+    box-shadow: 0 8rpx 16rpx rgba(255, 77, 79, 0.2);
+    transition: all 0.3s ease;
+
+    &--disabled {
+      opacity: 0.5;
+      box-shadow: none;
+    }
+
+    &:active {
+      transform: translateY(2rpx);
+      box-shadow: 0 4rpx 8rpx rgba(255, 77, 79, 0.2);
+    }
   }
-  
-  .btn-wrapper {
-    margin-top: 20rpx;
-  }
-}
-
-.upload-btns {
-  display: flex;
-  flex-direction: column;
-  gap: 20rpx;
-  margin-bottom: 40rpx;
-}
-
-.btn-primary {
-  height: 88rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #1890ff;
-  color: #fff;
-  border-radius: 44rpx;
-  font-size: 28rpx;
-  
-  .btn-icon {
-    margin-right: 10rpx;
-  }
-}
-
-.btn-secondary {
-  height: 88rpx;
-  line-height: 88rpx;
-  background: #fff;
-  color: #1890ff;
-  border: 2rpx solid #1890ff;
-  border-radius: 44rpx;
-  font-size: 28rpx;
-}
-
-.btn-submit {
-  width: 100%;
-  height: 88rpx;
-  line-height: 88rpx;
-  background: linear-gradient(to right, #ff4d4f, #ff7875);
-  color: #fff;
-  border-radius: 44rpx;
-  font-size: 32rpx;
-  font-weight: 500;
-  margin-top: 40rpx;
 }
 </style>
