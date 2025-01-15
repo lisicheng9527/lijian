@@ -1,0 +1,181 @@
+<template>
+  <view class="camera-main">
+    <view class="camera-view" :style="{ height: `${cameraHeight}px`,top:`${statusBarHeight}px` }">
+      <CameraPreview ref="CameraPreview" :style="{ height: cameraHeight + 'px', width: cameraWidth + 'px', left: '0px' }"></CameraPreview>
+      <image class="camera-btn-mask" src="https://testfile.zhihuischool.com.cn/uploads/images/20250105/2025010502213193ebf5583.png" mode="aspectFill" :style="{ height:  cameraHeight + 'px', width: mainWidth + 'px', left: '0px', top:  '0px' }"></image>
+      <view class="camera-bottom" :style="{ height: `${bottomHeight}px`, width: `${mainWidth}px`,'padding-bottom':`${safeAreaBottom}px` }">
+        <view class="camera-btn" @click="back">
+          <image class="camera-btn-back" src="https://testfile.zhihuischool.com.cn/uploads/images/20250105/2025010502210200a666099.png" mode="aspectFit"></image>
+        </view>
+        <view class="camera-btn camera-btn-take" @click="take"></view>
+        <view class="camera-btn" @click="switchCamera">
+          <image class="camera-btn-switch" src="https://testfile.zhihuischool.com.cn/uploads/images/20250105/20250105022157f658b9364.png" mode="aspectFit"></image>
+        </view>
+      </view>
+    </view>
+    <view class="camera-top" :style="{ height: `${statusBarHeight}px` }"></view>
+  </view>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        titleHeight: 0, //设置title高度rpx,按需调整
+        bottomHeight: 200, //设置bottom高度rpx,按需调整
+        statusBarHeight: 0, //状态栏高度，后面有动态计算
+        safeAreaBottom: 0, //底部安全高度，后面有动态计算
+        mainHeight: 1920, //屏幕宽度，后面有动态计算
+        mainWidth: 1080, //屏幕高度，后面有动态计算
+        mainTop: 0, //顶部留空距离
+        cameraHeight: 1440, //取景框高度，后面有动态计算
+        cameraWidth: 1080, //取景框宽度，后面有动态计算
+        photoUrl: '',
+      }
+    },
+    onLoad(options) {},
+    onShow() {
+      let self = this
+      //计算界面部分高度边距等
+      this.ininLayout()
+      this.$nextTick(() => {
+        //加入延迟防止取景设备还未完成初始化
+        setTimeout(() => {
+          //设置默认前后摄像头
+          //开启摄像头
+          self.$refs.CameraPreview.setIsbackCamera(true)
+          self.$refs.CameraPreview.start({ scale: '4:3' }, res => {
+            //如果需要通过取帧模式拍照，需取消到下面的注释
+            // self.$refs.CameraPreview.startFrameListen(res => {})
+          })
+        }, 100)
+      })
+    },
+    onUnload() {
+      this.$refs.CameraPreview.destroy()
+    },
+    onHide() {
+      this.$refs.CameraPreview.stop()
+    },
+    methods: {
+      upx2px(rpx) { return uni.upx2px(rpx) },
+      //初始化相机尺寸
+      ininLayout() {
+        this.statusBarHeight = uni.getSystemInfoSync().statusBarHeight
+        this.safeAreaBottom = uni.getSystemInfoSync().safeAreaInsets.bottom
+        this.mainTop = this.statusBarHeight + this.upx2px(this.titleHeight)
+        this.mainHeight = uni.getSystemInfoSync().screenHeight
+        this.mainWidth = uni.getSystemInfoSync().screenWidth
+        this.cameraWidth = this.mainWidth
+        this.cameraHeight = this.mainWidth * (4 / 3)
+        this.bottomHeight = this.upx2px(this.bottomHeight)
+        //计算一个合理的填充高度使得拍照区域居中
+        const fiilHeight = (this.mainHeight - this.cameraHeight - this.statusBarHeight - this.bottomHeight) / 2
+        this.statusBarHeight += fiilHeight
+        this.bottomHeight += fiilHeight
+      },
+      //拍照
+      take() {
+        const that = this
+        uni.showLoading({ title: '拍摄中...', mask: true })
+        this.$refs.CameraPreview.takePhoto({
+            isExif: true, //是否写入exif信息
+            quality: 100, //返回图像质量 默认90  1-100
+            width: 1024, //返回图像宽度 默认300  原图设置0
+            returnFile: true, //是否返回文件  默认false
+            savePath: plus.io.convertLocalFileSystemURL('_doc/facePhoto/'),
+            // fileName:'', //文件保存文件名(非必填)如 demo.jpg
+            crop: [] //需要裁剪在这里配置    [0,0,50,50]，4个参数分别代表 xywh 其中xw是参考宽度的百分比，yh参考的高度的百分比
+          },
+          res => {
+            uni.hideLoading()
+            if (res.code == 200) {
+				uni.$emit('faceBack', { pic: res.url })
+				uni.navigateBack({})
+              // that.photoUrl = res.url
+              //拍照完成，这里写处理逻辑
+            }
+          }
+        )
+      },
+      back() {
+        //告诉上个页面没有拍照
+        uni.$emit('faceBack', null)
+        uni.navigateBack()
+      },
+      switchCamera() {
+        uni.showLoading({ title: '切换中...', mask: true })
+        this.$refs.CameraPreview.switchCamera(res => {
+          uni.hideLoading()
+        })
+      }
+    }
+  }
+</script>
+
+<style>
+  .camera-main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0d1627;
+  }
+
+  .camera-view {
+    position: relative;
+  }
+
+  .camera-top {
+    position: fixed;
+    background-color: #0d1627;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+
+  .camera-btn-mask {
+    position: absolute;
+  }
+
+  .camera-bottom {
+    position: fixed;
+    bottom: 0;
+    background-color: #0d1627;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10rpx;
+  }
+
+  .camera-btn {
+    flex: 0.3333;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .camera-btn-take {
+    flex: 0;
+    border: solid 15rpx #a6b0b8;
+    background-color: #fff;
+    border-radius: 50%;
+    height: 140rpx;
+    width: 140rpx;
+  }
+
+
+
+  .camera-btn-switch {
+    width: 90rpx;
+    height: 90rpx;
+  }
+
+  .camera-btn-back {
+    width: 90rpx;
+    height: 90rpx;
+  }
+</style>

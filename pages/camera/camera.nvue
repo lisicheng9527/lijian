@@ -1,0 +1,309 @@
+<template>
+  <view>
+    <text>{{ text }}</text>
+    <view class="show-view">
+      <CameraPreview ref="CameraPreview" class="hw-push" :style="{ height: getHeight(400) + 'rpx', width: '400rpx' }"></CameraPreview>
+      <view class="show-right">
+        <view class="color-view" :style="{ 'background-color': 'rgb(' + viewColor + ')', height: '100rpx', width: '100rpx' }"></view>
+        <image :src="src" mode="aspectFit" :style="'height: ' + getHeight(300) + 'rpx;width:300rpx; '"></image>
+      </view>
+    </view>
+    <view>
+      <radio-group @change="scaleChange">
+        <label class="r-flex">
+          <radio value="16:9" :checked="scale == '16:9'" />
+          <text>16:9</text>
+          <view style="width: 50rpx"></view>
+          <radio value="4:3" :checked="scale == '4:3'" />
+          <text>4:3</text>
+          <view style="width: 50rpx"></view>
+          <!--      <radio value="1:1" :checked="scale == '1:1'" />
+          <text>1:1</text> -->
+        </label>
+      </radio-group>
+      <radio-group @change="ckChange">
+        <label class="r-flex">
+          <radio :value="true" :checked="isbackCamera" />
+          <text>后摄</text>
+          <view style="width: 100rpx"></view>
+          <radio :value="false" :checked="!isbackCamera" />
+          <text>前摄</text>
+        </label>
+      </radio-group>
+
+      <radio-group @change="ckChange2">
+        <label class="r-flex">
+          <radio :value="true" :checked="returnisFile" />
+          <text>返回文件</text>
+          <radio :value="false" :checked="!returnisFile" />
+          <text>返回base64</text>
+        </label>
+      </radio-group>
+    </view>
+    <button @click="start">启动</button>
+    <button @click="setZoom(10)">焦距+</button>
+    <button @click="setZoom(-10)">焦距-</button>
+    <button @click="takePhoto(false)" :sizeLimit="100">拍照（部分设备拍照有声）</button>
+    <button @click="takePhoto(true)" :sizeLimit="100">拍照，加入裁剪（部分设备拍照有声）</button>
+    <text style="height: 60rpx; line-height: 60rpx; text-align: center; font-size: 28rpx; background-color: red; color: #fff">拍照无声方案(无声，与拍照2选1)⬇️</text>
+    <button @click="startFrameListen" :sizeLimit="100">开始监控帧数据(开启一次即可)</button>
+    <button @click="getFrameData(false)" :sizeLimit="100">获取帧数据（可以反复使用）</button>
+    <button @click="getFrameData(true)" :sizeLimit="100">获取帧数据，加入裁剪（可以反复使用）</button>
+    <button @click="stopFrameListen" :sizeLimit="100">停止监控帧数据</button>
+    <view style="height: 60rpx; line-height: 60rpx; text-align: center; font-size: 28rpx; background-color: red; color: #fff">辅助功能</view>
+    <button @click="openFlash" :sizeLimit="100">打开闪光灯</button>
+    <button @click="closeFlash" :sizeLimit="100">关闭闪光灯</button>
+    <button @click="resetPreview" :sizeLimit="100">重新设置取景角度（横竖屏切换后调用）</button>
+    <button @click="setExposureCompensation" :sizeLimit="100">设置曝光度</button>
+    <button @click="gotoDemo" :sizeLimit="100">自定义界面案例</button>
+    <button @click="gotoRecordDemo" :sizeLimit="100">录像</button>
+    <text style="height: 60rpx; line-height: 60rpx; text-align: center; font-size: 28rpx; background-color: red; color: #fff">扩展⬇️</text>
+    <button @click="getColor" :sizeLimit="100">开始/停止取色</button>
+  </view>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      src: '/static/logo.png',
+      text: 'msg信息',
+      returnisFile: true,
+      isbackCamera: true,
+      viewColor: '255,255,255',
+      zoom: 0,
+      scale: '4:3'
+    }
+  },
+  computed: {},
+  onLoad() {},
+  onShow() {
+    const self = this
+    // this.$nextTick(() => {
+    //   //加入延迟防止取景设备还未完成初始化
+    //   setTimeout(() => {
+    //     //设置默认前后摄像头
+    //     self.$refs.CameraPreview.setIsbackCamera(self.isbackCamera)
+    //     self.$refs.CameraPreview.start({ scale: self.scale }, res => {
+    //       self.text = JSON.stringify(res)
+    //     })
+    //   }, 500)
+    // })
+  },
+  onUnload() {
+    this.$refs.CameraPreview.destroy()
+  },
+  onHide() {
+    this.$refs.CameraPreview.stop()
+  },
+  methods: {
+    start() {
+      let self = this
+      this.$nextTick(() => {
+        //加入延迟防止取景设备还未完成初始化
+        self.$refs.CameraPreview.start({ scale: self.scale }, res => {
+          self.text = JSON.stringify(res)
+        })
+      })
+    },
+    getHeight(val) {
+      return val * (this.scale.split(':')[0] / this.scale.split(':')[1])
+    },
+    setZoom(val) {
+      this.zoom += val
+      if (this.zoom > 90) {
+        this.zoom = 90
+      }
+      if (this.zoom < 0) {
+        this.zoom = 0
+      }
+      this.$refs.CameraPreview.setZoom(this.zoom)
+    },
+    //设置曝光度
+    setExposureCompensation() {
+      let self = this
+      //获取曝光度的设置范围
+      self.$refs.CameraPreview.getExposureCompensationVal(res => {
+        //设置曝光度 res.data.min ～ res.data.max 默认0
+        if (res.code == 200) self.$refs.CameraPreview.setExposureCompensation(res.data.max)
+      })
+    },
+    resetPreview() {
+      //根据旋转角度重制预览角度（因为组件的原因无法监控到系统的旋转事件）
+      this.$refs.CameraPreview.reSetPreviewSize()
+      //设置成像角度（针对部分特定情况，兼容性等特殊设备改变成像角度）
+      // this.$refs.CameraPreview.setImgOrientaion(0)
+    },
+    takePhoto(crop) {
+      let self = this
+      //拍照
+      console.log('开始拍照')
+      this.$refs.CameraPreview.takePhoto(
+        {
+          isExif: true, //是否写入exif信息
+          quality: 100, //返回图像质量 默认90  1-100
+          width: 1080, //返回图像宽度 默认300  原图设置0
+          returnFile: self.returnisFile, //是否返回文件  默认false
+          crop: [] // crop ? [0, 0, 100, 100 * (this.scale.split(':')[1] / this.scale.split(':')[0])] : [] //成像自动裁剪，可以不传  案例计算为上半部分的正方形  0 0 50 50 表示右上方1/4区域
+        },
+        res => {
+          console.log('拍照完成')
+          const FSYANGPicTool = uni.requireNativePlugin('FSYANG-PicTool')
+          FSYANGPicTool.compressImage(
+            {
+              path: res.url, //压缩的图片路径 必传
+              maxWidth: 600, //压缩最大宽度  默认 612,可不传
+              maxHeight: 800, //压缩最大高度  默认 816,可不传
+              quality: 80, //压缩质量 默认80,可不传
+              targetPath: '', //压缩后图片保存路径 默认在当前目录，文件名'compress_{fileName}',可不传
+              format: 'webp' //jpg,png,webp(默认) ,可不传
+            },
+            tRes => {
+              if (tRes.code == 200) {
+                res.url = tRes.path
+                self.takeBack(res)
+              } else {
+                uni.showToast({
+                  title: '压缩失败' + JSON.stringify(tRes),
+                  icon: 'none'
+                })
+              }
+            }
+          )
+        }
+      )
+    },
+    openFlash() {
+      //开启闪光灯（后摄）
+      this.$refs.CameraPreview.setFlash(true)
+    },
+    closeFlash() {
+      //关闭闪光灯（后摄）
+      this.$refs.CameraPreview.setFlash(false)
+    },
+    takeBack(res) {
+      let self = this
+      if (self.returnisFile) {
+        self.text = JSON.stringify(res)
+        //ios文件开头加入file://
+        self.src = 'file://' + res.url
+        // uni.saveImageToPhotosAlbum({
+        //   filePath: self.src,
+        //   success: function() {
+        //     console.log('save success')
+        //   }
+        // })
+        uni.getImageInfo({
+          src: self.src,
+          success(res1) {
+            self.text += JSON.stringify(res1)
+          },
+          fail(e) {
+            self.text = JSON.stringify(e)
+          }
+        })
+      } else {
+        self.text = '回调base64数据，在控制台输出'
+        self.src = 'data:image/jpg;base64,' + res.data
+      }
+    },
+    startFrameListen() {
+      let self = this
+      this.$refs.CameraPreview.startFrameListen(res => {
+        self.text = JSON.stringify(res)
+      })
+    },
+    stopFrameListen() {
+      let self = this
+      this.$refs.CameraPreview.stopFrameListen(res => {
+        self.text = JSON.stringify(res)
+      })
+    },
+    getFrameData(crop) {
+      let self = this
+      //获取帧数据
+      console.log('开始抓帧')
+      this.$refs.CameraPreview.getFrameData(
+        {
+          quality: 50, //返回图像质量 默认90  1-100
+          width: 0, //返回图像宽度 默认300  原图设置0
+          crop: crop ? [0, 0, 50, 50] : [] //成像自动裁剪，可以不传 0 0 50 50 表示右上方1/4区域
+        },
+        res => {
+          console.log('抓帧完成')
+          if (res.code == 200) {
+            self.src = 'data:image/jpg;base64,' + res.data
+          }
+          self.text = res.msg
+        }
+      )
+    },
+    getColor() {
+      let self = this
+      //获取指定像素点的颜色 （百分比）
+      this.$refs.CameraPreview.getColor([50, 50], res => {
+        self.viewColor = res.color
+      })
+    },
+    scaleChange(res) {
+      this.scale = res.detail.value
+      this.$refs.CameraPreview.start({ scale: this.scale }, res => {
+        this.text = JSON.stringify(res)
+      })
+    },
+    ckChange(res) {
+      uni.showLoading({
+        mask: true,
+        title: '切换中'
+      })
+      this.$refs.CameraPreview.switchCamera(res => {
+        this.text = '切换完成'
+        uni.hideLoading()
+      })
+    },
+    ckChange2(res) {
+      this.returnisFile = res.detail.value
+      this.$refs.CameraPreview.setReturnFile(this.returnisFile) //设置是否返回路径 默认false
+    },
+    gotoDemo() {
+      uni.navigateTo({
+        url: 'pages/face/face'
+      })
+    },
+	gotoRecordDemo() {
+		uni.navigateTo({
+		  url: 'pages/record/record'
+		})
+	}
+  }
+}
+</script>
+
+<style>
+.show-view {
+  flex-direction: row;
+}
+.show-right {
+  display: flex;
+}
+
+.hw-push {
+  /* 	height: 360rpx;
+		width: 640rpx; */
+
+  background-color: #333333;
+}
+
+.r-flex {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.color-view {
+  border-width: 1rpx;
+  border-style: solid;
+  border-color: #333333;
+}
+</style>

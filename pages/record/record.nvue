@@ -1,0 +1,259 @@
+<template>
+  <view class="camera-main">
+    <view class="camera-view" :style="{ height: `${cameraHeight}px`, top: `${mainTop}px`, left: `${mainLeft}px` }">
+      <CameraPreviewPlus v-if="isIos" ref="CameraPreview" :style="{ height: cameraHeight + 'px', width: cameraWidth + 'px', left: '0px', top: '0px' }" class="hw-push"></CameraPreviewPlus>
+      <CameraPreview v-else ref="CameraPreview" :style="{ height: cameraHeight + 'px', width: cameraWidth + 'px', left: '0px', top: '0px' }" class="hw-push"></CameraPreview>
+      <image src="https://testfile.zhihuischool.com.cn/uploads/images/20250105/2025010502213193ebf5583.png" mode="aspectFill" class="cover-face" :style="{ height: cameraHeight + 'px', width: cameraWidth + 'px', top: `${mainTop}px` }"></image>
+      <cover-view class="bottom-btns" :style="{ height: `${mainBottom + safeBottom}px` }">
+        <!-- <text class="back-btn" @click="back">返回</text> -->
+        <view class="btn-start" @click="startRecord">
+          <text class="btn-txt" v-if="txtNum > 0">{{ txtNum }}</text>
+        </view>
+        <!-- <text class="back-btn" @click="takePhoto">拍照</text> -->
+        <!-- <image :src="src" mode="scaleToFill" style="width: 100rpx; height: 100rpx"></image> -->
+      </cover-view>
+    </view>
+  </view>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      mainHeight: 0, //屏幕宽度
+      mainWidth: 0, //屏幕高度
+      mainBottom: 0, //底部留空距离
+      safeBottom: 0, //底部安全距离
+      cameraHeight: 0, //取景框高度（非16:9屏幕会溢出屏幕，拍照时会进行裁剪）
+      cameraWidth: 0, //取景框宽度 （非16:9屏幕会溢出屏幕，拍照时会进行裁剪）
+      mainTop: 0, //顶部偏移
+      mainLeft: 0, //左侧偏移
+      picWidth: 724, //成像图片关系到回来的坐标跟取景区域的比例要用到
+      txtNum: 0,
+      maxNum: 5, //倒计时10秒
+      isReady: false,
+      isIos: false,
+      src: ''
+    }
+  },
+  onLoad() {
+	plus.android.requestPermissions(['android.permission.RECORD_AUDIO'], function(e) {
+		if (e.deniedAlways.length > 0) { //权限被永久拒绝
+			// 弹出提示框解释为何需要定位权限，引导用户打开设置页面开启
+			console.log('Always Denied!!! ' + e.deniedAlways.toString());
+		}
+		if (e.deniedPresent.length > 0) { //权限被临时拒绝
+			// 弹出提示框解释为何需要定位权限，可再次调用plus.android.requestPermissions申请权限
+			console.log('Present Denied!!! ' + e.deniedPresent.toString());
+		}
+		if (e.granted.length > 0) { //权限被允许
+			//调用依赖获取定位权限的代码
+			console.log('Granted!!! ' + e.granted.toString());
+		}
+	}, function(e) {
+		console.log('Request Permissions error:' + JSON.stringify(e));
+	});
+    this.isIos = uni.getSystemInfoSync().platform === 'ios'
+    this.ininLayout()
+  },
+  onShow() {
+    let self = this
+    //计算界面部分高度边距等
+    plus.navigator.setFullscreen(true)
+    this.$nextTick(() => {
+      //加入延迟防止取景设备还未完成初始化
+      setTimeout(() => {
+        //设置默认前后摄像头
+        self.$refs.CameraPreview.setIsbackCamera(true)
+        //开启摄像头
+        self.$refs.CameraPreview.start({ scale: '16:9', noRecordPermissions: true }, res => {
+          self.isReady = true
+        })
+      }, 400)
+    })
+  },
+  onUnload() {
+    this.$refs.CameraPreview.stop()
+    this.$refs.CameraPreview.destroy()
+    plus.navigator.setFullscreen(false)
+  },
+  onHide() {},
+  methods: {
+    //初始化相机尺寸（主要为了计算和记录溢出部分，试用各种分辨率）
+    ininLayout() {
+      this.safeBottom = uni.getSystemInfoSync().safeAreaInsets.bottom
+      this.mainBottom = uni.upx2px(200)
+      this.mainHeight = uni.getSystemInfoSync().screenHeight - this.mainBottom - this.safeBottom
+      this.mainWidth = uni.getSystemInfoSync().screenWidth
+      //计算取景框溢出部分，记录下来用于裁剪
+      if (this.mainHeight / this.mainWidth > 16 / 9) {
+        //指的手机屏幕是类似刘海屏的长屏，高度用手机的宽度计算，宽度会溢出
+        this.cameraHeight = this.mainHeight
+        this.cameraWidth = this.cameraHeight * (9 / 16)
+        this.mainLeft = (this.mainWidth - this.cameraWidth) / 2
+      } else {
+        //指的手机屏幕胖屏幕，宽度用手机的高度计算出来，高度会溢出
+        this.cameraWidth = this.mainWidth
+        this.cameraHeight = (this.mainWidth * 16) / 9
+        this.mainTop = this.mainHeight - this.cameraHeight
+      }
+    },
+    takePhoto() {
+      const that = this
+      this.$refs.CameraPreview.takePhoto(
+        {
+          quality: 100, //返回图像质量 默认90  1-100
+          width: 800, //返回图像宽度 默认300  原图设置0
+          returnFile: true //是否返回文件  默认false
+          // crop: [15, 30.3125, 70, 39.375] //成像自动裁剪，可以不传
+        },
+        res => {
+          that.src = res.url
+        }
+      )
+    },
+    //开始录象
+    startRecord() {
+      let that = this
+      if (that.txtNum > 0 && that.isReady) {
+        return
+      }
+
+      //开始倒计时
+      that.txtNum = that.maxNum
+      const inter = setInterval(() => {
+        if (that.txtNum <= 0) {
+          that.txtNum = 0
+          clearInterval(inter)
+          uni.showLoading({ title: '保存中...' })
+          console.log(this.$refs.CameraPreview)
+          this.$refs.CameraPreview.stopRecord(res => {
+			  // console.log(res)
+				// uni.hideLoading()
+				// if(res && res.path){
+				// 	const pages = getCurrentPages();
+				// 	const prevPage = pages[pages.length - 2];
+				// 	prevPage.setData({
+				// 	  temporaryUrl: res.path,
+				// 	});
+				// 	uni.navigateBack({ delta: 1 });
+				// }else{
+				// 	uni.showToast({ title: '录制失败', icon: 'none' })
+				// 	that.back()
+				// }
+			  // uni.$emit('cameraback', { video: res.path, pic: that.src })
+			  // uni.hideLoading()
+			  // that.back()
+            if (res.code == 200) {
+              uni.$emit('recordBack', { video: res.path, pic: that.src })
+              uni.hideLoading()
+              that.back()
+            } else {
+              uni.showToast({ title: '录制失败', icon: 'none' })
+            }
+          })
+        }
+        that.txtNum--
+      }, 1000)
+
+      //开始录象
+      // recordBack
+      //转换成绝对路径，保存视频
+      const savePath = plus.io.convertLocalFileSystemURL('_doc/video/')
+      // orientation 视频旋转 默认 270，可以不传 (仅android)
+      // profile 分辨率
+      // 1080P = 6;
+      // 2160P = 8;
+      // 480P = 4;
+      // 720P = 5;
+      // Low = 3;
+      // High = 1;
+      // savePath  保存路径
+
+      this.$refs.CameraPreview.startRecord({ profile: 5, savePath: savePath }, res => {
+        console.log('开始录像')
+      })
+    },
+    back() {
+      if (this.txtNum > 0) {
+        uni.showToast({ title: '正在录制,无法返回', icon: 'none' })
+        return
+      }
+      uni.navigateBack({})
+    }
+  }
+}
+</script>
+
+<style>
+.camera-main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #141414;
+}
+
+.camera-view {
+}
+
+.left-btns {
+  position: fixed;
+  width: 160rpx;
+  height: 220rpx;
+  left: 0;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rb-btn {
+  align-items: center;
+}
+
+.rb-btn-img {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.cover-face {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.bottom-btns {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 0 50rpx;
+}
+
+.back-btn {
+  width: 140rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #fff;
+}
+
+.btn-start {
+  height: 140rpx;
+  width: 140rpx;
+  background-color: red;
+  border-radius: 80rpx;
+  border: solid 10rpx #fff;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-txt {
+  font-size: 50rpx;
+  font-weight: bold;
+  color: #fff;
+}
+</style>

@@ -97,7 +97,6 @@
           :show-progress="true"
           :direction="0"
           :codec="hardware"
-          @error="handleVideoError"
           @play="handleVideoPlay"
           @pause="handleVideoPause"
         ></video>
@@ -192,6 +191,7 @@
 </template>
 
 <script>
+import path from 'path';
 import { getPresignedUpload, presignedUpload } from '@/api/model'
 
 export default {
@@ -225,6 +225,11 @@ export default {
     if(pages && pages.length && pages[1] && pages[1].data) {
       this.temporaryUrl = pages[1].data.temporaryUrl
     }
+	let that = this;
+	uni.$off('recordBack')
+	uni.$on('recordBack', function(data) {
+		that.temporaryUrl = data.video;
+	})
   },
   methods: {
     reset() {
@@ -235,7 +240,7 @@ export default {
     },
     takePhoto() {
       this.$Router.push({
-        path: '/pages/camera/camera'
+        path: '/pages/record/record'
       })
     },
     localUpload() {
@@ -404,13 +409,6 @@ export default {
     handleFullscreenChange(e) {
       console.log('fullscreen change:', e)
     },
-    handleVideoError(e) {
-      console.error('视频播放错误：', e)
-      uni.showToast({
-        title: '视频加载失败，请重试',
-        icon: 'none'
-      })
-    },
     handleExampleVideoError(e) {
       console.error('示例视频播放错误：', e)
       uni.showToast({
@@ -546,7 +544,6 @@ export default {
     position: relative;
     
     .form-input {
-      width: 100%;
       height: 96rpx;
       background: #f8f8f8;
       border-radius: 16rpx;

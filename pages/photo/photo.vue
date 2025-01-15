@@ -190,6 +190,26 @@ export default {
       defaultImage: 'https://testfile.zhihuischool.com.cn/uploads/images/default/example_photo.jpg'
     };
   },
+  onShow(){
+  	let that = this;
+	uni.$off('faceBack');
+  	uni.$on('faceBack', function(data) {
+		if(!data) return
+		console.log(data);
+  		that.temporaryUrl = data.pic;
+		if(that.temporaryUrl.includes('blob')){
+		  that.fileType = file?.type?.split('/')[1];
+		  that.fileName = file.name
+		}else{
+		  that.fileType = that.temporaryUrl.split('.')[1];
+		  const filePath = that.fileType[0].split('/');
+		  that.fileName = filePath[filePath.length - 1];
+		}
+		getPresignedUpload({ type: 'image', filename: that.fileName, filetype: that.fileType }).then((res) => {
+		  that.uploadFile(res);
+		});
+  	})
+  },
   methods: {
     reset() {
       this.$nextTick(() => {
@@ -199,29 +219,32 @@ export default {
     },
     // 选择或拍摄照片
     chooseVideo() {
-      uni.chooseImage({
-        count: 1,
-        success: (chooseImageRes) => {
-          console.log(chooseImageRes)
-          var file = chooseImageRes.tempFiles[0];
-          if (!file) return;
-          // 获取要上传的本地文件路径
-          var fileUrl = chooseImageRes.tempFilePaths[0];
-          console.log(fileUrl)
-          this.temporaryUrl = fileUrl;
-          if(fileUrl.includes('blob')){
-            this.fileType = file?.type?.split('/')[1];
-            this.fileName = file.name
-          }else{
-            this.fileType = fileUrl.split('.')[1];
-            const filePath = this.fileType[0].split('/');
-            this.fileName = filePath[filePath.length - 1];
-          }
-          getPresignedUpload({ type: 'image', filename: this.fileName, filetype: this.fileType }).then((res) => {
-            this.uploadFile(res);
-          });
-        }
-      });
+		uni.navigateTo({
+			url: '/pages/face/face'
+		})
+      // uni.chooseImage({
+      //   count: 1,
+      //   success: (chooseImageRes) => {
+      //     console.log(chooseImageRes)
+      //     var file = chooseImageRes.tempFiles[0];
+      //     if (!file) return;
+      //     // 获取要上传的本地文件路径
+      //     var fileUrl = chooseImageRes.tempFilePaths[0];
+      //     console.log(fileUrl)
+      //     this.temporaryUrl = fileUrl;
+      //     if(fileUrl.includes('blob')){
+      //       this.fileType = file?.type?.split('/')[1];
+      //       this.fileName = file.name
+      //     }else{
+      //       this.fileType = fileUrl.split('.')[1];
+      //       const filePath = this.fileType[0].split('/');
+      //       this.fileName = filePath[filePath.length - 1];
+      //     }
+      //     getPresignedUpload({ type: 'image', filename: this.fileName, filetype: this.fileType }).then((res) => {
+      //       this.uploadFile(res);
+      //     });
+      //   }
+      // });
     },
     uploadFile(opt) {
       var camSafeUrlEncode = function (str) {

@@ -226,7 +226,8 @@
         {
             "path": "pages/scan/scan",
             "style": {
-                "navigationBarTitleText": "扫描"
+                "navigationBarTitleText": "扫描",
+				"navigationStyle": "custom"
             },
             "meta": {
                 "auth": true
@@ -242,21 +243,33 @@
             }
         },
         {
-            "path": "pages/photo/photo",
+            "path": "pages/face/face",
             "style": {
-                "navigationBarTitleText": "上传图片"
+                "navigationBarTitleText": "拍摄",
+				"navigationStyle": "custom"
             },
             "meta": {
                 "auth": true
             }
         },
+		{
+		    "path": "pages/record/record",
+		    "style": {
+		        "navigationBarTitleText": "录像",
+				"navigationStyle": "custom"
+		    },
+		    "meta": {
+		        "auth": true
+		    }
+		},
         {
-            "path": "pages/home/home",
+            "path": "pages/photo/photo",
             "style": {
-                "navigationBarTitleText": "首页"
+                "navigationBarTitleText": "上传图片",
+				"navigationStyle": "custom"
             },
             "meta": {
-                "auth": false
+                "auth": true
             }
         }
     ],

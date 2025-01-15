@@ -8,6 +8,7 @@
     /* 5+App特有相关 */
     "app-plus" : {
         "usingComponents" : true,
+        "nvueCompiler" : "uni-app",
         "nvueStyleCompiler" : "uni-app",
         "compilerVersion" : 3,
         "compatible" : {
@@ -24,7 +25,9 @@
             "OAuth" : {},
             "Payment" : {},
             "VideoPlayer" : {},
-            "Share" : {}
+            "Share" : {},
+            "Camera" : {},
+            "Record" : {}
         },
         /* 应用发布信息 */
         "distribute" : {
@@ -50,8 +53,14 @@
                     "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
                     "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
                     "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>",
-                    "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
-                ]
+                    "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\"/>",
+                    "<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_MEDIA_AUDIO\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_MEDIA_VIDEO\"/>"
+                ],
+                "minSdkVersion" : 21,
+                "abiFilters" : [ "armeabi-v7a", "arm64-v8a", "x86" ]
             },
             /* ios打包配置 */
             "ios" : {
@@ -127,6 +136,22 @@
             "splashscreen" : {
                 "useOriginalMsgbox" : true
             }
+        },
+        "nativePlugins" : {
+            "FY-CameraPreview" : {
+                "__plugin_info__" : {
+                    "name" : "【限时五折】相机自定义 拍照界面任意定制，支持抓帧 支持录像  支持取色",
+                    "description" : "component组件，实现自定义相机界面的相机组件，在nuve页面下可以任意进行布局,可做静默拍照，扩展性极强",
+                    "platforms" : "Android,iOS",
+                    "url" : "https://ext.dcloud.net.cn/plugin?id=4531",
+                    "android_package_name" : "uni.UNI81C1033",
+                    "ios_bundle_id" : "",
+                    "isCloud" : true,
+                    "bought" : 1,
+                    "pid" : "4531",
+                    "parameters" : {}
+                }
+            }
         }
     },
     /* 快应用特有相关 */
@@ -181,5 +206,6 @@
             "mode" : "history"
         },
         "title" : "加载中"
-    }
+    },
+    "vueVersion" : "2"
 }

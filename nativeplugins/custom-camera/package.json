@@ -1,0 +1,39 @@
+{
+    "name": "custom-camera",
+    "id": "custom-camera",
+    "version": "1.0.0",
+    "description": "自定义相机插件，支持拍照和录像",
+    "_dp_type": "nativeplugin",
+    "_dp_nativeplugin": {
+        "android": {
+            "plugins": [
+                {
+                    "type": "module",
+                    "name": "custom-camera",
+                    "class": "com.example.camera.CustomCameraModule"
+                }
+            ],
+            "permissions": [
+                "android.permission.CAMERA",
+                "android.permission.RECORD_AUDIO",
+                "android.permission.WRITE_EXTERNAL_STORAGE",
+                "android.permission.READ_EXTERNAL_STORAGE"
+            ],
+            "integrateType": "aar"
+        },
+        "ios": {
+            "plugins": [
+                {
+                    "type": "module",
+                    "name": "custom-camera",
+                    "class": "CustomCameraModule"
+                }
+            ],
+            "frameworks": [
+                "AVFoundation.framework",
+                "CoreMedia.framework"
+            ],
+            "integrateType": "framework"
+        }
+    }
+} 
