@@ -1,8 +1,0 @@
-{
-  "usingComponents": {
-    "mescroll-uni": "/components/mescroll-uni/mescroll-uni",
-    "w-banner": "/components/widgets/banner/banner",
-    "goods-card": "/components/goods-card/goods-card"
-  },
-  "component": true
-}

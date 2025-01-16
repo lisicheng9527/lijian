@@ -56,7 +56,12 @@
                             >
                                 <view class="model-image" @click="goModelDetail(model.model_id)">
                                     <image v-if="model.image_urls[0]" :src="model.image_urls[0].url" mode="aspectFill"></image>
-                                    <view class="model-status" :class="getStatusClass(model.status)">
+                                    <view class="model-status" :class="{
+                                        'status-completed': model.status === 10,
+                                        'status-processing': model.status === 20,
+                                        'status-reviewed': model.status === 30,
+                                        'status-rejected': model.status === 40
+                                    }">
                                         {{ model.status_desc }}
                                     </view>
                                 </view>
@@ -227,7 +232,7 @@ export default {
         getEmptyDesc(sign) {
             const descMap = {
                 'all': '开始创建您的第一个3D模型吧',
-                '10': '暂无已完成的模型，耐心等待处理完��',
+                '10': '暂无已完成的模型，耐心等待处理完',
                 '20': '暂无处理中的模型，可以尝试创建新的模型',
                 '30': '暂无已审核的模型，请等待审核完成',
                 '40': '暂无被拒绝的模型，继续保持哦'

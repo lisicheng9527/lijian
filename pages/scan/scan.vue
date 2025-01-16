@@ -221,10 +221,10 @@ export default {
   },
 
   onShow(){
-    const pages = getCurrentPages();
-    if(pages && pages.length && pages[1] && pages[1].data) {
-      this.temporaryUrl = pages[1].data.temporaryUrl
-    }
+    // const pages = getCurrentPages();
+    // if(pages && pages.length && pages[1] && pages[1].data) {
+    //   this.temporaryUrl = pages[1].data.temporaryUrl
+    // }
 	let that = this;
 	uni.$off('recordBack')
 	uni.$on('recordBack', function(data) {
@@ -239,9 +239,17 @@ export default {
       })
     },
     takePhoto() {
+      // #ifdef MP
+      this.$Router.push({
+        path: '/pages/record/MPrecord'
+      })
+      // #endif
+      
+      // #ifdef APP-PLUS
       this.$Router.push({
         path: '/pages/record/record'
       })
+      // #endif
     },
     localUpload() {
       var self = this;

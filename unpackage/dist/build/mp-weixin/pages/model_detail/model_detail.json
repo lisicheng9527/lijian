@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "模型详情",
-  "navigationStyle": "custom",
-  "usingComponents": {
-    "navbar": "/components/navbar/navbar",
-    "u-button": "/components/uview-ui/components/u-button/u-button"
-  }
-}

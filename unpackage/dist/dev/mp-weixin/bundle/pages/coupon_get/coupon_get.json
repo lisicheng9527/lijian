@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "领券中心",
-  "usingComponents": {
-    "mescroll-contain": "/components/mescroll-contain/mescroll-contain",
-    "coupon-card": "/components/coupon-card/coupon-card"
-  }
-}

@@ -1,1 +1,0 @@
-<view class="style-one data-v-a1389a3c"><left-aside vue-id="53952ed4-1" class="data-v-a1389a3c" bind:__l="__l"></left-aside><view class="right-warp data-v-a1389a3c"><block wx:if="{{height}}"><goods vue-id="53952ed4-2" scroll-height="{{$root.m0}}" class="data-v-a1389a3c" bind:__l="__l"></goods></block></view></view>

@@ -1,7 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "u-tabs": "/components/uview-ui/components/u-tabs/u-tabs",
-    "goods": "/components/widgets/category/goods"
-  }
-}

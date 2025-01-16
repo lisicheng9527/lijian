@@ -263,6 +263,16 @@
 		    }
 		},
         {
+		    "path": "pages/record/MPrecord",
+		    "style": {
+		        "navigationBarTitleText": "录像",
+				"navigationStyle": "custom"
+		    },
+		    "meta": {
+		        "auth": true
+		    }
+		},
+        {
             "path": "pages/photo/photo",
             "style": {
                 "navigationBarTitleText": "上传图片",

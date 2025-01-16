@@ -1,9 +1,0 @@
-@charset "UTF-8";
-/* 颜色变量 */
-/** S Font's size **/
-/** E Font's size **/
-.container {
-  background-color: white;
-  padding: 20rpx;
-}
-
