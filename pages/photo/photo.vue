@@ -80,7 +80,6 @@
         >
           <u-icon name="camera-fill" size="56" color="#FF4D4F"></u-icon>
           <text class="card-title">添加照片</text>
-          <text class="card-desc">支持拍摄或上传</text>
         </view>
       </view>
     </view>
@@ -158,6 +157,7 @@
     <view class="bottom-button">
       <button 
         class="submit-btn" 
+        :disabled="imgList.length < 8"
         :class="{'submit-btn--disabled': imgList.length < 8}"
         @click="nextStep"
       >下一步</button>
@@ -192,10 +192,9 @@ export default {
   },
   onShow(){
   	let that = this;
-	uni.$off('faceBack');
+	  uni.$off('faceBack');
   	uni.$on('faceBack', function(data) {
 		if(!data) return
-		console.log(data);
   		that.temporaryUrl = data.pic;
 		if(that.temporaryUrl.includes('blob')){
 		  that.fileType = file?.type?.split('/')[1];
@@ -219,32 +218,48 @@ export default {
     },
     // 选择或拍摄照片
     chooseVideo() {
-		uni.navigateTo({
-			url: '/pages/face/face'
-		})
-      // uni.chooseImage({
-      //   count: 1,
-      //   success: (chooseImageRes) => {
-      //     console.log(chooseImageRes)
-      //     var file = chooseImageRes.tempFiles[0];
-      //     if (!file) return;
-      //     // 获取要上传的本地文件路径
-      //     var fileUrl = chooseImageRes.tempFilePaths[0];
-      //     console.log(fileUrl)
-      //     this.temporaryUrl = fileUrl;
-      //     if(fileUrl.includes('blob')){
-      //       this.fileType = file?.type?.split('/')[1];
-      //       this.fileName = file.name
-      //     }else{
-      //       this.fileType = fileUrl.split('.')[1];
-      //       const filePath = this.fileType[0].split('/');
-      //       this.fileName = filePath[filePath.length - 1];
-      //     }
-      //     getPresignedUpload({ type: 'image', filename: this.fileName, filetype: this.fileType }).then((res) => {
-      //       this.uploadFile(res);
-      //     });
-      //   }
-      // });
+      uni.showActionSheet({
+        itemList: ['拍摄照片', '从相册选择'],
+        success: (res) => {
+          if (res.tapIndex === 0) {
+            // 跳转到拍摄页面
+            // #ifdef APP-PLUS
+            uni.navigateTo({
+              url: '/pages/face/face'
+            })
+            // #endif
+            
+            // #ifdef MP
+            uni.navigateTo({
+              url: '/pages/face/MPface'
+            })
+            // #endif
+          } else {
+            // 从相册选择
+            uni.chooseImage({
+              count: 1,
+              sourceType: ['album'],
+              success: (chooseImageRes) => {
+                var file = chooseImageRes.tempFiles[0];
+                if (!file) return;
+                var fileUrl = chooseImageRes.tempFilePaths[0];
+                this.temporaryUrl = fileUrl;
+                if(fileUrl.includes('blob')){
+                  this.fileType = file?.type?.split('/')[1];
+                  this.fileName = file.name
+                }else{
+                  this.fileType = fileUrl.split('.')[1];
+                  const filePath = fileUrl.split('/');
+                  this.fileName = filePath[filePath.length - 1];
+                }
+                getPresignedUpload({ type: 'image', filename: this.fileName, filetype: this.fileType }).then((res) => {
+                  this.uploadFile(res);
+                });
+              }
+            });
+          }
+        }
+      })
     },
     uploadFile(opt) {
       var camSafeUrlEncode = function (str) {
@@ -538,6 +553,7 @@ export default {
     aspect-ratio: 1;
     border-radius: 12rpx;
     overflow: hidden;
+    background: #f8f8f8;
 
     .photo-img {
       width: 100%;
@@ -567,6 +583,7 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 16rpx;
     transition: all 0.3s ease;
 
     &:active {
@@ -574,16 +591,10 @@ export default {
     }
 
     .card-title {
-      margin-top: 24rpx;
       font-size: 28rpx;
       font-weight: 600;
       color: #333;
-    }
-
-    .card-desc {
-      margin-top: 8rpx;
-      font-size: 24rpx;
-      color: #999;
+      line-height: 1.4;
     }
   }
 }
@@ -703,8 +714,10 @@ export default {
     transition: all 0.3s ease;
 
     &--disabled {
-      opacity: 0.5;
+      opacity: 0.6;
+      background: #CCCCCC;
       box-shadow: none;
+      pointer-events: none;
     }
 
     &:active {

@@ -183,7 +183,8 @@
     <view class="bottom-button">
       <button 
         class="submit-btn" 
-        :class="{'submit-btn--disabled': !canSubmit}"
+        :disabled="!formName || !temporaryUrl"
+        :class="{'submit-btn--disabled': !formName || !temporaryUrl}"
         @click="nextStep"
       >下一步</button>
     </view>
@@ -216,7 +217,7 @@ export default {
 
   computed: {
     canSubmit() {
-      return this.formName && this.temporaryUrl
+      return this.formName && this.temporaryUrl;
     }
   },
 
@@ -723,33 +724,33 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 20rpx 30rpx;
+  padding: 20rpx 40rpx;
   padding-bottom: calc(20rpx + env(safe-area-inset-bottom));
   background: #fff;
-  box-shadow: 0 -2rpx 10rpx rgba(0, 0, 0, 0.05);
-
+  box-shadow: 0 -4rpx 20rpx rgba(0, 0, 0, 0.05);
+  
   .submit-btn {
     width: 100%;
-    height: 88rpx;
-    border-radius: 44rpx;
-    color: #fff;
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
     font-size: 32rpx;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
+    font-weight: 600;
+    color: #fff;
     background: linear-gradient(to right, #FF4D4F, #FF7875);
-    box-shadow: 0 8rpx 16rpx rgba(255, 77, 79, 0.2);
+    border-radius: 45rpx;
     transition: all 0.3s ease;
-
-    &--disabled {
-      opacity: 0.5;
-      box-shadow: none;
-    }
-
+    
     &:active {
-      transform: translateY(2rpx);
-      box-shadow: 0 4rpx 8rpx rgba(255, 77, 79, 0.2);
+      transform: scale(0.98);
+      box-shadow: 0 2rpx 8rpx rgba(99, 102, 241, 0.2);
+    }
+    
+    &--disabled {
+      background: #CCCCCC !important;
+      color: #FFFFFF !important;
+      pointer-events: none;
+      opacity: 0.6;
     }
   }
 }

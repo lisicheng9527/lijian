@@ -226,7 +226,7 @@
         {
             "path": "pages/scan/scan",
             "style": {
-                "navigationBarTitleText": "扫描",
+                "navigationBarTitleText": "信息采集",
 				"navigationStyle": "custom"
             },
             "meta": {
@@ -252,6 +252,16 @@
                 "auth": true
             }
         },
+        {
+		    "path": "pages/face/MPface",
+		    "style": {
+		        "navigationBarTitleText": "拍摄",
+                "navigationStyle": "custom"
+		    },
+		    "meta": {
+		        "auth": true
+		    }
+		},
 		{
 		    "path": "pages/record/record",
 		    "style": {

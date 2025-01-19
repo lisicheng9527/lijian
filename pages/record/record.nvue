@@ -3,7 +3,9 @@
     <view class="camera-view" :style="{ height: `${cameraHeight}px`, top: `${mainTop}px`, left: `${mainLeft}px` }">
       <CameraPreviewPlus v-if="isIos" ref="CameraPreview" :style="{ height: cameraHeight + 'px', width: cameraWidth + 'px', left: '0px', top: '0px' }" class="hw-push"></CameraPreviewPlus>
       <CameraPreview v-else ref="CameraPreview" :style="{ height: cameraHeight + 'px', width: cameraWidth + 'px', left: '0px', top: '0px' }" class="hw-push"></CameraPreview>
-      <image src="https://testfile.zhihuischool.com.cn/uploads/images/20250105/2025010502213193ebf5583.png" mode="aspectFill" class="cover-face" :style="{ height: cameraHeight + 'px', width: cameraWidth + 'px', top: `${mainTop}px` }"></image>
+      <view class="cover-face" :style="{ height: cameraHeight + 'px', width: cameraWidth + 'px' }">
+		  <image src="https://testfile.zhihuischool.com.cn/uploads/images/20250118/20250118192755a396f5986.png"  mode="heightFix" :style="{ height: cameraHeight + 'px', width: cameraWidth + 'px', top: `${mainTop}px` }"></image>
+	  </view>
       <cover-view class="bottom-btns" :style="{ height: `${mainBottom + safeBottom}px` }">
         <!-- <text class="back-btn" @click="back">返回</text> -->
         <view class="btn-start" @click="startRecord">
@@ -30,29 +32,13 @@ export default {
       mainLeft: 0, //左侧偏移
       picWidth: 724, //成像图片关系到回来的坐标跟取景区域的比例要用到
       txtNum: 0,
-      maxNum: 5, //倒计时10秒
+      maxNum: 30, //倒计时10秒
       isReady: false,
       isIos: false,
       src: ''
     }
   },
   onLoad() {
-	plus.android.requestPermissions(['android.permission.RECORD_AUDIO'], function(e) {
-		if (e.deniedAlways.length > 0) { //权限被永久拒绝
-			// 弹出提示框解释为何需要定位权限，引导用户打开设置页面开启
-			console.log('Always Denied!!! ' + e.deniedAlways.toString());
-		}
-		if (e.deniedPresent.length > 0) { //权限被临时拒绝
-			// 弹出提示框解释为何需要定位权限，可再次调用plus.android.requestPermissions申请权限
-			console.log('Present Denied!!! ' + e.deniedPresent.toString());
-		}
-		if (e.granted.length > 0) { //权限被允许
-			//调用依赖获取定位权限的代码
-			console.log('Granted!!! ' + e.granted.toString());
-		}
-	}, function(e) {
-		console.log('Request Permissions error:' + JSON.stringify(e));
-	});
     this.isIos = uni.getSystemInfoSync().platform === 'ios'
     this.ininLayout()
   },
@@ -66,7 +52,7 @@ export default {
         //设置默认前后摄像头
         self.$refs.CameraPreview.setIsbackCamera(true)
         //开启摄像头
-        self.$refs.CameraPreview.start({ scale: '16:9', noRecordPermissions: true }, res => {
+        self.$refs.CameraPreview.start({ scale: '16:9', noRecordPermissions: false }, res => {
           self.isReady = true
         })
       }, 400)
@@ -83,13 +69,13 @@ export default {
     ininLayout() {
       this.safeBottom = uni.getSystemInfoSync().safeAreaInsets.bottom
       this.mainBottom = uni.upx2px(200)
-      this.mainHeight = uni.getSystemInfoSync().screenHeight - this.mainBottom - this.safeBottom
+      this.mainHeight = uni.getSystemInfoSync().screenHeight - this.safeBottom - 5
       this.mainWidth = uni.getSystemInfoSync().screenWidth
       //计算取景框溢出部分，记录下来用于裁剪
       if (this.mainHeight / this.mainWidth > 16 / 9) {
         //指的手机屏幕是类似刘海屏的长屏，高度用手机的宽度计算，宽度会溢出
         this.cameraHeight = this.mainHeight
-        this.cameraWidth = this.cameraHeight * (9 / 16)
+        this.cameraWidth = this.mainWidth
         this.mainLeft = (this.mainWidth - this.cameraWidth) / 2
       } else {
         //指的手机屏幕胖屏幕，宽度用手机的高度计算出来，高度会溢出
@@ -128,28 +114,13 @@ export default {
           uni.showLoading({ title: '保存中...' })
           console.log(this.$refs.CameraPreview)
           this.$refs.CameraPreview.stopRecord(res => {
-			  // console.log(res)
-				// uni.hideLoading()
-				// if(res && res.path){
-				// 	const pages = getCurrentPages();
-				// 	const prevPage = pages[pages.length - 2];
-				// 	prevPage.setData({
-				// 	  temporaryUrl: res.path,
-				// 	});
-				// 	uni.navigateBack({ delta: 1 });
-				// }else{
-				// 	uni.showToast({ title: '录制失败', icon: 'none' })
-				// 	that.back()
-				// }
-			  // uni.$emit('cameraback', { video: res.path, pic: that.src })
-			  // uni.hideLoading()
-			  // that.back()
             if (res.code == 200) {
               uni.$emit('recordBack', { video: res.path, pic: that.src })
               uni.hideLoading()
               that.back()
             } else {
               uni.showToast({ title: '录制失败', icon: 'none' })
+			  that.back()
             }
           })
         }
@@ -170,7 +141,7 @@ export default {
       // High = 1;
       // savePath  保存路径
 
-      this.$refs.CameraPreview.startRecord({ profile: 5, savePath: savePath }, res => {
+      this.$refs.CameraPreview.startRecord({ profile: 5, savePath: savePath, orientation: 90 }, res => {
         console.log('开始录像')
       })
     },
@@ -219,7 +190,11 @@ export default {
 .cover-face {
   position: fixed;
   top: 0;
+  bottom: 0;
   left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
 }
 
 .bottom-btns {
@@ -227,11 +202,11 @@ export default {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #000;
+  /* background-color: #000; */
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  padding: 0 50rpx;
+  /* padding: 0 50rpx; */
 }
 
 .back-btn {

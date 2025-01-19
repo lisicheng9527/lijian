@@ -90,8 +90,8 @@
           res => {
             uni.hideLoading()
             if (res.code == 200) {
-				uni.$emit('faceBack', { pic: res.url })
-				uni.navigateBack({})
+              uni.$emit('faceBack', { pic: res.url })
+              uni.navigateBack({})
               // that.photoUrl = res.url
               //拍照完成，这里写处理逻辑
             }

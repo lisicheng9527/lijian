@@ -9,8 +9,6 @@
             :height="90"
             :active-color="themeColor"
             :bar-style="{
-                height: '4rpx',
-                width: '60rpx',
                 background: 'linear-gradient(90deg, #6366f1, #818cf8)',
                 borderRadius: '4rpx'
             }"
@@ -23,12 +21,20 @@
         <view class="list-container" v-if="isLogin">
             <mescroll-uni
                 ref="mescrollRef"
+                :safearea="true"
                 :fixed="false"
                 :up="{
                     auto: false,
-                    noMoreSize: 3
+                    noMoreSize: 3,
+                    empty: {
+                        use: false
+                    }
                 }"
-                :down="{ auto: false }"
+                :down="{
+                    use: true,
+                    auto: false,
+                    native: false
+                }"
                 @init="mescrollInit"
                 @down="downCallback"
                 @up="upCallback"
@@ -70,20 +76,20 @@
                                     <text class="model-name" @click="goModelDetail(model.model_id)">{{ model.model_name }}</text>
                                     
                                     <view class="model-actions">
-                                        <u-button 
-                                            v-if="model.preview_url" 
-                                            size="mini" 
-                                            type="primary" 
-                                            @click="goPreview(model.preview_url)"
-                                            class="action-btn preview-btn"
-                                        >预览</u-button>
-                                        <u-button 
-                                            v-if="model.status === 10" 
-                                            size="mini" 
-                                            type="error" 
-                                            @click="fileDownload(model.model_id)"
-                                            class="action-btn download-btn"
-                                        >下载</u-button>
+                                        <button 
+                                            class="action-btn preview-btn" 
+                                            @click.stop="goPreview(model.file_url)"
+                                            v-if="model.file_url"
+                                        >
+                                            预览
+                                        </button>
+                                        <button 
+                                            class="action-btn download-btn" 
+                                            @click.stop="fileDownload(model.model_id)"
+                                            v-if="model.status === 10"
+                                        >
+                                            下载
+                                        </button>
                                     </view>
                                 </view>
                             </view>
@@ -154,6 +160,11 @@ export default {
         // 映射Tabs项
         mapTabsItem() {
             return (sign) => this.tabsList.find((item) => item['sign'] === sign)
+        },
+
+        // 状态栏高度
+        statusBarHeight() {
+            return uni.getSystemInfoSync().statusBarHeight || 0
         }
     },
 
@@ -260,26 +271,29 @@ export default {
 
 <style lang="scss" scoped>
 .model-list {
-    min-height: 100vh;
     background-color: #f8fafc;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
     
     .custom-navbar {
+        background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(8px);
-        background: rgba(255, 255, 255, 0.8);
     }
     
     .custom-tabs {
-        background: rgba(255, 255, 255, 0.9);
-        position: sticky;
-        top: 0;
-        z-index: 100;
+        height: 90rpx;
+        background: rgba(255, 255, 255, 0.95);
         box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.03);
         backdrop-filter: blur(8px);
         
         :deep(.u-tabs__wrapper__nav__item) {
             font-size: 28rpx;
             font-weight: 500;
-            padding: 0 30rpx;
+            padding: 0 24rpx;
+            height: 90rpx;
+            line-height: 90rpx;
+            white-space: nowrap;
             
             &.u-tabs__wrapper__nav__item--active {
                 font-weight: 600;
@@ -290,7 +304,15 @@ export default {
     }
     
     .list-container {
-        padding: 24rpx;
+        flex: 1;
+        position: relative;
+        height: 100%;
+        overflow-y: auto;
+    }
+    
+    :deep(.mescroll-upwarp) {
+        padding: 30rpx;
+        text-align: center;
     }
     
     .models-grid {
@@ -388,12 +410,16 @@ export default {
                     flex: 1;
                     height: 70rpx;
                     border-radius: 35rpx;
-                    font-weight: 500;
                     font-size: 26rpx;
+                    font-weight: 500;
                     letter-spacing: 1rpx;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                     transition: all 0.3s ease;
                     
                     &.preview-btn {
+                        color: #FFFFFF;
                         background: linear-gradient(135deg, #22c55e, #16a34a);
                         box-shadow: 0 4rpx 12rpx rgba(34, 197, 94, 0.2);
                         
@@ -404,6 +430,7 @@ export default {
                     }
                     
                     &.download-btn {
+                        color: #FFFFFF;
                         background: linear-gradient(135deg, #ef4444, #dc2626);
                         box-shadow: 0 4rpx 12rpx rgba(239, 68, 68, 0.2);
                         

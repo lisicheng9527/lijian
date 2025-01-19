@@ -2,7 +2,7 @@
   <view class="box">
     <view class="transcribe-box" v-if="!videoSrc">
       <camera @error="handleError" device-position="back" flash="on" frame-size="large" resolution="high">
-        <image class="stroke" mode="heightFix" src="https://img.tomato3d.cn/svg%E5%B0%8F%E7%A8%8B%E5%BA%8Ficon/Union.png"></image>
+        <image class="stroke" mode="heightFix" src="https://testfile.zhihuischool.com.cn/uploads/images/20250118/20250118192755a396f5986.png"></image>
         <view class="ratote">
           <view class="rotate-box" :class="{'run': !isTranscribe}" style="background: rgba(255, 255, 255, 0);">
             <image class="dot" mode="heightFix" src="https://img.tomato3d.cn/svg%E5%B0%8F%E7%A8%8B%E5%BA%8Ficon/%E7%AE%AD%E5%A4%B41.png"></image>
@@ -23,9 +23,9 @@
     </view>
     <view class="video-box" v-else>
       <video :src="videoSrc"></video>
-      <view class="btn">
-        <button @click="retake" class="van-button block round" style="background-color: #BF0811; border-color: #BF0811;" size="large" type="primary">重拍</button>
-        <button @click="submit" class="van-button block round" style="background-color: #BF0811; border-color: #BF0811;" size="large" type="primary">提交</button>
+      <view class="action-buttons">
+        <button @click="retake" class="action-btn cancel">重拍</button>
+        <button @click="submit" class="action-btn confirm">确定</button>
       </view>
     </view>
   </view>
@@ -57,12 +57,6 @@ export default {
         success: () => {
           uni.$emit('recordBack', { video: this.videoSrc })
           uni.navigateBack({})
-          // const pages = getCurrentPages();
-          // const prevPage = pages[pages.length - 2];
-          // prevPage.setData({
-          //   temporaryUrl: this.videoSrc,
-          // });
-          // uni.navigateBack({ delta: 1 });
         }
       });
     },
@@ -167,7 +161,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .box {
 	background: #000;
 	height: 100vh;
@@ -209,7 +203,64 @@ video {
 
 .video-box {
 	height: 100%;
-	width: 100%
+	width: 100%;
+	background: #000;
+	display: flex;
+	flex-direction: column;
+	
+	video {
+		flex: 1;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.action-buttons {
+	height: 180rpx;
+	padding: 0 40rpx;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 30rpx;
+	background: rgba(0, 0, 0, 0.9);
+	backdrop-filter: blur(10px);
+	
+	.action-btn {
+		flex: 1;
+		height: 88rpx;
+		border-radius: 44rpx;
+		font-size: 32rpx;
+		font-weight: 500;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.3s ease;
+		border: none;
+		
+		&.cancel {
+			background: rgba(255, 255, 255, 0.15);
+			color: #fff;
+			backdrop-filter: blur(8px);
+			border: 1px solid rgba(255, 255, 255, 0.2);
+			
+			&:active {
+				transform: scale(0.96);
+				background: rgba(255, 255, 255, 0.1);
+			}
+		}
+		
+		&.confirm {
+			background: linear-gradient(135deg, #22c55e, #16a34a);
+			color: #fff;
+			box-shadow: 0 4rpx 12rpx rgba(34, 197, 94, 0.3);
+			
+			&:active {
+				transform: scale(0.96);
+				box-shadow: 0 2rpx 6rpx rgba(34, 197, 94, 0.2);
+			}
+		}
+	}
 }
 
 .btn {
